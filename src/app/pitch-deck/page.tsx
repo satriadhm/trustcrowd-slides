@@ -2,21 +2,21 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import BusinessModelSection from "../components/sections/BusinessModelSection";
+import CompetitiveAdvantageSection from "../components/sections/CompetitiveAdvantageSection";
+import ContactSection from "../components/sections/ContactSection";
+import ExecutiveSummary from "../components/sections/ExecutiveSummary";
+import FinancialSection from "../components/sections/FinancialSection";
+import GoToMarketSection from "../components/sections/GoToMarketSection";
+import HeroSection from "../components/sections/HeroSection";
+import HowItWorksSection from "../components/sections/HowItWorksSection";
+import InvestmentSection from "../components/sections/InvestmentSection";
+import MarketAnalysisSection from "../components/sections/MarketAnalysisSection";
+import ProblemSection from "../components/sections/ProblemSection";
+import SolutionSection from "../components/sections/SolutionSection";
+import TeamSection from "../components/sections/TeamSection";
+import TractionRoadmapSection from "../components/sections/TractionRoadmapSection";
 
-import HeroSection from "@/components/sections/HeroSection";
-import ExecutiveSummary from "@/components/sections/ExecutiveSummary";
-import ProblemSection from "@/components/sections/ProblemSection";
-import SolutionSection from "@/components/sections/SolutionSection";
-import HowItWorksSection from "@/components/sections/HowItWorksSection";
-import MarketAnalysisSection from "@/components/sections/MarketAnalysisSection";
-import CompetitiveAdvantageSection from "@/components/sections/CompetitiveAdvantageSection";
-import BusinessModelSection from "@/components/sections/BusinessModelSection";
-import GoToMarketSection from "@/components/sections/GoToMarketSection";
-import TractionRoadmapSection from "@/components/sections/TractionRoadmapSection";
-import FinancialSection from "@/components/sections/FinancialSection";
-import InvestmentSection from "@/components/sections/InvestmentSection";
-import TeamSection from "@/components/sections/TeamSection";
-import ContactSection from "@/components/sections/ContactSection";
 
 export default function PitchDeckPage() {
   const [activeSection, setActiveSection] = useState("hero");
