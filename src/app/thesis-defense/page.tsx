@@ -2,21 +2,22 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import AnalysisSlide from "../components/thesis-slides/AnalysisSlide";
+import ConclusionSlide from "../components/thesis-slides/ConclusionSlide";
+import FutureWorkSlide from "../components/thesis-slides/FutureWorkSlide";
+import IntroductionSlide from "../components/thesis-slides/IntroductionSlide";
+import MethodologySlide from "../components/thesis-slides/MethodologySlide";
+import MXAlgorithmSlide from "../components/thesis-slides/MXAlgorithmSlide";
+import QuestionAnswerSlide from "../components/thesis-slides/QuestionAnswerSlide";
+import ResearchProblemsSlide from "../components/thesis-slides/ResearchProblemsSlide";
+import ResultsSlide from "../components/thesis-slides/ResultsSlide";
+import SimulationDesignSlide from "../components/thesis-slides/SimulationDesignSlide";
+import SystemArchitectureSlide from "../components/thesis-slides/SystemArchitectureSlide";
+import ThankYouSlide from "../components/thesis-slides/ThankyouSlide";
+import TheoreticalBackgroundSlide from "../components/thesis-slides/TheoreticalBackgroundSlide";
+import TitleSlide from "../components/thesis-slides/TitleSlide";
 
-import IntroductionSlide from "@/components/thesis-slides/IntroductionSlide";
-import ResearchProblemsSlide from "@/components/thesis-slides/ResearchProblemsSlide";
-import TheoreticalBackgroundSlide from "@/components/thesis-slides/TheoreticalBackgroundSlide";
-import TitleSlide from "@/components/thesis-slides/TitleSlide";
-import MethodologySlide from "@/components/thesis-slides/MethodologySlide";
-import MXAlgorithmSlide from "@/components/thesis-slides/MXAlgorithmSlide";
-import SimulationDesignSlide from "@/components/thesis-slides/SimulationDesignSlide";
-import SystemArchitectureSlide from "@/components/thesis-slides/SystemArchitectureSlide";
-import AnalysisSlide from "@/components/thesis-slides/AnalysisSlide";
-import ConclusionSlide from "@/components/thesis-slides/ConclusionSlide";
-import ResultsSlide from "@/components/thesis-slides/ResultsSlide";
-import FutureWorkSlide from "@/components/thesis-slides/FutureWorkSlide";
-import QuestionAnswerSlide from "@/components/thesis-slides/QuestionAnswerSlide";
-import ThankYouSlide from "@/components/thesis-slides/ThankyouSlide";
+
 
 export default function ThesisDefensePage() {
   const [activeSection, setActiveSection] = useState("title");

@@ -14,8 +14,12 @@ export default function Home() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    resizeCanvas();
 
     const particles: {
       x: number;
@@ -24,7 +28,7 @@ export default function Home() {
       dx: number;
       dy: number;
     }[] = [];
-    const numParticles = 800;
+    const numParticles = 150;
     const mouse = { x: 0, y: 0 };
 
     for (let i = 0; i < numParticles; i++) {
@@ -32,27 +36,29 @@ export default function Home() {
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
         radius: Math.random() * 2 + 1,
-        dx: Math.random() * 2 - 1,
-        dy: Math.random() * 2 - 1,
+        dx: (Math.random() - 0.5) * 2,
+        dy: (Math.random() - 0.5) * 2,
       });
     }
 
     const drawParticles = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
       particles.forEach((particle) => {
         const distX = particle.x - mouse.x;
         const distY = particle.y - mouse.y;
         const distance = Math.sqrt(distX ** 2 + distY ** 2);
 
         if (distance < 100) {
-          particle.x += distX / 10;
-          particle.y += distY / 10;
+          particle.x += distX / 20;
+          particle.y += distY / 20;
         }
 
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-        ctx.fillStyle = "#fff";
+        ctx.fillStyle = "rgba(255, 255, 255, 0.6)";
         ctx.fill();
+        
         particle.x += particle.dx;
         particle.y += particle.dy;
 
@@ -67,86 +73,158 @@ export default function Home() {
     };
 
     const handleMouseMove = (e: MouseEvent) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    };
+
+    const handleResize = () => {
+      resizeCanvas();
     };
 
     animate();
     window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("resize", () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    });
+    window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   return (
-    <div className="relative h-screen bg-gradient-to-r from-[#0a1e5e] to-[#001333] text-white overflow-hidden">
-      <canvas ref={canvasRef} className="absolute inset-0"></canvas>
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10">
-        <motion.h1
-          className="text-6xl font-extrabold mb-6 leading-tight"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          <div>TrustCrowd</div>
-          <div className="bg-clip-text text-transparent bg-gradient-to-r from-[#24ce2a] to-[#25da9e]">
-            PRESENTATION
-          </div>
-        </motion.h1>
-        <motion.div
-          className="text-xl mb-8 space-y-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 1 }}
-        >
+    <div className="relative min-h-screen bg-gradient-to-br from-[#0a1e5e] via-[#001333] to-[#21074f] text-white overflow-hidden">
+      {/* Background Canvas */}
+      <canvas 
+        ref={canvasRef} 
+        className="absolute inset-0 pointer-events-none"
+        style={{ zIndex: 1 }}
+      />
+      
+      {/* Main Content */}
+      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4">
+        <div className="text-center max-w-4xl mx-auto">
+          {/* Logo/Icon */}
           <motion.div
-            className="flex items-center space-x-4 justify-center"
-            whileHover={{ scale: 1.05 }}
+            className="mb-8 flex justify-center"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
           >
-            <span className="p-3 bg-white bg-opacity-20 rounded-full text-white">
-              🚀
-            </span>
-            <span className="font-medium">Business Pitch Deck</span>
+            <div className="bg-gradient-to-r from-[#24ce2a] to-[#25da9e] p-6 rounded-full shadow-2xl">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-white"
+              >
+                <path d="M9 12l2 2 4-4" />
+                <path d="M21 12c.552 0 1-.448 1-1V8c0-.552-.448-1-1-1h-3c-.552 0-1-.448-1-1V3c0-.552-.448-1-1-1H8c-.552 0-1 .448-1 1v3c0 .552-.448 1-1 1H3c-.552 0-1 .448-1 1v3c0 .552.448 1 1 1h3c.552 0 1 .448 1 1v3c0 .552.448 1 1 1h8c.552 0 1-.448 1-1v-3c0-.552.448-1 1-1h3z" />
+              </svg>
+            </div>
           </motion.div>
-          <motion.div
-            className="flex items-center space-x-4 justify-center"
-            whileHover={{ scale: 1.05 }}
+
+          {/* Main Title */}
+          <motion.h1
+            className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
           >
-            <span className="p-3 bg-white bg-opacity-20 rounded-full text-white">
-              🎓
-            </span>
-            <span className="font-medium">Thesis Defense</span>
-          </motion.div>
-        </motion.div>
-        
-        <div className="flex flex-col md:flex-row gap-6">
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
+            <div className="mb-2">TrustCrowd</div>
+            <div className="bg-clip-text text-transparent bg-gradient-to-r from-[#24ce2a] to-[#25da9e]">
+              PRESENTATION
+            </div>
+          </motion.h1>
+
+          {/* Subtitle */}
+          <motion.p
+            className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8, duration: 1 }}
           >
-            <Link
-              href="/components/pitch-deck"
-              className="block px-8 py-4 bg-gradient-to-r from-[#24ce2a] to-[#25da9e] text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300 text-center"
+            Quality Control Mechanism for Crowdsourcing
+          </motion.p>
+
+          {/* Features */}
+          <motion.div
+            className="mb-12 space-y-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 1 }}
+          >
+            <motion.div
+              className="flex items-center justify-center space-x-4 p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20"
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.15)" }}
+              transition={{ type: "spring", stiffness: 300 }}
             >
-              Business Pitch Deck
-            </Link>
+              <span className="p-3 bg-[#24ce2a]/20 rounded-full text-[#24ce2a]">
+                🚀
+              </span>
+              <span className="font-medium text-lg">Business Pitch Deck</span>
+            </motion.div>
+            
+            <motion.div
+              className="flex items-center justify-center space-x-4 p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20"
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.15)" }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <span className="p-3 bg-[#25da9e]/20 rounded-full text-[#25da9e]">
+                🎓
+              </span>
+              <span className="font-medium text-lg">Thesis Defense</span>
+            </motion.div>
           </motion.div>
           
+          {/* Action Buttons */}
           <motion.div
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
+            className="flex flex-col md:flex-row gap-6 justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2, duration: 0.8 }}
           >
-            <Link
-              href="/thesis-defense"
-              className="block px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all duration-200 rounded-lg text-center font-semibold"
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              Thesis Defense
-            </Link>
+              <Link
+                href="/components/pitch-deck"
+                className="inline-block px-8 py-4 bg-gradient-to-r from-[#24ce2a] to-[#25da9e] text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-center min-w-[200px]"
+              >
+                View Business Pitch
+              </Link>
+            </motion.div>
+            
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link
+                href="/thesis-defense"
+                className="inline-block px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/30 text-white hover:bg-white/20 transition-all duration-300 rounded-lg text-center font-semibold min-w-[200px]"
+              >
+                View Thesis Defense
+              </Link>
+            </motion.div>
+          </motion.div>
+
+          {/* Footer Info */}
+          <motion.div
+            className="mt-16 text-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5, duration: 0.8 }}
+          >
+            <p className="text-gray-400 text-sm">
+              Glorious Satria Dhamang Aji • Telkom University • 2025
+            </p>
           </motion.div>
         </div>
       </div>
