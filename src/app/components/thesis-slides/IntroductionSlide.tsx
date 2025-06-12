@@ -5,120 +5,112 @@ import { motion } from "framer-motion";
 
 const IntroductionSlide = () => {
   return (
-    <div className="max-w-6xl mx-auto">
-      <motion.h2 
-        className="text-4xl font-bold mb-8 text-center"
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-      >
-        Introduction
-      </motion.h2>
-
-      <div className="grid md:grid-cols-2 gap-8">
-        <motion.div 
-          className="bg-white/10 p-6 rounded-xl backdrop-blur-sm"
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+    <div className="w-full h-screen flex items-center justify-center bg-gradient-to-br from-[#0a1e5e] via-[#001333] to-[#21074f] text-white px-8">
+      <div className="max-w-6xl mx-auto">
+        <motion.h2 
+          className="text-6xl font-bold mb-12 text-center"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl font-semibold mb-4 text-tertiary-light">Background</h3>
-          <ul className="space-y-4 text-gray-200">
-            <li className="flex items-start gap-3">
-              <div className="bg-tertiary/20 p-1 rounded-full mt-1 flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-tertiary-light">
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
-              </div>
-              <span>Software quality is crucial in commercial software development</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <div className="bg-tertiary/20 p-1 rounded-full mt-1 flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-tertiary-light">
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
-              </div>
-              <span>User Acceptance Testing (UAT) is the final critical stage before implementation</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <div className="bg-tertiary/20 p-1 rounded-full mt-1 flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-tertiary-light">
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
-              </div>
-              <span>UAT connects developers and end-users, ensuring software meets business requirements</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <div className="bg-tertiary/20 p-1 rounded-full mt-1 flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-tertiary-light">
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
-              </div>
-              <span>Comprehensive UAT requires significant resources, time, and budget</span>
-            </li>
-          </ul>
-        </motion.div>
+          Pendahuluan
+        </motion.h2>
+
+        <div className="grid md:grid-cols-2 gap-12">
+          <motion.div 
+            className="bg-white/10 p-8 rounded-xl backdrop-blur-sm"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-3xl font-semibold mb-6 text-[#24ce2a]">Latar Belakang</h3>
+            <ul className="space-y-5 text-xl text-gray-200">
+              <li className="flex items-start gap-4">
+                <div className="bg-[#24ce2a]/20 p-2 rounded-full mt-1 flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#24ce2a]">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                </div>
+                <span>Kualitas software sangat penting dalam pengembangan komersial</span>
+              </li>
+              <li className="flex items-start gap-4">
+                <div className="bg-[#24ce2a]/20 p-2 rounded-full mt-1 flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#24ce2a]">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                </div>
+                <span>UAT adalah tahap kritis terakhir sebelum implementasi</span>
+              </li>
+              <li className="flex items-start gap-4">
+                <div className="bg-[#24ce2a]/20 p-2 rounded-full mt-1 flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#24ce2a]">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                </div>
+                <span>UAT membutuhkan sumber daya, waktu, dan budget signifikan</span>
+              </li>
+            </ul>
+          </motion.div>
+
+          <motion.div 
+            className="bg-white/10 p-8 rounded-xl backdrop-blur-sm"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-3xl font-semibold mb-6 text-[#25da9e]">Crowdsourced UAT</h3>
+            <ul className="space-y-5 text-xl text-gray-200">
+              <li className="flex items-start gap-4">
+                <div className="bg-[#25da9e]/20 p-2 rounded-full mt-1 flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#25da9e]">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                </div>
+                <div>
+                  <span className="font-medium">Solusi potensial:</span>
+                  <p className="text-lg mt-2">Melibatkan beragam pengguna untuk testing yang lebih luas dan realistis</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-4">
+                <div className="bg-[#25da9e]/20 p-2 rounded-full mt-1 flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#25da9e]">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                </div>
+                <div>
+                  <span className="font-medium">Tantangan utama:</span>
+                  <p className="text-lg mt-2">Variabilitas karakteristik tester yang mempengaruhi konsistensi hasil</p>
+                </div>
+              </li>
+            </ul>
+          </motion.div>
+        </div>
 
         <motion.div 
-          className="bg-white/10 p-6 rounded-xl backdrop-blur-sm"
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mt-12 bg-white/10 p-8 rounded-xl backdrop-blur-sm"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl font-semibold mb-4 text-tertiary-light">Crowdsourced UAT</h3>
-          <ul className="space-y-4 text-gray-200">
-            <li className="flex items-start gap-3">
-              <div className="bg-tertiary/20 p-1 rounded-full mt-1 flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-tertiary-light">
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
-              </div>
-              <div>
-                <span className="font-medium">Offers potential solution:</span>
-                <p className="text-sm mt-1">Involving diverse users to achieve broader, more realistic testing coverage with efficient budget allocation</p>
-              </div>
-            </li>
-            <li className="flex items-start gap-3">
-              <div className="bg-tertiary/20 p-1 rounded-full mt-1 flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-tertiary-light">
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
-              </div>
-              <div>
-                <span className="font-medium">Key challenge:</span>
-                <p className="text-sm mt-1">Variability in tester (worker) characteristics, affecting consistency and reliability of test outcomes</p>
-              </div>
-            </li>
-            <li className="flex items-start gap-3">
-              <div className="bg-tertiary/20 p-1 rounded-full mt-1 flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-tertiary-light">
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
-              </div>
-              <span>Need for effective tester quality control mechanism to ensure optimal testing process</span>
-            </li>
-          </ul>
+          <h3 className="text-3xl font-semibold mb-6 text-center text-[#24ce2a]">Algoritma M-X sebagai Solusi</h3>
+          <div className="text-center">
+            <p className="text-xl text-gray-200 mb-6">
+              Algoritma M-X menawarkan pendekatan untuk menilai kualitas tester berdasarkan konsistensi respons 
+              <span className="text-[#25da9e] font-medium"> tanpa memerlukan jawaban benar yang telah ditentukan</span>
+            </p>
+            <div className="bg-gradient-to-r from-[#24ce2a]/20 to-[#25da9e]/20 p-6 rounded-lg">
+              <p className="text-xl font-medium">
+                Penelitian ini mengevaluasi efektivitas algoritma M-X dalam mengklasifikasi kelayakan tester 
+                dalam konteks UAT berbasis crowdsourcing
+              </p>
+            </div>
+          </div>
         </motion.div>
       </div>
-
-      <motion.div 
-        className="mt-10 bg-white/10 p-6 rounded-xl backdrop-blur-sm"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <h3 className="text-2xl font-semibold mb-4 text-tertiary-light">Algorithm M-X as a Potential Solution</h3>
-        <p className="text-gray-200 mb-4">
-          The M-X algorithm offers a promising approach for assessing worker quality based on response consistency without relying on predefined correct answers, making it suitable for subjective and exploratory UAT scenarios.
-        </p>
-        <p className="text-gray-200">
-          This research evaluates the effectiveness of the M-X algorithm in classifying tester eligibility within the context of UAT-based crowdsourcing, and its ability to reduce tester characteristic variability for more consistent testing quality.
-        </p>
-      </motion.div>
     </div>
   );
 };
