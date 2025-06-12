@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 
 const MethodologySlide = () => {
   return (
-    <div className="w-full min-h-screen flex items-start justify-center text-white px-4 py-6 overflow-y-auto">
-      <div className="max-w-7xl mx-auto w-full">
+    <div className="w-full min-h-screen flex items-center justify-center text-white px-4 py-6 overflow-y-auto">
+      <div className="max-w-6xl mx-auto w-full">
         <motion.h2 
-          className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 sm:mb-6 lg:mb-8 text-center"
+          className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 sm:mb-8 lg:mb-10 text-center"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -17,7 +17,7 @@ const MethodologySlide = () => {
           Metodologi
         </motion.h2>
 
-        <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 mb-8 sm:mb-10 lg:mb-12">
           <motion.div 
             className="bg-white/10 p-4 sm:p-5 lg:p-6 rounded-xl backdrop-blur-sm"
             initial={{ opacity: 0, x: -20 }}
@@ -103,7 +103,7 @@ const MethodologySlide = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-semibold mb-4 sm:mb-5 lg:mb-6 text-center">Metrik Evaluasi</h3>
+          <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold mb-4 sm:mb-6 lg:mb-8 text-center">Metrik Evaluasi</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 sm:gap-4">
             <div className="bg-white/5 p-3 sm:p-4 rounded-lg text-center">
               <h4 className="font-medium text-sm sm:text-base lg:text-lg text-[#24ce2a] mb-2">Accuracy</h4>
