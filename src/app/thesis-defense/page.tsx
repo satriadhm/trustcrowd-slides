@@ -4,7 +4,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight, Home, Menu, X, MoreVertical } from "lucide-react";
 
-// Import all slide components (keeping existing imports)
+// Import all slide components
 import TitleSlide from "@/app/components/thesis-slides/TitleSlide";
 import IntroductionSlide from "@/app/components/thesis-slides/IntroductionSlide";
 import ResearchProblemsSlide from "@/app/components/thesis-slides/ResearchProblemsSlide";
@@ -20,7 +20,6 @@ import FutureWorkSlide from "@/app/components/thesis-slides/FutureWorkSlide";
 import QuestionAnswerSlide from "@/app/components/thesis-slides/QuestionAnswerSlide";
 import ThankYouSlide from "@/app/components/thesis-slides/ThankyouSlide";
 
-// TypeScript interfaces
 interface SlideItem {
   component: React.ComponentType;
   title: string;
@@ -35,7 +34,7 @@ export default function ThesisDefensePage() {
 
   // Define all slides with their components and titles
   const slides: SlideItem[] = [
-    { component: TitleSlide, title: "Title", id: "title", shortTitle: "Title" },
+    { component: TitleSlide, title: "Title Slide", id: "title", shortTitle: "Title" },
     { component: IntroductionSlide, title: "Pendahuluan", id: "introduction", shortTitle: "Intro" },
     { component: ResearchProblemsSlide, title: "Rumusan Masalah", id: "problems", shortTitle: "Problems" },
     { component: TheoreticalBackgroundSlide, title: "Landasan Teori", id: "background", shortTitle: "Theory" },
@@ -101,15 +100,15 @@ export default function ThesisDefensePage() {
     <div className="min-h-screen bg-gradient-to-br from-[#0a1e5e] via-[#001333] to-[#21074f] text-white relative overflow-hidden">
       {/* Compact Header Navigation */}
       <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[#001333]/95 to-[#0a1e5e]/95 backdrop-blur-md border-b border-white/10">
-        <div className="flex items-center justify-between px-4 lg:px-6 py-2">
+        <div className="flex items-center justify-between px-3 lg:px-6 py-2">
           {/* Left: Home and Menu */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
             <Link 
               href="/" 
               className="flex items-center gap-2 hover:bg-white/10 p-2 rounded-lg transition-all duration-200 group"
               title="Back to Home"
             >
-              <Home size={18} className="group-hover:scale-110 transition-transform" />
+              <Home size={16} className="group-hover:scale-110 transition-transform" />
               <span className="hidden sm:inline text-sm font-medium">Home</span>
             </Link>
             
@@ -118,23 +117,23 @@ export default function ThesisDefensePage() {
               className="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
               title="Open slide navigation"
             >
-              <Menu size={18} />
+              <Menu size={16} />
             </button>
           </div>
 
           {/* Center: Current Slide Info */}
-          <div className="flex-1 text-center">
-            <div className="flex items-center justify-center gap-3">
-              <span className="text-sm font-medium text-gray-300">
+          <div className="flex-1 text-center px-4">
+            <div className="flex items-center justify-center gap-2 sm:gap-3">
+              <span className="text-xs sm:text-sm font-medium text-gray-300 whitespace-nowrap">
                 {currentSlide + 1} / {slides.length}
               </span>
-              <div className="hidden sm:block w-32 h-1.5 bg-white/20 rounded-full overflow-hidden">
+              <div className="w-16 sm:w-32 h-1 sm:h-1.5 bg-white/20 rounded-full overflow-hidden">
                 <div 
                   className="h-full bg-gradient-to-r from-[#24ce2a] to-[#25da9e] transition-all duration-500 ease-out"
                   style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
                 />
               </div>
-              <span className="hidden md:inline text-sm font-medium text-white max-w-48 truncate">
+              <span className="hidden lg:inline text-sm font-medium text-white max-w-40 xl:max-w-64 truncate">
                 {slides[currentSlide].title}
               </span>
             </div>
@@ -148,7 +147,7 @@ export default function ThesisDefensePage() {
               className="p-2 rounded-lg hover:bg-white/10 transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed group"
               title="Previous slide (←)"
             >
-              <ChevronLeft size={18} className="group-hover:scale-110 transition-transform" />
+              <ChevronLeft size={16} className="group-hover:scale-110 transition-transform" />
             </button>
             <button
               onClick={nextSlide}
@@ -156,36 +155,26 @@ export default function ThesisDefensePage() {
               className="p-2 rounded-lg hover:bg-white/10 transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed group"
               title="Next slide (→ or Space)"
             >
-              <ChevronRight size={18} className="group-hover:scale-110 transition-transform" />
+              <ChevronRight size={16} className="group-hover:scale-110 transition-transform" />
             </button>
             
             <button
               onClick={() => setIsMinimized(!isMinimized)}
-              className="hidden lg:block p-2 rounded-lg hover:bg-white/10 transition-colors ml-2"
+              className="hidden lg:block p-2 rounded-lg hover:bg-white/10 transition-colors ml-1"
               title="Toggle navigation"
             >
-              <MoreVertical size={16} />
+              <MoreVertical size={14} />
             </button>
-          </div>
-        </div>
-
-        {/* Mobile Progress Bar */}
-        <div className="sm:hidden px-4 pb-2">
-          <div className="w-full h-1 bg-white/20 rounded-full overflow-hidden">
-            <div 
-              className="h-full bg-gradient-to-r from-[#24ce2a] to-[#25da9e] transition-all duration-500"
-              style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
-            />
           </div>
         </div>
       </div>
 
       {/* Desktop Slide Navigation Sidebar */}
       <div className={`hidden lg:block fixed left-0 top-12 bottom-0 z-40 transition-all duration-300 ${
-        isMinimized ? 'w-12' : 'w-64'
+        isMinimized ? 'w-12' : 'w-60 xl:w-64'
       } bg-gradient-to-b from-[#001333]/95 to-[#0a1e5e]/95 backdrop-blur-md border-r border-white/10`}>
-        <div className="h-full overflow-y-auto no-scrollbar">
-          <div className="p-3">
+        <div className="h-full overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white/20">
+          <div className="p-2">
             <div className="space-y-1">
               {slides.map((slide, index) => (
                 <button
@@ -195,21 +184,21 @@ export default function ThesisDefensePage() {
                     currentSlide === index 
                       ? "bg-gradient-to-r from-[#24ce2a]/20 to-[#25da9e]/20 border-l-2 border-[#24ce2a]" 
                       : "hover:bg-white/5"
-                  } ${isMinimized ? 'p-2 rounded-lg' : 'p-3 rounded-lg'}`}
+                  } ${isMinimized ? 'p-2 rounded-lg' : 'p-2 xl:p-3 rounded-lg'}`}
                   title={isMinimized ? slide.title : undefined}
                 >
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2 xl:gap-3">
                     <div className={`flex-shrink-0 flex items-center justify-center rounded-md font-medium transition-all duration-200 ${
                       currentSlide === index 
-                        ? "bg-[#24ce2a] text-white w-6 h-6 text-xs" 
-                        : "bg-white/10 text-gray-300 w-6 h-6 text-xs group-hover:bg-white/20"
+                        ? "bg-[#24ce2a] text-white w-5 h-5 text-xs" 
+                        : "bg-white/10 text-gray-300 w-5 h-5 text-xs group-hover:bg-white/20"
                     }`}>
                       {index + 1}
                     </div>
                     
                     {!isMinimized && (
                       <div className="flex-1 min-w-0">
-                        <div className={`font-medium transition-colors text-sm ${
+                        <div className={`font-medium transition-colors text-xs xl:text-sm leading-tight ${
                           currentSlide === index ? "text-white" : "text-gray-300 group-hover:text-white"
                         }`}>
                           {slide.title}
@@ -235,7 +224,7 @@ export default function ThesisDefensePage() {
       {/* Mobile Slide Navigation Overlay */}
       {isNavigationOpen && (
         <div className="lg:hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm">
-          <div className="fixed top-0 left-0 bottom-0 w-80 max-w-[85vw] bg-gradient-to-b from-[#001333] to-[#0a1e5e] border-r border-white/10">
+          <div className="fixed top-0 left-0 bottom-0 w-72 max-w-[85vw] bg-gradient-to-b from-[#001333] to-[#0a1e5e] border-r border-white/10">
             <div className="flex items-center justify-between p-4 border-b border-white/10">
               <h3 className="text-lg font-semibold">Navigation</h3>
               <button
@@ -246,20 +235,20 @@ export default function ThesisDefensePage() {
               </button>
             </div>
             
-            <div className="h-full overflow-y-auto no-scrollbar pb-20">
-              <div className="p-4 space-y-2">
+            <div className="h-full overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white/20 pb-20">
+              <div className="p-3 space-y-2">
                 {slides.map((slide, index) => (
                   <button
                     key={slide.id}
                     onClick={() => goToSlide(index)}
-                    className={`w-full text-left p-4 rounded-lg transition-all duration-200 ${
+                    className={`w-full text-left p-3 rounded-lg transition-all duration-200 ${
                       currentSlide === index 
                         ? "bg-gradient-to-r from-[#24ce2a]/20 to-[#25da9e]/20 border border-[#24ce2a]/30" 
                         : "hover:bg-white/5 border border-transparent"
                     }`}
                   >
                     <div className="flex items-center gap-3">
-                      <div className={`flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-lg font-bold transition-all duration-200 ${
+                      <div className={`flex-shrink-0 flex items-center justify-center w-7 h-7 rounded-lg font-bold text-sm transition-all duration-200 ${
                         currentSlide === index 
                           ? "bg-[#24ce2a] text-white" 
                           : "bg-white/10 text-gray-300"
@@ -267,12 +256,12 @@ export default function ThesisDefensePage() {
                         {index + 1}
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className={`font-medium transition-colors ${
+                        <div className={`font-medium transition-colors text-sm ${
                           currentSlide === index ? "text-white" : "text-gray-300"
                         }`}>
                           {slide.title}
                         </div>
-                        <div className="text-sm text-gray-400 mt-1">
+                        <div className="text-xs text-gray-400 mt-1">
                           Slide {index + 1} of {slides.length}
                         </div>
                       </div>
@@ -285,13 +274,18 @@ export default function ThesisDefensePage() {
         </div>
       )}
 
-      {/* Main Slide Content */}
-      <div className={`transition-all duration-300 pt-12 ${
-        isMinimized ? 'lg:ml-12' : 'lg:ml-64'
+      {/* Main Slide Content - Fixed with proper responsive spacing */}
+      <div className={`transition-all duration-300 ${
+        isMinimized ? 'lg:ml-12' : 'lg:ml-60 xl:ml-64'
       }`}>
-        <div className="min-h-[calc(100vh-3rem)] flex items-center justify-center p-4">
-          <div className="w-full max-w-7xl mx-auto">
-            <CurrentSlideComponent />
+        <div className="min-h-screen flex items-center justify-center">
+          {/* Container with proper responsive padding and max-width */}
+          <div className="w-full h-screen flex items-center justify-center pt-12 lg:pt-14 pb-16 lg:pb-4 px-2 sm:px-4 lg:px-6">
+            <div className="w-full max-w-7xl mx-auto h-full flex items-center justify-center">
+              <div className="w-full scale-90 sm:scale-95 lg:scale-100">
+                <CurrentSlideComponent />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -302,21 +296,21 @@ export default function ThesisDefensePage() {
           <button
             onClick={prevSlide}
             disabled={currentSlide === 0}
-            className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-white/10 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-white/10 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
           >
             <ChevronLeft size={16} />
             <span className="text-sm font-medium">Previous</span>
           </button>
           
-          <div className="text-center">
-            <div className="text-sm font-medium">{slides[currentSlide].shortTitle}</div>
+          <div className="text-center px-2">
+            <div className="text-sm font-medium truncate max-w-32">{slides[currentSlide].shortTitle}</div>
             <div className="text-xs text-gray-400">{currentSlide + 1} / {slides.length}</div>
           </div>
           
           <button
             onClick={nextSlide}
             disabled={currentSlide === slides.length - 1}
-            className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-white/10 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-white/10 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
           >
             <span className="text-sm font-medium">Next</span>
             <ChevronRight size={16} />
