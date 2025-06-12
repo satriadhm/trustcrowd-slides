@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Home() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -92,9 +93,9 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <div>Test Your Apps</div>
-          <div className="bg-clip-text text-transparent bg-gradient-to-r from-tertiary to-tertiary-light">
-            RIGHT NOW
+          <div>TrustCrowd</div>
+          <div className="bg-clip-text text-transparent bg-gradient-to-r from-[#24ce2a] to-[#25da9e]">
+            PRESENTATION
           </div>
         </motion.h1>
         <motion.div
@@ -110,35 +111,44 @@ export default function Home() {
             <span className="p-3 bg-white bg-opacity-20 rounded-full text-white">
               🚀
             </span>
-            <span className="font-medium">Join us in innovation</span>
+            <span className="font-medium">Business Pitch Deck</span>
           </motion.div>
           <motion.div
             className="flex items-center space-x-4 justify-center"
             whileHover={{ scale: 1.05 }}
           >
             <span className="p-3 bg-white bg-opacity-20 rounded-full text-white">
-              💰
+              🎓
             </span>
-            <span className="font-medium">Earn rewards for testing</span>
-          </motion.div>
-          <motion.div
-            className="flex items-center space-x-4 justify-center"
-            whileHover={{ scale: 1.05 }}
-          >
-            <span className="p-3 bg-white bg-opacity-20 rounded-full text-white">
-              🖥️
-            </span>
-            <span className="font-medium">Help us build better software</span>
+            <span className="font-medium">Thesis Defense</span>
           </motion.div>
         </motion.div>
-        <motion.a
-          href="/login"
-          className="px-6 py-3 bg-gradient-to-r from-tertiary to-tertiary-light text-white font-semibold rounded-lg shadow-md hover:bg-secondary"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Get Started
-        </motion.a>
+        
+        <div className="flex flex-col md:flex-row gap-6">
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Link
+              href="/components/pitch-deck"
+              className="block px-8 py-4 bg-gradient-to-r from-[#24ce2a] to-[#25da9e] text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300 text-center"
+            >
+              Business Pitch Deck
+            </Link>
+          </motion.div>
+          
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Link
+              href="/thesis-defense"
+              className="block px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all duration-200 rounded-lg text-center font-semibold"
+            >
+              Thesis Defense
+            </Link>
+          </motion.div>
+        </div>
       </div>
     </div>
   );

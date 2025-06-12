@@ -1,4 +1,3 @@
-import ApolloProviderWrapper from "../layout/apollo-provider";
 import "./globals.css";
 
 export const metadata = {
@@ -15,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased from-[#001133] no-scrollbar">
-        <ApolloProviderWrapper>{children}</ApolloProviderWrapper>
+        {children}
       </body>
     </html>
   );

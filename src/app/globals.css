@@ -7,9 +7,8 @@
   --secondary-color: #0c3981;
   --tertiary-color: #24ce2a;
   --tertiary-color-light: #25da9e;
-  --background_color-light: #8c60de;
-  --background_color-dark: #7d65a7;
-
+  --background-color-light: #8c60de;
+  --background-color-dark: #7d65a7;
   --background-color: #f3f4f6;
 }
 
@@ -46,6 +45,7 @@ body {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+  
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -84,12 +84,35 @@ body {
 }
 
 @layer utilities {
-  /* Hide scrollbar for Chrome, Safari and Opera */
+  /* Custom Tailwind utilities for tertiary colors */
+  .text-tertiary {
+    color: #24ce2a;
+  }
+  
+  .text-tertiary-light {
+    color: #25da9e;
+  }
+  
+  .bg-tertiary {
+    background-color: #24ce2a;
+  }
+  
+  .bg-tertiary-light {
+    background-color: #25da9e;
+  }
+  
+  .border-tertiary {
+    border-color: #24ce2a;
+  }
+  
+  .border-tertiary-light {
+    border-color: #25da9e;
+  }
+
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
 
-  /* Hide scrollbar for IE, Edge and Firefox */
   .no-scrollbar {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
