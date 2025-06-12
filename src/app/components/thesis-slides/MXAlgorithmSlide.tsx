@@ -47,13 +47,11 @@ const MXAlgorithmSlide = () => {
               </div>
             </div>
 
-            {/* Box M-X Algorithm */}
             <div className="bg-gradient-to-br from-[#25da9e]/20 to-[#25da9e]/5 border-2 border-[#25da9e]/30 p-4 sm:p-6 lg:p-8 rounded-2xl backdrop-blur-sm">
               <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 text-[#25da9e] text-center">M-X Algorithm</h3>
               <p className="text-sm sm:text-base lg:text-lg text-gray-300 mb-4 sm:mb-6 text-center">
                 Ekstensi M-1 untuk multiple-choice dengan dekomposisi biner
               </p>
-              {/* Formula M-X */}
               <div className="bg-white/15 p-4 sm:p-6 lg:p-8 rounded-xl text-center border border-[#25da9e]/20">
                 <span className="font-mono text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-[#25da9e] font-bold block leading-tight">
                   A<sub className="text-lg sm:text-xl lg:text-2xl">i</sub> = ∏<sub className="text-base sm:text-lg lg:text-xl">j=1</sub><sup className="text-base sm:text-lg lg:text-xl">M</sup> A<sub className="text-base sm:text-lg lg:text-xl">ij</sub>
@@ -63,10 +61,7 @@ const MXAlgorithmSlide = () => {
           </div>
         </motion.div>
 
-        {/* Content Grid (Karakteristik, Proses, Relevansi) */}
-        {/* Mengubah gap sedikit dan memastikan padding di div induknya cukup */}
         <div className="grid lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
-          {/* Karakteristik Algoritma */}
           <motion.div 
             className="bg-white/10 p-3 sm:p-4 lg:p-5 rounded-xl backdrop-blur-sm"
             initial={{ opacity: 0, x: -20 }}
