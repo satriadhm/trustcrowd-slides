@@ -26,10 +26,10 @@ const ResearchProblemsSlide = () => {
             viewport={{ once: true }}
           >
             <div className="text-center mb-4 sm:mb-6 lg:mb-8">
-              <span className="bg-[#24ce2a]/20 text-[#24ce2a] text-xl sm:text-2xl lg:text-3xl font-bold px-3 sm:px-4 lg:px-6 py-2 sm:py-3 rounded-full">RQ1</span>
+              <span className="bg-[#24ce2a]/20 text-[#24ce2a] text-xl sm:text-2xl lg:text-3xl font-bold px-3 sm:px-4 lg:px-6 py-2 rounded-full">RQ1</span>
             </div>
             <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-semibold mb-4 sm:mb-6 lg:mb-8 text-center leading-relaxed">
-              Seberapa akurat algoritma M-X dalam mengklasifikasi kelayakan tester?
+              Seberapa akurat algoritma M-X dalam mengklasifikasi kelayakan <i>tester</i> di lingkungan UAT <i>crowdsourced</i>?
             </h3>
             <div className="bg-white/10 p-3 sm:p-4 lg:p-6 rounded-lg">
               <ul className="space-y-2 sm:space-y-3 lg:space-y-4 text-sm sm:text-base lg:text-lg xl:text-xl">
@@ -39,7 +39,7 @@ const ResearchProblemsSlide = () => {
                       <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
                     </svg>
                   </div>
-                  <span>Evaluasi metrik performa klasifikasi</span>
+                  <span><b>Tujuan:</b> Mengevaluasi akurasi klasifikasi M-X menggunakan respons <i>tester</i> nyata dalam tugas-tugas subjektif.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="bg-[#24ce2a]/20 p-2 rounded-full mt-1 flex-shrink-0">
@@ -47,7 +47,7 @@ const ResearchProblemsSlide = () => {
                       <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
                     </svg>
                   </div>
-                  <span>Deteksi tester berkualitas konsisten</span>
+                  <span><b>Metrik:</b> Akurasi, Presisi, <i>Recall</i>, F1-Score, dan TNR.</span>
                 </li>
               </ul>
             </div>
@@ -61,10 +61,10 @@ const ResearchProblemsSlide = () => {
             viewport={{ once: true }}
           >
             <div className="text-center mb-4 sm:mb-6 lg:mb-8">
-              <span className="bg-[#25da9e]/20 text-[#25da9e] text-xl sm:text-2xl lg:text-3xl font-bold px-3 sm:px-4 lg:px-6 py-2 sm:py-3 rounded-full">RQ2</span>
+              <span className="bg-[#25da9e]/20 text-[#25da9e] text-xl sm:text-2xl lg:text-3xl font-bold px-3 sm:px-4 lg:px-6 py-2 rounded-full">RQ2</span>
             </div>
             <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-semibold mb-4 sm:mb-6 lg:mb-8 text-center leading-relaxed">
-              Sejauh mana algoritma M-X mengurangi variabilitas tester?
+              Sejauh mana algoritma M-X mengurangi variabilitas karakteristik <i>tester</i> dan memastikan kualitas <i>testing</i> yang konsisten?
             </h3>
             <div className="bg-white/10 p-3 sm:p-4 lg:p-6 rounded-lg">
               <ul className="space-y-2 sm:space-y-3 lg:space-y-4 text-sm sm:text-base lg:text-lg xl:text-xl">
@@ -74,7 +74,7 @@ const ResearchProblemsSlide = () => {
                       <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
                     </svg>
                   </div>
-                  <span>Filtering tester tidak konsisten</span>
+                  <span><b>Tujuan:</b> Mengukur dampak variabilitas <i>tester</i>, khususnya pengalaman sebelumnya, terhadap performa algoritma.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="bg-[#25da9e]/20 p-2 rounded-full mt-1 flex-shrink-0">
@@ -82,7 +82,7 @@ const ResearchProblemsSlide = () => {
                       <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
                     </svg>
                   </div>
-                  <span>Homogenitas pola respons</span>
+                  <span><b>Metrik:</b> TNR, FP Rate.</span>
                 </li>
               </ul>
             </div>
@@ -99,8 +99,7 @@ const ResearchProblemsSlide = () => {
           <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold mb-3 sm:mb-4 lg:mb-6 text-center">Tujuan Penelitian</h3>
           <div className="text-center">
             <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-gray-200 leading-relaxed">
-              Mengevaluasi efektivitas algoritma M-X sebagai mekanisme kontrol kualitas 
-              untuk klasifikasi tester dalam lingkungan UAT crowdsourced
+              Mengevaluasi <b>efektivitas algoritma M-X sebagai mekanisme kontrol kualitas</b> untuk klasifikasi <i>tester</i> dalam lingkungan UAT <i>crowdsourced</i>.
             </p>
           </div>
         </motion.div>

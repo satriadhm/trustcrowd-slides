@@ -28,12 +28,12 @@ const ConclusionSlide = () => {
           
           <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-4 sm:mb-6 leading-relaxed">
             Penelitian ini berhasil mendemonstrasikan efektivitas algoritma M-X sebagai mekanisme kontrol kualitas 
-            tester dalam crowdsourcing UAT dengan akurasi <span className="font-bold text-[#24ce2a]">79%</span>, 
-            precision <span className="font-bold text-[#24ce2a]">82%</span>, dan recall <span className="font-bold text-[#24ce2a]">75%</span>.
+            <i>tester</i> dalam <i>crowdsourcing</i> UAT dengan akurasi <span className="font-bold text-[#24ce2a]">79%</span>, 
+            presisi <span className="font-bold text-[#24ce2a]">82%</span> , dan <i>recall</i> <span className="font-bold text-[#24ce2a]">75%</span>.
           </p>
           
           <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 leading-relaxed">
-            Algoritma dapat secara efektif membedakan tester eligible dan non-eligible berdasarkan pola konsistensi respons 
+            Algoritma dapat secara efektif membedakan <i>tester eligible</i> dan <i>non-eligible</i> berdasarkan pola konsistensi respons 
             tanpa memerlukan jawaban yang telah ditetapkan.
           </p>
         </motion.div>
@@ -50,23 +50,23 @@ const ConclusionSlide = () => {
             
             <div className="space-y-4 sm:space-y-6">
               <div className="bg-white/5 p-4 sm:p-6 rounded-lg">
-                <h4 className="font-medium text-lg sm:text-xl lg:text-2xl mb-2 sm:mb-3 text-[#24ce2a]">Reduksi Variabilitas</h4>
+                <h4 className="font-medium text-lg sm:text-xl lg:text-2xl mb-2 text-[#24ce2a]"><b>Reduksi Variabilitas</b></h4>
                 <p className="text-sm sm:text-base lg:text-lg text-gray-300">
-                  TNR 83% menunjukkan kemampuan signifikan dalam mengurangi variabilitas tester
+                  TNR 83% menunjukkan kemampuan signifikan dalam mengurangi variabilitas <i>tester</i>.
                 </p>
               </div>
               
               <div className="bg-white/5 p-4 sm:p-6 rounded-lg">
-                <h4 className="font-medium text-lg sm:text-xl lg:text-2xl mb-2 sm:mb-3 text-[#24ce2a]">Fleksibilitas</h4>
+                <h4 className="font-medium text-lg sm:text-xl lg:text-2xl mb-2 text-[#24ce2a]"><b>Fleksibilitas</b></h4>
                 <p className="text-sm sm:text-base lg:text-lg text-gray-300">
-                  Independensi dari ground truth membuatnya versatile untuk berbagai skenario testing
+                  Independensi dari <i>ground truth</i> membuatnya <i>versatile</i> untuk berbagai skenario <i>testing</i>.
                 </p>
               </div>
               
               <div className="bg-white/5 p-4 sm:p-6 rounded-lg">
-                <h4 className="font-medium text-lg sm:text-xl lg:text-2xl mb-2 sm:mb-3 text-[#24ce2a]">Performa Seimbang</h4>
+                <h4 className="font-medium text-lg sm:text-xl lg:text-2xl mb-2 text-[#24ce2a]"><b>Performa Seimbang</b></h4>
                 <p className="text-sm sm:text-base lg:text-lg text-gray-300">
-                  Konsistensi kuat across semua metrik evaluasi menunjukkan klasifikasi yang reliable
+                  Konsistensi kuat di semua metrik evaluasi menunjukkan klasifikasi yang <i>reliable</i>.
                 </p>
               </div>
             </div>
@@ -83,23 +83,23 @@ const ConclusionSlide = () => {
             
             <div className="space-y-4 sm:space-y-6">
               <div className="bg-white/5 p-4 sm:p-6 rounded-lg">
-                <h4 className="font-medium text-lg sm:text-xl lg:text-2xl mb-2 sm:mb-3 text-[#25da9e]">Keterbatasan Sample</h4>
+                <h4 className="font-medium text-lg sm:text-xl lg:text-2xl mb-2 text-[#25da9e]"><b>Keterbatasan Sampel</b></h4>
                 <p className="text-sm sm:text-base lg:text-lg text-gray-300">
-                  24 volunteer dari populasi terbatas, perlu studi dengan diversitas demografis lebih luas
+                  Ukuran sampel 24 partisipan membatasi generalisasi ke lingkungan <i>crowdsourced</i> yang lebih besar.
                 </p>
               </div>
               
               <div className="bg-white/5 p-4 sm:p-6 rounded-lg">
-                <h4 className="font-medium text-lg sm:text-xl lg:text-2xl mb-2 sm:mb-3 text-[#25da9e]">Lingkungan Testing</h4>
+                <h4 className="font-medium text-lg sm:text-xl lg:text-2xl mb-2 text-[#25da9e]"><b>Lingkungan Testing</b></h4>
                 <p className="text-sm sm:text-base lg:text-lg text-gray-300">
-                  Simulasi terkontrol vs production environment, perlu validasi di real-world scenarios
+                  Simulasi terkontrol vs <i>production environment</i>; perlu validasi di skenario <i>real-world</i>.
                 </p>
               </div>
               
               <div className="bg-white/5 p-4 sm:p-6 rounded-lg">
-                <h4 className="font-medium text-lg sm:text-xl lg:text-2xl mb-2 sm:mb-3 text-[#25da9e]">Penelitian Lanjutan</h4>
+                <h4 className="font-medium text-lg sm:text-xl lg:text-2xl mb-2 text-[#25da9e]"><b>Nuansa Subjektivitas & Keahlian</b></h4>
                 <p className="text-sm sm:text-base lg:text-lg text-gray-300">
-                  Eksplorasi varian algoritma, optimasi threshold, dan integrasi dengan metode QC lain
+                  Algoritma berpotensi mengecualikan kontributor berharga yang pola responsnya menyimpang dari konsensus, berpotensi mengurangi keragaman <i>tester</i> dan kualitas dalam skenario UAT kompleks yang membutuhkan perspektif beragam.
                 </p>
               </div>
             </div>
@@ -116,8 +116,8 @@ const ConclusionSlide = () => {
           <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-3 sm:mb-4">Penilaian Akhir</h3>
           
           <p className="text-lg sm:text-xl lg:text-2xl text-gray-200 leading-relaxed">
-            Algoritma M-X memberikan solusi yang promising untuk meningkatkan kualitas crowdsourced UAT 
-            melalui identifikasi tester konsisten dan reduksi variabilitas dalam testing outcomes
+            Algoritma M-X memberikan solusi yang <i>promising</i> untuk meningkatkan kualitas <i>crowdsourced</i> UAT 
+            dengan mengidentifikasi <i>tester</i> konsisten dan reduksi variabilitas dalam hasil <i>testing</i>.
           </p>
         </motion.div>
       </div>

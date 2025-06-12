@@ -33,7 +33,7 @@ const IntroductionSlide = () => {
                     <path d="M20 6 9 17l-5-5" />
                   </svg>
                 </div>
-                <span>Kualitas software sangat penting dalam pengembangan komersial</span>
+                <span>Kualitas <em>software</em> sangat penting dalam pengembangan komersial.</span>
               </li>
               <li className="flex items-start gap-3 sm:gap-4">
                 <div className="bg-[#24ce2a]/20 p-2 rounded-full mt-1 flex-shrink-0">
@@ -41,7 +41,7 @@ const IntroductionSlide = () => {
                     <path d="M20 6 9 17l-5-5" />
                   </svg>
                 </div>
-                <span>UAT adalah tahap kritis terakhir sebelum implementasi</span>
+                <span>UAT adalah tahap kritis <strong>validasi akhir</strong> sebelum implementasi, berperan sebagai <strong>jembatan penting</strong> antara tim pengembangan dan <em>end-user</em>.</span>
               </li>
               <li className="flex items-start gap-3 sm:gap-4">
                 <div className="bg-[#24ce2a]/20 p-2 rounded-full mt-1 flex-shrink-0">
@@ -49,7 +49,7 @@ const IntroductionSlide = () => {
                     <path d="M20 6 9 17l-5-5" />
                   </svg>
                 </div>
-                <span>UAT membutuhkan sumber daya, waktu, dan budget signifikan</span>
+                <span>UAT membutuhkan sumber daya, waktu, dan anggaran yang signifikan.</span>
               </li>
             </ul>
           </motion.div>
@@ -71,7 +71,7 @@ const IntroductionSlide = () => {
                 </div>
                 <div>
                   <span className="font-medium">Solusi potensial:</span>
-                  <p className="text-sm sm:text-base lg:text-lg mt-1 sm:mt-2">Melibatkan beragam pengguna untuk testing yang lebih luas dan realistis</p>
+                  <p className="text-sm sm:text-base lg:text-lg mt-1 sm:mt-2">Melibatkan beragam pengguna untuk <em>testing</em> yang <strong>lebih luas, realistis, dan hemat biaya</strong>.</p>
                 </div>
               </li>
               <li className="flex items-start gap-3 sm:gap-4">
@@ -82,7 +82,7 @@ const IntroductionSlide = () => {
                 </div>
                 <div>
                   <span className="font-medium">Tantangan utama:</span>
-                  <p className="text-sm sm:text-base lg:text-lg mt-1 sm:mt-2">Variabilitas karakteristik tester yang mempengaruhi konsistensi hasil</p>
+                  <p className="text-sm sm:text-base lg:text-lg mt-1 sm:mt-2"><strong>Heterogenitas partisipan</strong>, variabilitas karakteristik <em>tester</em> memengaruhi konsistensi hasil.</p>
                 </div>
               </li>
             </ul>
@@ -96,16 +96,16 @@ const IntroductionSlide = () => {
           transition={{ duration: 0.5, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-4 sm:mb-6 text-center text-[#24ce2a]">Algoritma M-X sebagai Solusi</h3>
+          <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold mb-3 sm:mb-4 lg:mb-6 text-center text-[#24ce2a]">Algoritma M-X sebagai Solusi</h3>
           <div className="text-center">
-            <p className="text-base sm:text-lg lg:text-xl text-gray-200 mb-4 sm:mb-6 leading-relaxed">
-              Algoritma M-X menawarkan pendekatan untuk menilai kualitas tester berdasarkan konsistensi respons 
-              <span className="text-[#25da9e] font-medium"> tanpa memerlukan jawaban benar yang telah ditentukan</span>
+            <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-gray-200 mb-4 sm:mb-6 leading-relaxed">
+              Algoritma M-X menawarkan pendekatan untuk menilai kualitas <em>tester</em> berdasarkan konsistensi respons 
+              <span className="text-[#25da9e] font-medium"> tanpa memerlukan jawaban benar yang telah ditentukan</span>, <strong>mengatasi keterbatasan metode konvensional yang tidak memiliki <em>ground truth</em></strong>.
             </p>
             <div className="bg-gradient-to-r from-[#24ce2a]/20 to-[#25da9e]/20 p-4 sm:p-6 rounded-lg">
               <p className="text-base sm:text-lg lg:text-xl font-medium">
-                Penelitian ini mengevaluasi efektivitas algoritma M-X dalam mengklasifikasi kelayakan tester 
-                dalam konteks UAT berbasis crowdsourcing
+                Penelitian ini mengevaluasi efektivitas algoritma M-X dalam mengklasifikasi <strong>kelayakan <em>tester</em></strong> 
+                dalam konteks UAT berbasis <em>crowdsourcing</em>.
               </p>
             </div>
           </div>

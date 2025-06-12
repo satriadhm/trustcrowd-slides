@@ -1,11 +1,10 @@
 "use client";
 
-import React from "react"; // Import useState
+import React from "react";
 import { motion } from "framer-motion";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from "@/app/components/ui/dialog"; 
 
 const SimulationDesignSlide = () => {
-
   return (
     <div className="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0a1e5e] via-[#001333] to-[#21074f] text-white px-4 sm:px-8 py-8">
       <div className="max-w-7xl mx-auto w-full">
@@ -47,7 +46,7 @@ const SimulationDesignSlide = () => {
                       <path d="M20 6 9 17l-5-5" />
                     </svg>
                   </div>
-                  <span>Kapabilitas dekomposisi biner untuk algoritma M-X</span>
+                  <span>Kapabilitas <em>dekomposisi biner</em> untuk algoritma <strong>M-X</strong></span>
                 </li>
                 <li className="flex items-start gap-2 sm:gap-3">
                   <div className="bg-[#24ce2a]/20 p-1 rounded-full mt-1 flex-shrink-0">
@@ -55,7 +54,7 @@ const SimulationDesignSlide = () => {
                       <path d="M20 6 9 17l-5-5" />
                     </svg>
                   </div>
-                  <span>Opsi independen dan non-eksklusif</span>
+                  <span>Opsi <em>independen</em> dan <em>non-eksklusif</em></span>
                 </li>
               </ul>
             </div>
@@ -91,9 +90,9 @@ const SimulationDesignSlide = () => {
             <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold mb-3 sm:mb-4 lg:mb-6 text-[#25da9e]">Penentuan Kelayakan</h3>
             
             <div className="bg-white/5 p-3 sm:p-4 lg:p-6 rounded-lg mb-3 sm:mb-4 lg:mb-6">
-              <h4 className="font-medium text-base sm:text-lg lg:text-xl xl:text-2xl mb-2 sm:mb-3 lg:mb-4">Rule-Based Validation</h4>
+              <h4 className="font-medium text-base sm:text-lg lg:text-xl xl:text-2xl mb-2 sm:mb-3 lg:mb-4"><strong>Rule-Based Validation</strong></h4>
               <p className="text-sm sm:text-base lg:text-lg text-gray-300 mb-2 sm:mb-3 lg:mb-4">
-                Pendekatan definisi threshold manual untuk kriteria kelayakan spesifik konteks
+                Pendekatan definisi <em>threshold</em> manual untuk kriteria kelayakan spesifik konteks
               </p>
               <div className="space-y-1 sm:space-y-2 lg:space-y-3">
                 <li className="flex items-start gap-2 sm:gap-3">
@@ -102,7 +101,7 @@ const SimulationDesignSlide = () => {
                       <path d="M20 6 9 17l-5-5" />
                     </svg>
                   </div>
-                  <span className="text-sm sm:text-base lg:text-lg">Perbandingan accuracy scores M-X terhadap threshold</span>
+                  <span>Perbandingan <em>accuracy scores</em> <strong>M-X</strong> terhadap <em>threshold</em></span>
                 </li>
                 <li className="flex items-start gap-2 sm:gap-3">
                   <div className="bg-[#25da9e]/20 p-1 rounded-full mt-1 flex-shrink-0">
@@ -110,26 +109,26 @@ const SimulationDesignSlide = () => {
                       <path d="M20 6 9 17l-5-5" />
                     </svg>
                   </div>
-                  <span className="text-sm sm:text-base lg:text-lg">Kalkulasi kelayakan berdasarkan rata-rata performa task</span>
+                  <span>Kalkulasi kelayakan berdasarkan rata-rata <em>performa task</em></span>
                 </li>
               </div>
             </div>
             
             <div className="bg-white/5 p-3 sm:p-4 lg:p-6 rounded-lg">
-              <h4 className="font-medium text-base sm:text-lg lg:text-xl xl:text-2xl mb-2 sm:mb-3 lg:mb-4">Protokol Simulasi</h4>
+              <h4 className="font-medium text-base sm:text-lg lg:text-xl xl:text-2xl mb-2 sm:mb-3 lg:mb-4"><strong>Protokol Simulasi</strong></h4>
               <div className="space-y-1 sm:space-y-2 lg:space-y-3 text-sm sm:text-base lg:text-lg text-gray-300">
-                <p>• <span className="font-medium">Timeframe:</span> 3 hari simulasi hybrid</p>
-                <p>• <span className="font-medium">Partisipan:</span> 24 volunteer (12 berpengalaman UAT, 12 tanpa pengalaman)</p>
-                <p>• <span className="font-medium">Validasi:</span> Prior-experience based validation untuk ground truth</p>
-                <p>• <span className="font-medium">Distribusi:</span> 50:50 eligible/non-eligible</p>
+                <p>• <span className="font-medium">Timeframe:</span> <strong>3 hari simulasi <em>hybrid</em></strong> </p>
+                <p>• <span className="font-medium">Partisipan:</span> <strong>24 <em>volunteer</em></strong> (12 berpengalaman UAT, 12 tanpa pengalaman) </p>
+                <p>• <span className="font-medium">Validasi:</span> <strong><em>Prior-experience based validation</em></strong> untuk <em>ground truth</em> </p>
+                <p>• <span className="font-medium">Distribusi:</span> <strong>50:50 <em>eligible</em>/<em>non-eligible</em></strong> </p>
               </div>
             </div>
           </motion.div>
         </div>
 
-        {/* Section 3: Proses Pengumpulan Data - Sekarang ini adalah tombol atau kartu pemicu modal */}
+        {/* Section 3: Proses Pengumpulan Data */}
         <motion.div 
-          className="mt-6 sm:mt-8 lg:mt-12 bg-white/10 p-4 sm:p-6 lg:p-8 rounded-xl backdrop-blur-sm text-center" // Tambahkan text-center
+          className="mt-6 sm:mt-8 lg:mt-12 bg-white/10 p-4 sm:p-6 lg:p-8 rounded-xl backdrop-blur-sm text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
@@ -137,7 +136,6 @@ const SimulationDesignSlide = () => {
         >
           <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-semibold mb-3 sm:mb-4 lg:mb-6 text-center">Proses Pengumpulan Data</h3>
           
-          {/* Menggunakan DialogTrigger untuk membuka modal saat diklik */}
           <Dialog>
             <DialogTrigger asChild>
               <button className="bg-gradient-to-r from-[#24ce2a] to-[#25da9e] text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
@@ -157,8 +155,8 @@ const SimulationDesignSlide = () => {
                 <div className="flex items-start gap-4">
                   <div className="bg-white/10 p-3 rounded-full flex-shrink-0 flex items-center justify-center w-10 h-10 font-bold text-lg text-[#24ce2a]">1</div>
                   <div>
-                    <h4 className="font-medium text-lg text-white">Task Distribution</h4>
-                    <p className="text-sm text-gray-300">Distribusi tugas testing berbasis Gherkin</p>
+                    <h4 className="font-medium text-lg text-white"><strong>Task Distribution</strong></h4>
+                    <p className="text-sm text-gray-300">Distribusi tugas <em>testing</em> berbasis Gherkin.</p>
                   </div>
                 </div>
                 
@@ -166,8 +164,8 @@ const SimulationDesignSlide = () => {
                 <div className="flex items-start gap-4">
                   <div className="bg-white/10 p-3 rounded-full flex-shrink-0 flex items-center justify-center w-10 h-10 font-bold text-lg text-[#25da9e]">2</div>
                   <div>
-                    <h4 className="font-medium text-lg text-white">Response Collection</h4>
-                    <p className="text-sm text-gray-300">Pengumpulan respons dari 24 partisipan</p>
+                    <h4 className="font-medium text-lg text-white"><strong>Response Collection</strong></h4>
+                    <p className="text-sm text-gray-300">Pengumpulan respons dari <strong>24 partisipan</strong>.</p>
                   </div>
                 </div>
                 
@@ -175,8 +173,8 @@ const SimulationDesignSlide = () => {
                 <div className="flex items-start gap-4">
                   <div className="bg-white/10 p-3 rounded-full flex-shrink-0 flex items-center justify-center w-10 h-10 font-bold text-lg text-[#24ce2a]">3</div>
                   <div>
-                    <h4 className="font-medium text-lg text-white">Algorithm Processing</h4>
-                    <p className="text-sm text-gray-300">Pemrosesan dengan algoritma M-X</p>
+                    <h4 className="font-medium text-lg text-white"><strong>Algorithm Processing</strong></h4>
+                    <p className="text-sm text-gray-300">Pemrosesan dengan algoritma <strong>M-X</strong>.</p>
                   </div>
                 </div>
                 
@@ -184,8 +182,8 @@ const SimulationDesignSlide = () => {
                 <div className="flex items-start gap-4">
                   <div className="bg-white/10 p-3 rounded-full flex-shrink-0 flex items-center justify-center w-10 h-10 font-bold text-lg text-[#25da9e]">4</div>
                   <div>
-                    <h4 className="font-medium text-lg text-white">Evaluation</h4>
-                    <p className="text-sm text-gray-300">Evaluasi dengan confusion matrix</p>
+                    <h4 className="font-medium text-lg text-white"><strong>Evaluation</strong></h4>
+                    <p className="text-sm text-gray-300">Evaluasi dengan <em>confusion matrix</em>.</p>
                   </div>
                 </div>
               </div>

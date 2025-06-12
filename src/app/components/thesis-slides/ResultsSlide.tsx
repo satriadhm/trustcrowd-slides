@@ -3,6 +3,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+// Helper to replace * and ** with <em> and <strong>
+function formatMarkdown(text: string) {
+  // Replace **text** with <strong>text</strong>
+  text = text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+  // Replace *text* with <em>text</em>
+  text = text.replace(/\*(.*?)\*/g, "<em>$1</em>");
+  return text;
+}
+
 const ResultsSlide = () => {
   const metricsData = [
     { name: "Accuracy", value: 0.79 },
@@ -11,19 +20,17 @@ const ResultsSlide = () => {
     { name: "TNR", value: 0.83 },
     { name: "F1 Score", value: 0.78 },
   ];
-
   const confusionMatrixData = {
     truePositive: 9,
     trueNegative: 10,
     falsePositive: 2,
     falseNegative: 3,
   };
-
   return (
     <div className="w-full h-screen flex items-center justify-center bg-gradient-to-br from-[#0a1e5e] via-[#001333] to-[#21074f] text-white px-4 sm:px-8">
       <div className="max-w-7xl mx-auto w-full">
         <motion.h2 
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-7 sm:mb-12 text-center"
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 sm:mb-12 text-center"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -46,7 +53,7 @@ const ResultsSlide = () => {
               {metricsData.map((metric, index) => (
                 <div key={index} className="space-y-2">
                   <div className="flex justify-between items-center">
-                    <span className="font-medium text-lg sm:text-xl lg:text-2xl">{metric.name}</span>
+                    <span className="font-medium text-lg sm:text-xl lg:text-2xl"><strong>{metric.name}</strong></span>
                     <span className="font-bold text-xl sm:text-2xl lg:text-3xl text-[#24ce2a]">{(metric.value * 100).toFixed(1)}%</span>
                   </div>
                   <div className="w-full h-4 sm:h-5 bg-white/10 rounded-full overflow-hidden">
@@ -80,7 +87,7 @@ const ResultsSlide = () => {
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                <span className="block text-sm sm:text-base lg:text-lg mb-2 sm:mb-3">True Positive</span>
+                <span className="block text-sm sm:text-base lg:text-lg mb-2 sm:mb-3"><strong>True Positive</strong></span>
                 <span className="text-3xl sm:text-4xl lg:text-5xl font-bold text-green-400">{confusionMatrixData.truePositive}</span>
               </motion.div>
               
@@ -91,7 +98,7 @@ const ResultsSlide = () => {
                 transition={{ duration: 0.5, delay: 0.1 }}
                 viewport={{ once: true }}
               >
-                <span className="block text-sm sm:text-base lg:text-lg mb-2 sm:mb-3">False Positive</span>
+                <span className="block text-sm sm:text-base lg:text-lg mb-2 sm:mb-3"><strong>False Positive</strong></span>
                 <span className="text-3xl sm:text-4xl lg:text-5xl font-bold text-red-400">{confusionMatrixData.falsePositive}</span>
               </motion.div>
               
@@ -102,7 +109,7 @@ const ResultsSlide = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <span className="block text-sm sm:text-base lg:text-lg mb-2 sm:mb-3">False Negative</span>
+                <span className="block text-sm sm:text-base lg:text-lg mb-2 sm:mb-3"><strong>False Negative</strong></span>
                 <span className="text-3xl sm:text-4xl lg:text-5xl font-bold text-red-400">{confusionMatrixData.falseNegative}</span>
               </motion.div>
               
@@ -113,14 +120,14 @@ const ResultsSlide = () => {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                <span className="block text-sm sm:text-base lg:text-lg mb-2 sm:mb-3">True Negative</span>
+                <span className="block text-sm sm:text-base lg:text-lg mb-2 sm:mb-3"><strong>True Negative</strong></span>
                 <span className="text-3xl sm:text-4xl lg:text-5xl font-bold text-green-400">{confusionMatrixData.trueNegative}</span>
               </motion.div>
             </div>
             
             <div className="text-center text-sm sm:text-base lg:text-lg text-gray-300">
-              <p><strong>Total Sample:</strong> {confusionMatrixData.truePositive + confusionMatrixData.trueNegative + confusionMatrixData.falsePositive + confusionMatrixData.falseNegative}</p>
-              <p><strong>Klasifikasi Benar:</strong> {confusionMatrixData.truePositive + confusionMatrixData.trueNegative}</p>
+              <p><strong>Total Sample:</strong> {confusionMatrixData.truePositive + confusionMatrixData.trueNegative + confusionMatrixData.falsePositive + confusionMatrixData.falseNegative} </p>
+              <p><strong>Klasifikasi Benar:</strong> {confusionMatrixData.truePositive + confusionMatrixData.trueNegative} </p>
             </div>
           </motion.div>
         </div>
@@ -136,25 +143,39 @@ const ResultsSlide = () => {
           
           <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
             <div className="bg-white/5 p-4 sm:p-6 rounded-lg">
-              <h4 className="font-medium text-lg sm:text-xl lg:text-2xl mb-2 sm:mb-3 text-[#24ce2a]">RQ1: Akurasi Klasifikasi</h4>
-              <p className="text-sm sm:text-base lg:text-lg text-gray-200">
-                Algoritma M-X mencapai akurasi <span className="font-bold text-[#24ce2a]">79%</span> dengan precision <span className="font-bold text-[#24ce2a]">82%</span> dan recall <span className="font-bold text-[#24ce2a]">75%</span> dalam mengklasifikasi tester
-              </p>
+              <h4 className="font-medium text-lg sm:text-xl lg:text-2xl mb-2 sm:mb-3 text-[#24ce2a]"><strong>RQ1: Akurasi Klasifikasi</strong></h4>
+              <p
+                className="text-sm sm:text-base lg:text-lg text-gray-200"
+                dangerouslySetInnerHTML={{
+                  __html: formatMarkdown(
+                    "Algoritma M-X mencapai akurasi *79%*  dengan presisi *82%*  dan *recall* *75%*  dalam mengklasifikasi *tester*."
+                  ),
+                }}
+              />
             </div>
             
             <div className="bg-white/5 p-4 sm:p-6 rounded-lg">
-              <h4 className="font-medium text-lg sm:text-xl lg:text-2xl mb-2 sm:mb-3 text-[#25da9e]">RQ2: Reduksi Variabilitas</h4>
-              <p className="text-sm sm:text-base lg:text-lg text-gray-200">
-                TNR <span className="font-bold text-[#25da9e]">83%</span> menunjukkan efektivitas algoritma dalam filtering tester tidak konsisten dan mengurangi variabilitas
-              </p>
+              <h4 className="font-medium text-lg sm:text-xl lg:text-2xl mb-2 sm:mb-3 text-[#25da9e]"><strong>RQ2: Reduksi Variabilitas</strong></h4>
+              <p
+                className="text-sm sm:text-base lg:text-lg text-gray-200"
+                dangerouslySetInnerHTML={{
+                  __html: formatMarkdown(
+                    "TNR *83%*  menunjukkan efektivitas algoritma dalam *filtering tester* tidak konsisten dan mengurangi variabilitas."
+                  ),
+                }}
+              />
             </div>
           </div>
           
           <div className="mt-4 sm:mt-6 bg-[#24ce2a]/10 p-4 sm:p-6 rounded-lg">
-            <p className="text-center text-lg sm:text-xl lg:text-2xl text-gray-200">
-              Algoritma berhasil mengklasifikasi <span className="font-bold text-[#24ce2a]">19 dari 24 tester</span> dengan benar, 
-              menunjukkan efektivitas sebagai mekanisme kontrol kualitas crowdsourcing UAT
-            </p>
+            <p
+              className="text-center text-lg sm:text-xl lg:text-2xl text-gray-200"
+              dangerouslySetInnerHTML={{
+                __html: formatMarkdown(
+                  "Algoritma berhasil mengklasifikasi **19 dari 24 *tester*** dengan benar, menunjukkan efektivitas sebagai mekanisme kontrol kualitas UAT *crowdsourcing*."
+                ),
+              }}
+            />
           </div>
         </motion.div>
       </div>
