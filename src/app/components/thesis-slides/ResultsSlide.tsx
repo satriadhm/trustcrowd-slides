@@ -23,7 +23,7 @@ const ResultsSlide = () => {
     <div className="w-full h-screen flex items-center justify-center bg-gradient-to-br from-[#0a1e5e] via-[#001333] to-[#21074f] text-white px-4 sm:px-8">
       <div className="max-w-7xl mx-auto w-full">
         <motion.h2 
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 sm:mb-12 text-center"
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-7 sm:mb-12 text-center"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}

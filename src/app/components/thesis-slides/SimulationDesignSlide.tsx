@@ -1,9 +1,11 @@
 "use client";
 
-import React from "react";
+import React from "react"; // Import useState
 import { motion } from "framer-motion";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from "@/app/components/ui/dialog"; 
 
 const SimulationDesignSlide = () => {
+
   return (
     <div className="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0a1e5e] via-[#001333] to-[#21074f] text-white px-4 sm:px-8 py-8">
       <div className="max-w-7xl mx-auto w-full">
@@ -125,9 +127,9 @@ const SimulationDesignSlide = () => {
           </motion.div>
         </div>
 
-        {/* Section 3: Proses Pengumpulan Data */}
+        {/* Section 3: Proses Pengumpulan Data - Sekarang ini adalah tombol atau kartu pemicu modal */}
         <motion.div 
-          className="mt-6 sm:mt-8 lg:mt-12 bg-white/10 p-4 sm:p-6 lg:p-8 rounded-xl backdrop-blur-sm"
+          className="mt-6 sm:mt-8 lg:mt-12 bg-white/10 p-4 sm:p-6 lg:p-8 rounded-xl backdrop-blur-sm text-center" // Tambahkan text-center
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
@@ -135,67 +137,60 @@ const SimulationDesignSlide = () => {
         >
           <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-semibold mb-3 sm:mb-4 lg:mb-6 text-center">Proses Pengumpulan Data</h3>
           
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 lg:gap-6">
-            {/* Step 1 */}
-            <div className="text-center flex-1">
-              <div className="bg-white/10 p-2 sm:p-3 lg:p-4 rounded-full inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 mb-1 sm:mb-2 lg:mb-3">
-                <span className="text-[#24ce2a] font-bold text-base sm:text-lg lg:text-xl xl:text-2xl">1</span>
+          {/* Menggunakan DialogTrigger untuk membuka modal saat diklik */}
+          <Dialog>
+            <DialogTrigger asChild>
+              <button className="bg-gradient-to-r from-[#24ce2a] to-[#25da9e] text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                Lihat Detail Proses
+              </button>
+            </DialogTrigger>
+            <DialogContent className="max-w-xl p-6 bg-gradient-to-br from-[#0a1e5e] via-[#001333] to-[#21074f] text-white rounded-xl shadow-xl">
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold text-center mb-4">Detail Proses Pengumpulan Data</DialogTitle>
+                <DialogDescription className="text-gray-300 text-base text-center">
+                  Berikut adalah langkah-langkah detail dalam proses pengumpulan data untuk simulasi.
+                </DialogDescription>
+              </DialogHeader>
+              
+              <div className="space-y-6 mt-4">
+                {/* Step 1 */}
+                <div className="flex items-start gap-4">
+                  <div className="bg-white/10 p-3 rounded-full flex-shrink-0 flex items-center justify-center w-10 h-10 font-bold text-lg text-[#24ce2a]">1</div>
+                  <div>
+                    <h4 className="font-medium text-lg text-white">Task Distribution</h4>
+                    <p className="text-sm text-gray-300">Distribusi tugas testing berbasis Gherkin</p>
+                  </div>
+                </div>
+                
+                {/* Step 2 */}
+                <div className="flex items-start gap-4">
+                  <div className="bg-white/10 p-3 rounded-full flex-shrink-0 flex items-center justify-center w-10 h-10 font-bold text-lg text-[#25da9e]">2</div>
+                  <div>
+                    <h4 className="font-medium text-lg text-white">Response Collection</h4>
+                    <p className="text-sm text-gray-300">Pengumpulan respons dari 24 partisipan</p>
+                  </div>
+                </div>
+                
+                {/* Step 3 */}
+                <div className="flex items-start gap-4">
+                  <div className="bg-white/10 p-3 rounded-full flex-shrink-0 flex items-center justify-center w-10 h-10 font-bold text-lg text-[#24ce2a]">3</div>
+                  <div>
+                    <h4 className="font-medium text-lg text-white">Algorithm Processing</h4>
+                    <p className="text-sm text-gray-300">Pemrosesan dengan algoritma M-X</p>
+                  </div>
+                </div>
+                
+                {/* Step 4 */}
+                <div className="flex items-start gap-4">
+                  <div className="bg-white/10 p-3 rounded-full flex-shrink-0 flex items-center justify-center w-10 h-10 font-bold text-lg text-[#25da9e]">4</div>
+                  <div>
+                    <h4 className="font-medium text-lg text-white">Evaluation</h4>
+                    <p className="text-sm text-gray-300">Evaluasi dengan confusion matrix</p>
+                  </div>
+                </div>
               </div>
-              <h4 className="font-medium text-sm sm:text-base lg:text-lg xl:text-xl mb-1 sm:mb-2">Task Distribution</h4>
-              <p className="text-xs sm:text-sm lg:text-base text-gray-300">Distribusi tugas testing berbasis Gherkin</p>
-            </div>
-            
-            {/* Arrow 1 */}
-            <div className="hidden sm:block">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#24ce2a]">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </div>
-            
-            {/* Step 2 */}
-            <div className="text-center flex-1">
-              <div className="bg-white/10 p-2 sm:p-3 lg:p-4 rounded-full inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 mb-1 sm:mb-2 lg:mb-3">
-                <span className="text-[#25da9e] font-bold text-base sm:text-lg lg:text-xl xl:text-2xl">2</span>
-              </div>
-              <h4 className="font-medium text-sm sm:text-base lg:text-lg xl:text-xl mb-1 sm:mb-2">Response Collection</h4>
-              <p className="text-xs sm:text-sm lg:text-base text-gray-300">Pengumpulan respons dari 24 partisipan</p>
-            </div>
-            
-            {/* Arrow 2 */}
-            <div className="hidden sm:block">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#25da9e]">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </div>
-            
-            {/* Step 3 */}
-            <div className="text-center flex-1">
-              <div className="bg-white/10 p-2 sm:p-3 lg:p-4 rounded-full inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 mb-1 sm:mb-2 lg:mb-3">
-                <span className="text-[#24ce2a] font-bold text-base sm:text-lg lg:text-xl xl:text-2xl">3</span>
-              </div>
-              <h4 className="font-medium text-sm sm:text-base lg:text-lg xl:text-xl mb-1 sm:mb-2">Algorithm Processing</h4>
-              <p className="text-xs sm:text-sm lg:text-base text-gray-300">Pemrosesan dengan algoritma M-X</p>
-            </div>
-            
-            {/* Arrow 3 */}
-            <div className="hidden sm:block">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#24ce2a]">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </div>
-            
-            {/* Step 4 */}
-            <div className="text-center flex-1">
-              <div className="bg-white/10 p-2 sm:p-3 lg:p-4 rounded-full inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 mb-1 sm:mb-2 lg:mb-3">
-                <span className="text-[#25da9e] font-bold text-base sm:text-lg lg:text-xl xl:text-2xl">4</span>
-              </div>
-              <h4 className="font-medium text-sm sm:text-base lg:text-lg xl:text-xl mb-1 sm:mb-2">Evaluation</h4>
-              <p className="text-xs sm:text-sm lg:text-base text-gray-300">Evaluasi dengan confusion matrix</p>
-            </div>
-          </div>
+            </DialogContent>
+          </Dialog>
         </motion.div>
       </div>
     </div>

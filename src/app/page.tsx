@@ -104,32 +104,6 @@ export default function Home() {
       {/* Main Content */}
       <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4">
         <div className="text-center max-w-4xl mx-auto">
-          {/* Logo/Icon */}
-          <motion.div
-            className="mb-8 flex justify-center"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="bg-gradient-to-r from-[#24ce2a] to-[#25da9e] p-6 rounded-full shadow-2xl">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="48"
-                height="48"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-white"
-              >
-                <path d="M9 12l2 2 4-4" />
-                <path d="M21 12c.552 0 1-.448 1-1V8c0-.552-.448-1-1-1h-3c-.552 0-1-.448-1-1V3c0-.552-.448-1-1-1H8c-.552 0-1 .448-1 1v3c0 .552-.448 1-1 1H3c-.552 0-1 .448-1 1v3c0 .552.448 1 1 1h3c.552 0 1 .448 1 1v3c0 .552.448 1 1 1h8c.552 0 1-.448 1-1v-3c0-.552.448-1 1-1h3z" />
-              </svg>
-            </div>
-          </motion.div>
-
           {/* Main Title */}
           <motion.h1
             className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
