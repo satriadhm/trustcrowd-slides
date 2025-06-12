@@ -112,7 +112,8 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.2 }}
           >
             <div className="mb-2">TrustCrowd</div>
-            <div className="bg-clip-text text-transparent bg-gradient-to-r from-[#24ce2a] to-[#25da9e]">
+            {/* Mengganti gradien judul menjadi lebih kalem (biru-ke-abu/putih) */}
+            <div className="bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-blue-300">
               PRESENTATION
             </div>
           </motion.h1>
@@ -126,43 +127,13 @@ export default function Home() {
           >
             Quality Control Mechanism for Crowdsourcing
           </motion.p>
-
-          {/* Features */}
-          <motion.div
-            className="mb-12 space-y-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 1 }}
-          >
-            <motion.div
-              className="flex items-center justify-center space-x-4 p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20"
-              whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.15)" }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <span className="p-3 bg-[#24ce2a]/20 rounded-full text-[#24ce2a]">
-                🚀
-              </span>
-              <span className="font-medium text-lg">Business Pitch Deck</span>
-            </motion.div>
-            
-            <motion.div
-              className="flex items-center justify-center space-x-4 p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20"
-              whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.15)" }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <span className="p-3 bg-[#25da9e]/20 rounded-full text-[#25da9e]">
-                🎓
-              </span>
-              <span className="font-medium text-lg">Thesis Defense</span>
-            </motion.div>
-          </motion.div>
           
           {/* Action Buttons */}
           <motion.div
-            className="flex flex-col md:flex-row gap-6 justify-center"
+            className="flex flex-col md:flex-row gap-6 justify-center mt-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, duration: 0.8 }}
+            transition={{ delay: 1.0, duration: 0.8 }}
           >
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -170,7 +141,7 @@ export default function Home() {
             >
               <Link
                 href="/components/pitch-deck"
-                className="inline-block px-8 py-4 bg-gradient-to-r from-[#24ce2a] to-[#25da9e] text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-center min-w-[200px]"
+                className="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-center min-w-[200px]"
               >
                 View Business Pitch
               </Link>
@@ -182,7 +153,7 @@ export default function Home() {
             >
               <Link
                 href="/thesis-defense"
-                className="inline-block px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/30 text-white hover:bg-white/20 transition-all duration-300 rounded-lg text-center font-semibold min-w-[200px]"
+                className="inline-block px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-800 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-center min-w-[200px]"
               >
                 View Thesis Defense
               </Link>
