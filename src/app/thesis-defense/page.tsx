@@ -17,7 +17,6 @@ import ResultsSlide from "@/app/components/thesis-slides/ResultsSlide";
 import AnalysisSlide from "@/app/components/thesis-slides/AnalysisSlide";
 import ConclusionSlide from "@/app/components/thesis-slides/ConclusionSlide";
 import FutureWorkSlide from "@/app/components/thesis-slides/FutureWorkSlide";
-import QuestionAnswerSlide from "@/app/components/thesis-slides/QuestionAnswerSlide";
 import ThankYouSlide from "@/app/components/thesis-slides/ThankyouSlide";
 
 interface SlideItem {
@@ -46,7 +45,6 @@ export default function ThesisDefensePage() {
     { component: AnalysisSlide, title: "Analisis Hasil", id: "analysis", shortTitle: "Analysis" },
     { component: ConclusionSlide, title: "Kesimpulan", id: "conclusion", shortTitle: "Conclusion" },
     { component: FutureWorkSlide, title: "Penelitian Lanjutan", id: "future", shortTitle: "Future" },
-    { component: QuestionAnswerSlide, title: "Sesi Tanya Jawab", id: "qa", shortTitle: "Q&A" },
     { component: ThankYouSlide, title: "Terima Kasih", id: "thankyou", shortTitle: "Thanks" }
   ];
 
