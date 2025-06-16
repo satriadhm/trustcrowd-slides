@@ -20,7 +20,7 @@ const IntroductionSlide = () => {
 
         <SectionGrid columns={2} className="mb-8">
           <ContentCard title="Latar Belakang" animationDelay={0}>
-            <div className="space-y-3">
+            <div className="space-y-4">
               <ListItem>
                 <TextContent size="base">
                   <strong>User Acceptance Testing (UAT)</strong> adalah validasi akhir kritis dalam pengembangan software komersial.
@@ -31,55 +31,86 @@ const IntroductionSlide = () => {
                   UAT tradisional membutuhkan <strong>sumber daya besar</strong> dengan cakupan testing terbatas.
                 </TextContent>
               </ListItem>
+              <ListItem>
+                <TextContent size="base">
+                  <strong>Crowdsourced UAT</strong> menawarkan solusi cost-effective dengan perspektif beragam.
+                </TextContent>
+              </ListItem>
             </div>
           </ContentCard>
 
-          <ContentCard title="Crowdsourced UAT" animationDelay={0.2}>
-            <div className="space-y-3">
+          <ContentCard title="Tantangan Crowdsourced UAT" animationDelay={0.2}>
+            <div className="space-y-4">
               <ListItem>
                 <TextContent size="base">
-                  <strong>Solusi inovatif:</strong> Melibatkan pengguna terdistribusi untuk testing yang <strong>lebih luas dan hemat biaya</strong>.
+                  <strong>Heterogenitas partisipan</strong> dapat mempengaruhi konsistensi hasil testing.
                 </TextContent>
               </ListItem>
               <ListItem>
                 <TextContent size="base">
-                  <strong>Tantangan:</strong> Heterogenitas partisipan dapat memengaruhi <strong>konsistensi hasil testing</strong>.
+                  <strong>Variabilitas kualitas tester</strong> tanpa mekanisme kontrol yang efektif.
+                </TextContent>
+              </ListItem>
+              <ListItem>
+                <TextContent size="base">
+                  <strong>Tidak ada predefined answers</strong> dalam UAT yang bersifat subjektif dan eksploratif.
                 </TextContent>
               </ListItem>
             </div>
           </ContentCard>
         </SectionGrid>
 
-        <HighlightBox variant="primary" className="mt-8">
-          <SectionTitle level={3} centered>Problem Definition</SectionTitle>
-          <TextContent size="large" className="text-center font-medium">
-            Bagaimana <strong>mengidentifikasi tester berkualitas</strong> dalam UAT crowdsourced tanpa jawaban yang telah ditentukan sebelumnya?
-          </TextContent>
+        {/* M-X Algorithm as Solution */}
+        <HighlightBox variant="primary" className="mt-8 mb-8">
+          <SectionTitle level={3} centered>M-X Algorithm sebagai Solusi</SectionTitle>
+          <div className="space-y-4">
+            <TextContent size="base" className="text-center">
+              <strong>M-X Algorithm</strong> menawarkan pendekatan probabilistik untuk mengevaluasi kualitas tester melalui <strong>inter-tester agreement</strong> tanpa memerlukan jawaban yang telah ditentukan sebelumnya.
+            </TextContent>
+            
+            <SectionGrid columns={3} gap="gap-4">
+              <div className="bg-white/5 p-4 rounded-lg text-center">
+                <h4 className="font-medium text-base mb-2 text-[#24ce2a]">No Ground Truth</h4>
+                <TextContent size="small">Evaluasi berdasarkan konsistensi antar-tester</TextContent>
+              </div>
+              <div className="bg-white/5 p-4 rounded-lg text-center">
+                <h4 className="font-medium text-base mb-2 text-[#24ce2a]">Probabilistic</h4>
+                <TextContent size="small">Pendekatan matematis yang robust</TextContent>
+              </div>
+              <div className="bg-white/5 p-4 rounded-lg text-center">
+                <h4 className="font-medium text-base mb-2 text-[#24ce2a]">Scalable</h4>
+                <TextContent size="small">Dapat diterapkan pada skala besar</TextContent>
+              </div>
+            </SectionGrid>
+          </div>
         </HighlightBox>
 
-        <motion.div
-          className="mt-8 bg-white/10 p-6 rounded-xl backdrop-blur-sm"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <SectionTitle level={3} color="secondary" centered>Research Gap</SectionTitle>
-          <div className="space-y-3 text-base lg:text-lg text-gray-200">
-            <div className="flex items-start space-x-3">
-              <div className="w-2 h-2 rounded-full bg-blue-400 mt-2 flex-shrink-0"></div>
-              <TextContent size="base">
-                Studi sebelumnya fokus pada <strong>konteks objektif dengan hasil terverifikasi</strong>, tidak sesuai dengan sifat UAT yang subjektif.
-              </TextContent>
-            </div>
-            <div className="flex items-start space-x-3">
-              <div className="w-2 h-2 rounded-full bg-blue-400 mt-2 flex-shrink-0"></div>
-              <TextContent size="base">
-                <strong>Belum ada validasi empiris komprehensif</strong> dalam skenario UAT realistis tanpa ground truth.
-              </TextContent>
-            </div>
+        <HighlightBox variant="secondary" className="mt-8">
+          <SectionTitle level={3} centered>Research Gap</SectionTitle>
+          <div className="space-y-4">
+            <TextContent size="base" className="text-center font-medium">
+              Studi sebelumnya fokus pada <strong>konteks objektif dengan hasil terverifikasi</strong>, tidak sesuai dengan sifat UAT yang subjektif dan eksploratif.
+            </TextContent>
+            <SectionGrid columns={2} gap="gap-4">
+              <div className="bg-white/5 p-4 rounded-lg">
+                <h4 className="font-medium text-base mb-2 text-blue-400">Existing Methods</h4>
+                <ul className="text-sm text-gray-300 space-y-1">
+                  <li>• MOCOM: Butuh data historis ekstensif</li>
+                  <li>• WSM: Masalah privasi & bias</li>
+                  <li>• Learning Curves: Focus jangka panjang</li>
+                </ul>
+              </div>
+              <div className="bg-white/5 p-4 rounded-lg">
+                <h4 className="font-medium text-base mb-2 text-purple-400">Our Contribution</h4>
+                <ul className="text-sm text-gray-300 space-y-1">
+                  <li>• Validasi empiris M-X dalam UAT</li>
+                  <li>• Evaluasi pada skenario subjektif</li>
+                  <li>• Analisis dampak variabilitas tester</li>
+                </ul>
+              </div>
+            </SectionGrid>
           </div>
-        </motion.div>
+        </HighlightBox>
 
         <motion.div
           className="mt-8 bg-gradient-to-r from-purple-900/30 to-blue-900/30 p-6 rounded-xl border border-purple-400/20"
@@ -90,7 +121,7 @@ const IntroductionSlide = () => {
         >
           <SectionTitle level={3} color="primary" centered>Tujuan Penelitian</SectionTitle>
           <TextContent size="large" className="text-center font-medium">
-            Mengevaluasi efektivitas <strong>pendekatan probabilistik berbasis kesepakatan antar-tester</strong> untuk kontrol kualitas dalam UAT crowdsourced.
+            Mengevaluasi efektivitas <strong>M-X Algorithm sebagai mekanisme kontrol kualitas</strong> untuk klasifikasi tester dalam UAT crowdsourced melalui pendekatan probabilistik berbasis konsistensi antar-tester.
           </TextContent>
         </motion.div>
       </div>
