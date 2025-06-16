@@ -1,9 +1,17 @@
-// src/app/components/thesis-slides/MethodologySlide.tsx (Standardized Typography)
+// src/app/components/thesis-slides/MethodologySlide.tsx
 "use client";
 
 import React from "react";
 import SlideLayout from "./SlideLayout";
-import { SectionGrid, ContentCard, ListItem, TextContent, HighlightBox, Caption } from "./SlideContentComponent";
+import { 
+  SectionGrid, 
+  ContentCard, 
+  ListItem, 
+  TextContent, 
+  HighlightBox, 
+  Caption, 
+  SectionTitle 
+} from "./SlideContentComponent"; 
 
 const MethodologySlide = () => {
   return (
@@ -15,13 +23,13 @@ const MethodologySlide = () => {
         <ContentCard title="Desain Penelitian" animationDelay={0}>
           <div className="space-y-4">
             <ListItem>
-              <TextContent size="base">Simulasi kuantitatif untuk evaluasi algoritma M-X</TextContent>
+              <TextContent size="base"><strong>Simulasi kuantitatif</strong> untuk evaluasi algoritma M-X.</TextContent>
             </ListItem>
             <ListItem>
-              <TextContent size="base">Arsitektur client-server dengan GraphQL dan MongoDB</TextContent>
+              <TextContent size="base"><strong>Arsitektur client-server</strong> dengan GraphQL dan MongoDB.</TextContent>
             </ListItem>
             <ListItem>
-              <TextContent size="base">24 partisipan selama 3 hari simulasi</TextContent>
+              <TextContent size="base"><strong>24 partisipan</strong> selama <strong>3 hari simulasi</strong>.</TextContent>
             </ListItem>
           </div>
         </ContentCard>
@@ -35,7 +43,7 @@ const MethodologySlide = () => {
               <div>
                 <TextContent size="base" className="font-medium block">Literature Review</TextContent>
                 <Caption className="mt-1">
-                  Studi Crowdsourced Testing, UAT, dan kontrol kualitas worker
+                  Studi Crowdsourced Testing, UAT, dan kontrol kualitas *worker*.
                 </Caption>
               </div>
             </div>
@@ -47,7 +55,7 @@ const MethodologySlide = () => {
               <div>
                 <TextContent size="base" className="font-medium block">Pengembangan Sistem</TextContent>
                 <Caption className="mt-1">
-                  Platform web dengan implementasi algoritma M-X
+                  Platform web dengan implementasi algoritma M-X.
                 </Caption>
               </div>
             </div>
@@ -59,7 +67,7 @@ const MethodologySlide = () => {
               <div>
                 <TextContent size="base" className="font-medium block">Simulasi & Analisis</TextContent>
                 <Caption className="mt-1">
-                  Testing terkontrol dengan evaluasi kuantitatif
+                  Testing terkontrol dengan evaluasi kuantitatif.
                 </Caption>
               </div>
             </div>
@@ -68,7 +76,30 @@ const MethodologySlide = () => {
       </SectionGrid>
 
       <HighlightBox variant="primary">
-        <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-6 text-center">Metrik Evaluasi</h3>
+        <SectionTitle level={3} centered>Metrik Evaluasi</SectionTitle>
         <SectionGrid columns={5} gap="gap-3 sm:gap-4">
           <div className="bg-white/5 p-4 rounded-lg text-center">
-            <h4 className="text-base sm:text-lg font-medium text-[#24ce2a] mb-2">Accuracy</h
+            <SectionTitle level={4} color="primary" className="mb-0">**Accuracy**</SectionTitle>
+          </div>
+          <div className="bg-white/5 p-4 rounded-lg text-center">
+            <SectionTitle level={4} color="secondary" className="mb-0">**Precision**</SectionTitle>
+          </div>
+          <div className="bg-white/5 p-4 rounded-lg text-center">
+            <SectionTitle level={4} color="primary" className="mb-0">**Recall**</SectionTitle>
+          </div>
+          <div className="bg-white/5 p-4 rounded-lg text-center">
+            <SectionTitle level={4} color="secondary" className="mb-0">**F1 Score**</SectionTitle>
+          </div>
+          <div className="bg-white/5 p-4 rounded-lg text-center">
+            <SectionTitle level={4} color="primary" className="mb-0">**TNR**</SectionTitle>
+          </div>
+        </SectionGrid>
+        <TextContent size="small" className="mt-4 text-center">
+            Metrik standar yang digunakan berdasarkan Confusion Matrix untuk mengevaluasi performa klasifikasi.
+        </TextContent>
+      </HighlightBox>
+    </SlideLayout>
+  );
+};
+
+export default MethodologySlide;

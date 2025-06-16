@@ -1,129 +1,13 @@
-// src/app/components/thesis-slides/ResultsSlide.tsx (Standardized Typography)
 "use client";
 
 import React from "react";
 import { motion } from "framer-motion";
 import SlideLayout from "./SlideLayout";
-import { SectionGrid, ContentCard, HighlightBox, TextContent, MetricDisplay } from "./SlideContentComponent";
+import { SectionGrid, ContentCard, HighlightBox } from "./SlideContentComponent";
 
 const ResultsSlide = () => {
   const metricsData = [
     { name: "Accuracy", value: 0.79, color: "bg-[#24ce2a]" },
-    { name: "Precision", value: 0.82, color: "bg-blue-500" },
-    { name: "Recall", value: 0.75, color: "bg-purple-500" },
-    { name: "TNR", value: 0.83, color: "bg-green-500" },
-    { name: "F1 Score", value: 0.78, color: "bg-orange-500" },
-  ];
-
-  const confusionData = {
-    tp: 9, tn: 10, fp: 2, fn: 3
-  };
-
-  return (
-    <SlideLayout 
-      title="Hasil Penelitian"
-      className="bg-gradient-to-br from-[#0a1e5e] via-[#001333] to-[#21074f]"
-      contentClassName="space-y-6"
-    >
-      {/* Top Row - Metrics & Matrix */}
-      <SectionGrid columns={2} gap="gap-4">
-        <ContentCard title="Metrik Performa" animationDelay={0} className="py-4">
-          <div className="grid grid-cols-3 gap-3">
-            {metricsData.map((metric, index) => (
-              <div key={index} className="text-center">
-                <MetricDisplay 
-                  value={`${(metric.value * 100).toFixed(0)}%`}
-                  label={metric.name}
-                  color="text-[#24ce2a]"
-                />
-                <div className="w-full h-2 bg-white/10 rounded-full mt-1">
-                  <motion.div 
-                    className={metric.color}
-                    style={{ width: `${metric.value * 100}%` }}
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${metric.value * 100}%` }}
-                    transition={{ duration: 1, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="h-full rounded-full"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </ContentCard>
-
-        <ContentCard title="Confusion Matrix" animationDelay={0.2} className="py-4">
-          <div className="grid grid-cols-2 gap-3 mb-4">
-            <div className="bg-green-500/20 p-3 rounded-lg text-center">
-              <MetricDisplay 
-                value={confusionData.tp}
-                label="True Positive"
-                color="text-green-400"
-              />
-            </div>
-            <div className="bg-red-500/20 p-3 rounded-lg text-center">
-              <MetricDisplay 
-                value={confusionData.fp}
-                label="False Positive"
-                color="text-red-400"
-              />
-            </div>
-            <div className="bg-red-500/20 p-3 rounded-lg text-center">
-              <MetricDisplay 
-                value={confusionData.fn}
-                label="False Negative"
-                color="text-red-400"
-              />
-            </div>
-            <div className="bg-green-500/20 p-3 rounded-lg text-center">
-              <MetricDisplay 
-                value={confusionData.tn}
-                label="True Negative"
-                color="text-green-400"
-              />
-            </div>
-          </div>
-          <div className="text-center">
-            <TextContent size="small" className="text-gray-300">
-              <strong>Correct:</strong> {confusionData.tp + confusionData.tn}/24 (79%)
-            </TextContent>
-          </div>
-        </ContentCard>
-      </SectionGrid>
-
-      {/* Key Findings */}
-      <HighlightBox variant="primary" className="py-4">
-        <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-center">Temuan Utama</h3>
-        
-        <SectionGrid columns={2} gap="gap-4">
-          <div className="bg-white/5 p-4 rounded-lg">
-            <h4 className="text-base sm:text-lg font-medium mb-2 text-[#24ce2a]">RQ1: Akurasi Klasifikasi</h4>
-            <TextContent size="small" className="text-gray-200">
-              M-X mencapai <strong>79% akurasi</strong> dengan presisi <strong>82%</strong> 
-              dan recall <strong>75%</strong> dalam klasifikasi tester.
-            </TextContent>
-          </div>
-          
-          <div className="bg-white/5 p-4 rounded-lg">
-            <h4 className="text-base sm:text-lg font-medium mb-2 text-[#25da9e]">RQ2: Reduksi Variabilitas</h4>
-            <TextContent size="small" className="text-gray-200">
-              TNR <strong>83%</strong> menunjukkan efektivitas filtering 
-              tester tidak konsisten.
-            </TextContent>
-          </div>
-        </SectionGrid>
-        
-        <div className="bg-[#24ce2a]/10 p-4 rounded-lg mt-4 text-center">
-          <TextContent size="base" className="text-gray-200">
-            <strong>19/24 tester</strong> diklasifikasi benar → M-X efektif sebagai QC mechanism
-          </TextContent>
-        </div>
-      </HighlightBox>
-    </SlideLayout>
-  );
-};
-
-export default ResultsSlide;"Accuracy", value: 0.79, color: "bg-[#24ce2a]" },
     { name: "Precision", value: 0.82, color: "bg-blue-500" },
     { name: "Recall", value: 0.75, color: "bg-purple-500" },
     { name: "TNR", value: 0.83, color: "bg-green-500" },
@@ -158,7 +42,6 @@ export default ResultsSlide;"Accuracy", value: 0.79, color: "bg-[#24ce2a]" },
                     whileInView={{ width: `${metric.value * 100}%` }}
                     transition={{ duration: 1, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="h-full rounded-full"
                   />
                 </div>
               </div>
