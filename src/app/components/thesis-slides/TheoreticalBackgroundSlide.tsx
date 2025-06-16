@@ -131,7 +131,7 @@ const TheoreticalBackgroundSlide = () => {
           <div className="bg-white/5 p-4 rounded-lg">
             <h4 className="text-base font-medium mb-2 text-red-400">Research Gap</h4>
             <TextContent size="small" className="text-gray-300">
-              Belum ada validasi empiris M-X algorithm dalam <strong>realistic UAT scenarios</strong> 
+              Belum ada validasi empiris M-X algorithm dalam <strong>realistic UAT scenarios </strong> 
               yang melibatkan subjective evaluation dan heterogeneous tester backgrounds.
             </TextContent>
           </div>
