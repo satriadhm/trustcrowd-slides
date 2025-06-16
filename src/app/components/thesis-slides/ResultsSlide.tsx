@@ -91,26 +91,26 @@ const ResultsSlide = () => {
 
       {/* Key Findings */}
       <HighlightBox variant="primary" className="py-4">
-        <h3 className="text-xl font-semibold mb-4 text-center">Temuan Utama Penelitian</h3>
+        <h3 className="text-xl font-semibold mb-4 text-center">Temuan Utama</h3>
         
         <SectionGrid columns={2} gap="gap-4">
           <div className="bg-white/5 p-4 rounded-lg">
-            <h4 className="font-medium text-base mb-3 text-[#24ce2a]">RQ1: Akurasi Klasifikasi Tester</h4>
-            <ul className="text-sm text-gray-200 space-y-2">
-              <li>• M-X algorithm mencapai <strong>79% akurasi</strong> dalam mengklasifikasi tester eligibility</li>
-              <li>• <strong>High precision (82%)</strong> menunjukkan efektivitas minimalisir false positives</li>
-              <li>• <strong>Moderate recall (75%)</strong> dengan beberapa experienced tester tidak terdeteksi</li>
-              <li>• <strong>Balanced F1-Score (78%)</strong> mengkonfirmasi performa yang konsisten</li>
+            <h4 className="font-medium text-base mb-3 text-[#24ce2a]">RQ1: Akurasi Klasifikasi</h4>
+            <ul className="text-sm text-gray-200 space-y-1">
+              <li>• M-X mencapai <strong>79% akurasi</strong> klasifikasi</li>
+              <li>• <strong>Presisi 82%</strong> - efektif minimalisir kesalahan positif</li>
+              <li>• <strong>Recall 75%</strong> - beberapa tester berpengalaman terlewat</li>
+              <li>• <strong>F1-Score 78%</strong> - performa seimbang</li>
             </ul>
           </div>
           
           <div className="bg-white/5 p-4 rounded-lg">
-            <h4 className="font-medium text-base mb-3 text-[#25da9e]">RQ2: Reduksi Variabilitas Tester</h4>
-            <ul className="text-sm text-gray-200 space-y-2">
-              <li>• <strong>TNR 83%</strong> menunjukkan efektivitas filtering non-eligible testers</li>
-              <li>• Algorithm berhasil mengidentifikasi <strong>10 dari 12 non-eligible testers</strong></li>
-              <li>• Precision tinggi memastikan <strong>quality control yang ketat</strong></li>
-              <li>• Effective reduction of tester characteristic variability</li>
+            <h4 className="font-medium text-base mb-3 text-[#25da9e]">RQ2: Reduksi Variabilitas</h4>
+            <ul className="text-sm text-gray-200 space-y-1">
+              <li>• <strong>TNR 83%</strong> - filtering efektif</li>
+              <li>• Berhasil identifikasi <strong>10 dari 12</strong> tester tidak layak</li>
+              <li>• Presisi tinggi = kontrol kualitas ketat</li>
+              <li>• Reduksi variabilitas karakteristik tester</li>
             </ul>
           </div>
         </SectionGrid>
@@ -118,45 +118,45 @@ const ResultsSlide = () => {
 
       {/* Detailed Analysis */}
       <SectionGrid columns={2} gap="gap-4">
-        <ContentCard title="Analisis Misclassification" animationDelay={0.4} className="py-4">
-          <div className="space-y-4">
+        <ContentCard title="Analisis Kesalahan" animationDelay={0.4} className="py-4">
+          <div className="space-y-3">
             <div className="bg-red-500/10 p-3 rounded-lg border border-red-500/20">
-              <h5 className="font-medium text-sm mb-2 text-red-400">False Negatives (3 cases)</h5>
+              <h5 className="font-medium text-sm mb-2 text-red-400">False Negative (3 kasus)</h5>
               <p className="text-xs text-gray-300">
-                3 experienced software engineering students diklasifikasi sebagai non-eligible. 
-                Menunjukkan algorithm cenderung <strong>conservative</strong> dalam penilaian.
+                3 mahasiswa teknik informatika berpengalaman diklasifikasi tidak layak. 
+                Algoritma cenderung <strong>konservatif</strong>.
               </p>
             </div>
             
             <div className="bg-yellow-500/10 p-3 rounded-lg border border-yellow-500/20">
-              <h5 className="font-medium text-sm mb-2 text-yellow-400">False Positives (2 cases)</h5>
+              <h5 className="font-medium text-sm mb-2 text-yellow-400">False Positive (2 kasus)</h5>
               <p className="text-xs text-gray-300">
-                2 participants tanpa formal UAT experience diklasifikasi sebagai eligible. 
-                Suggests consistency patterns dapat <strong>berbeda dari experience-based assessment</strong>.
+                2 partisipan tanpa pengalaman UAT diklasifikasi layak. 
+                Konsistensi <strong>berbeda dari penilaian berbasis pengalaman</strong>.
               </p>
             </div>
           </div>
         </ContentCard>
 
-        <ContentCard title="Interpretasi Hasil" animationDelay={0.6} className="py-4">
+        <ContentCard title="Interpretasi" animationDelay={0.6} className="py-4">
           <div className="space-y-3">
             <div className="bg-green-500/10 p-3 rounded-lg border border-green-500/20">
-              <h5 className="font-medium text-sm mb-2 text-green-400">✓ Algorithm Strengths</h5>
+              <h5 className="font-medium text-sm mb-2 text-green-400">✓ Kekuatan</h5>
               <ul className="text-xs text-gray-300 space-y-1">
-                <li>• High precision = effective quality filtering</li>
-                <li>• Strong TNR = excellent non-eligible detection</li>
-                <li>• Balanced performance across metrics</li>
-                <li>• No ground truth dependency achieved</li>
+                <li>• Presisi tinggi = filtering efektif</li>
+                <li>• TNR kuat = deteksi tidak layak baik</li>
+                <li>• Performa seimbang semua metrik</li>
+                <li>• Tidak perlu ground truth</li>
               </ul>
             </div>
             
             <div className="bg-blue-500/10 p-3 rounded-lg border border-blue-500/20">
-              <h5 className="font-medium text-sm mb-2 text-blue-400">⚠ Considerations</h5>
+              <h5 className="font-medium text-sm mb-2 text-blue-400">⚠ Pertimbangan</h5>
               <ul className="text-xs text-gray-300 space-y-1">
-                <li>• Conservative tendency in classification</li>
-                <li>• Consistency ≠ domain expertise</li>
-                <li>• May exclude valuable diverse perspectives</li>
-                <li>• Complement with domain-specific assessment</li>
+                <li>• Tendensi konservatif</li>
+                <li>• Konsistensi ≠ keahlian domain</li>
+                <li>• Mungkin exclude perspektif berharga</li>
+                <li>• Perlu penilaian pelengkap</li>
               </ul>
             </div>
           </div>
@@ -165,18 +165,18 @@ const ResultsSlide = () => {
 
       {/* Overall Assessment */}
       <HighlightBox variant="primary" className="py-4 text-center">
-        <h3 className="text-xl font-semibold mb-3">Penilaian Keseluruhan</h3>
+        <h3 className="text-xl font-semibold mb-3">Kesimpulan</h3>
         <p className="text-base text-gray-200 leading-relaxed mb-4">
-          M-X Algorithm menunjukkan <strong>performance yang solid</strong> sebagai quality control mechanism 
-          dalam crowdsourced UAT dengan <strong>79% overall accuracy</strong>. High precision mengindikasikan 
-          efektivitas dalam mempertahankan kualitas testing, namun moderate recall menunjukkan perlunya 
-          <strong>complementary assessment approaches</strong> untuk mengoptimalkan tester selection.
+          M-X Algorithm menunjukkan <strong>performa solid</strong> sebagai mekanisme kontrol kualitas 
+          dalam UAT crowdsourced dengan <strong>akurasi 79%</strong>. Presisi tinggi efektif 
+          mempertahankan kualitas testing, namun recall moderat menunjukkan perlunya 
+          <strong>pendekatan pelengkap</strong> untuk optimalisasi seleksi tester.
         </p>
         
         <div className="bg-[#24ce2a]/10 p-3 rounded-lg">
           <p className="text-sm text-[#24ce2a] font-medium">
-            <strong>Conclusion:</strong> Algorithm valid untuk UAT quality control dengan catatan 
-            perlunya calibration dan hybrid approach untuk optimal performance
+            <strong>Rekomendasi:</strong> Algoritma valid untuk kontrol kualitas UAT dengan 
+            perlunya kalibrasi dan pendekatan hibrid untuk performa optimal
           </p>
         </div>
       </HighlightBox>
