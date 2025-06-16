@@ -3,7 +3,7 @@
 import React from "react";
 import SlideLayout from "./SlideLayout";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from "@/app/components/ui/dialog";
-import { SectionGrid, ContentCard, ListItem, TextContent, HighlightBox, Caption } from "./SlideContentComponent";
+import { SectionGrid, ContentCard, ListItem, HighlightBox, Caption } from "./SlideContentComponent";
 
 const SimulationDesignSlide = () => {
   return (
@@ -17,13 +17,13 @@ const SimulationDesignSlide = () => {
             <h4 className="text-base sm:text-lg font-medium mb-4">Format Requirements</h4>
             <ul className="space-y-3">
               <ListItem>
-                <TextContent size="base">Format multiple-choice dengan M opsi tetap</TextContent>
+                <span className="text-sm sm:text-base lg:text-base xl:text-lg text-gray-200 leading-relaxed">Format multiple-choice dengan M opsi tetap</span>
               </ListItem>
               <ListItem>
-                <TextContent size="base">Kapabilitas <em>dekomposisi biner</em> untuk algoritma <strong>M-X</strong></TextContent>
+                <span className="text-sm sm:text-base lg:text-base xl:text-lg text-gray-200 leading-relaxed">Kapabilitas <em>dekomposisi biner</em> untuk algoritma <strong>M-X</strong></span>
               </ListItem>
               <ListItem>
-                <TextContent size="base">Opsi <em>independen</em> dan <em>non-eksklusif</em></TextContent>
+                <span className="text-sm sm:text-base lg:text-base xl:text-lg text-gray-200 leading-relaxed">Opsi <em>independen</em> dan <em>non-eksklusif</em></span>
               </ListItem>
             </ul>
           </div>
@@ -51,15 +51,15 @@ const SimulationDesignSlide = () => {
         <ContentCard title="Penentuan Kelayakan" animationDelay={0.2}>
           <div className="bg-white/5 p-6 rounded-lg mb-6">
             <h4 className="text-base sm:text-lg font-medium mb-4"><strong>Rule-Based Validation</strong></h4>
-            <TextContent size="base" className="mb-4">
+            <div className="text-sm sm:text-base lg:text-base xl:text-lg text-gray-200 leading-relaxed mb-4">
               Pendekatan definisi <em>threshold</em> manual untuk kriteria kelayakan spesifik konteks
-            </TextContent>
+            </div>
             <div className="space-y-3">
               <ListItem>
-                <TextContent size="base">Perbandingan <em>accuracy scores</em> <strong>M-X</strong> terhadap <em>threshold</em></TextContent>
+                <span className="text-sm sm:text-base lg:text-base xl:text-lg text-gray-200 leading-relaxed">Perbandingan <em>accuracy scores</em> <strong>M-X</strong> terhadap <em>threshold</em></span>
               </ListItem>
               <ListItem>
-                <TextContent size="base">Kalkulasi kelayakan berdasarkan rata-rata <em>performa task</em></TextContent>
+                <span className="text-sm sm:text-base lg:text-base xl:text-lg text-gray-200 leading-relaxed">Kalkulasi kelayakan berdasarkan rata-rata <em>performa task</em></span>
               </ListItem>
             </div>
           </div>
@@ -67,18 +67,18 @@ const SimulationDesignSlide = () => {
           <div className="bg-white/5 p-6 rounded-lg">
             <h4 className="text-base sm:text-lg font-medium mb-4"><strong>Protokol Simulasi</strong></h4>
             <div className="space-y-3">
-              <p className="text-gray-300">
-                • <TextContent size="base" className="font-medium inline">Timeframe:</TextContent> <strong>3 hari simulasi <em>hybrid</em></strong>
-              </p>
-              <p className="text-gray-300">
-                • <TextContent size="base" className="font-medium inline">Partisipan:</TextContent> <strong>24 <em>volunteer</em></strong> (12 berpengalaman UAT, 12 tanpa pengalaman)
-              </p>
-              <p className="text-gray-300">
-                • <TextContent size="base" className="font-medium inline">Validasi:</TextContent> <strong><em>Prior-experience based validation</em></strong> untuk <em>ground truth</em>
-              </p>
-              <p className="text-gray-300">
-                • <TextContent size="base" className="font-medium inline">Distribusi:</TextContent> <strong>50:50 <em>eligible</em>/<em>non-eligible</em></strong>
-              </p>
+              <div className="text-gray-300">
+                <span className="text-sm sm:text-base lg:text-base xl:text-lg font-medium inline">Timeframe:</span> <strong>3 hari simulasi <em>hybrid</em></strong>
+              </div>
+              <div className="text-gray-300">
+                <span className="text-sm sm:text-base lg:text-base xl:text-lg font-medium inline">Partisipan:</span> <strong>24 <em>volunteer</em></strong> (12 berpengalaman UAT, 12 tanpa pengalaman)
+              </div>
+              <div className="text-gray-300">
+                <span className="text-sm sm:text-base lg:text-base xl:text-lg font-medium inline">Validasi:</span> <strong><em>Prior-experience based validation</em></strong> untuk <em>ground truth</em>
+              </div>
+              <div className="text-gray-300">
+                <span className="text-sm sm:text-base lg:text-base xl:text-lg font-medium inline">Distribusi:</span> <strong>50:50 <em>eligible</em>/<em>non-eligible</em></strong>
+              </div>
             </div>
           </div>
         </ContentCard>
