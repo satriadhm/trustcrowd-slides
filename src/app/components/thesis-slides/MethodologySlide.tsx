@@ -1,9 +1,9 @@
-// src/app/components/thesis-slides/MethodologySlide.tsx (Updated)
+// src/app/components/thesis-slides/MethodologySlide.tsx (Standardized Typography)
 "use client";
 
 import React from "react";
 import SlideLayout from "./SlideLayout";
-import { SectionGrid, ContentCard, ListItem, TextContent, HighlightBox } from "./SlideContentComponent";
+import { SectionGrid, ContentCard, ListItem, TextContent, HighlightBox, Caption } from "./SlideContentComponent";
 
 const MethodologySlide = () => {
   return (
@@ -11,17 +11,17 @@ const MethodologySlide = () => {
       title="Metodologi"
       className="bg-gradient-to-br from-[#0a1e5e] via-[#001333] to-[#21074f]"
     >
-      <SectionGrid columns={2} className="mb-8 sm:mb-10 lg:mb-12">
+      <SectionGrid columns={2} className="mb-8">
         <ContentCard title="Desain Penelitian" animationDelay={0}>
           <div className="space-y-4">
             <ListItem>
-              Simulasi kuantitatif untuk evaluasi algoritma M-X
+              <TextContent size="base">Simulasi kuantitatif untuk evaluasi algoritma M-X</TextContent>
             </ListItem>
             <ListItem>
-              Arsitektur client-server dengan GraphQL dan MongoDB
+              <TextContent size="base">Arsitektur client-server dengan GraphQL dan MongoDB</TextContent>
             </ListItem>
             <ListItem>
-              24 partisipan selama 3 hari simulasi
+              <TextContent size="base">24 partisipan selama 3 hari simulasi</TextContent>
             </ListItem>
           </div>
         </ContentCard>
@@ -33,10 +33,10 @@ const MethodologySlide = () => {
                 <span className="text-[#25da9e] font-bold text-sm">1</span>
               </div>
               <div>
-                <span className="font-medium text-lg block">Literature Review</span>
-                <TextContent size="sm" className="mt-1">
+                <TextContent size="base" className="font-medium block">Literature Review</TextContent>
+                <Caption className="mt-1">
                   Studi Crowdsourced Testing, UAT, dan kontrol kualitas worker
-                </TextContent>
+                </Caption>
               </div>
             </div>
             
@@ -45,10 +45,10 @@ const MethodologySlide = () => {
                 <span className="text-[#25da9e] font-bold text-sm">2</span>
               </div>
               <div>
-                <span className="font-medium text-lg block">Pengembangan Sistem</span>
-                <TextContent size="sm" className="mt-1">
+                <TextContent size="base" className="font-medium block">Pengembangan Sistem</TextContent>
+                <Caption className="mt-1">
                   Platform web dengan implementasi algoritma M-X
-                </TextContent>
+                </Caption>
               </div>
             </div>
             
@@ -57,10 +57,10 @@ const MethodologySlide = () => {
                 <span className="text-[#25da9e] font-bold text-sm">3</span>
               </div>
               <div>
-                <span className="font-medium text-lg block">Simulasi & Analisis</span>
-                <TextContent size="sm" className="mt-1">
+                <TextContent size="base" className="font-medium block">Simulasi & Analisis</TextContent>
+                <Caption className="mt-1">
                   Testing terkontrol dengan evaluasi kuantitatif
-                </TextContent>
+                </Caption>
               </div>
             </div>
           </div>
@@ -68,61 +68,7 @@ const MethodologySlide = () => {
       </SectionGrid>
 
       <HighlightBox variant="primary">
-        <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold mb-6 text-center">Metrik Evaluasi</h3>
+        <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-6 text-center">Metrik Evaluasi</h3>
         <SectionGrid columns={5} gap="gap-3 sm:gap-4">
           <div className="bg-white/5 p-4 rounded-lg text-center">
-            <h4 className="font-medium text-lg text-[#24ce2a] mb-2">Accuracy</h4>
-            <TextContent size="sm" className="mb-3">
-              Proporsi prediksi benar
-            </TextContent>
-            <div className="bg-white/10 p-2 rounded text-center">
-              <span className="font-mono text-xs text-gray-200">(TP + TN) / Total</span>
-            </div>
-          </div>
-          
-          <div className="bg-white/5 p-4 rounded-lg text-center">
-            <h4 className="font-medium text-lg text-[#24ce2a] mb-2">Precision</h4>
-            <TextContent size="sm" className="mb-3">
-              Prediksi positif benar
-            </TextContent>
-            <div className="bg-white/10 p-2 rounded text-center">
-              <span className="font-mono text-xs text-gray-200">TP / (TP + FP)</span>
-            </div>
-          </div>
-          
-          <div className="bg-white/5 p-4 rounded-lg text-center">
-            <h4 className="font-medium text-lg text-[#24ce2a] mb-2">Recall</h4>
-            <TextContent size="sm" className="mb-3">
-              Positif aktual terdeteksi
-            </TextContent>
-            <div className="bg-white/10 p-2 rounded text-center">
-              <span className="font-mono text-xs text-gray-200">TP / (TP + FN)</span>
-            </div>
-          </div>
-
-          <div className="bg-white/5 p-4 rounded-lg text-center">
-            <h4 className="font-medium text-lg text-[#24ce2a] mb-2">TNR</h4>
-            <TextContent size="sm" className="mb-3">
-              Negatif aktual terdeteksi
-            </TextContent>
-            <div className="bg-white/10 p-2 rounded text-center">
-              <span className="font-mono text-xs text-gray-200">TN / (TN + FP)</span>
-            </div>
-          </div>
-
-          <div className="bg-white/5 p-4 rounded-lg text-center">
-            <h4 className="font-medium text-lg text-[#24ce2a] mb-2">F1 Score</h4>
-            <TextContent size="sm" className="mb-3">
-              Harmonik P & R
-            </TextContent>
-            <div className="bg-white/10 p-2 rounded text-center">
-              <span className="font-mono text-xs text-gray-200">2 × (P × R) / (P + R)</span>
-            </div>
-          </div>
-        </SectionGrid>
-      </HighlightBox>
-    </SlideLayout>
-  );
-};
-
-export default MethodologySlide;
+            <h4 className="text-base sm:text-lg font-medium text-[#24ce2a] mb-2">Accuracy</h

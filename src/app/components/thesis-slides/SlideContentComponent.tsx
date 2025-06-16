@@ -1,8 +1,36 @@
-// src/app/components/thesis-slides/SlideContentComponents.tsx
 "use client";
 
 import React, { JSX } from "react";
 import { motion } from "framer-motion";
+
+const TYPOGRAPHY = {
+  // Slide titles - Main heading for each slide
+  slideTitle: "text-3xl sm:text-4xl lg:text-5xl xl:text-6xl",
+  
+  // Section titles - Major sections within slides
+  sectionTitle: "text-xl sm:text-2xl lg:text-2xl xl:text-3xl",
+  
+  // Card titles - Titles for content cards
+  cardTitle: "text-lg sm:text-xl lg:text-xl xl:text-2xl",
+  
+  // Sub headings - Minor headings and labels
+  subHeading: "text-base sm:text-lg lg:text-lg xl:text-xl",
+  
+  // Body text - Main readable content
+  bodyText: "text-sm sm:text-base lg:text-base xl:text-lg",
+  
+  // Small text - Captions, metadata, fine print
+  smallText: "text-xs sm:text-sm lg:text-sm xl:text-base",
+  
+  // Extra small - Very fine details (increased size)
+  extraSmall: "text-sm sm:text-sm lg:text-base xl:text-base",
+  
+  // Formula text - Mathematical expressions
+  formulaText: "text-lg sm:text-xl lg:text-2xl xl:text-3xl",
+  
+  // Metric numbers - Large display numbers
+  metricNumber: "text-2xl sm:text-3xl lg:text-4xl xl:text-5xl",
+} as const;
 
 // Section Grid untuk layout 2 kolom yang konsisten
 interface SectionGridProps {
@@ -16,7 +44,7 @@ export const SectionGrid: React.FC<SectionGridProps> = ({
   children,
   className = "",
   columns = 2,
-  gap = "gap-6 sm:gap-8 lg:gap-12",
+  gap = "gap-4 sm:gap-6 lg:gap-8",
 }) => {
   const gridClass = {
     1: "grid grid-cols-1",
@@ -55,14 +83,14 @@ export const ContentCard: React.FC<ContentCardProps> = ({
 
   return (
     <motion.div
-      className={`${baseClasses} p-4 sm:p-6 lg:p-8 rounded-xl ${className}`}
+      className={`${baseClasses} p-4 sm:p-6 lg:p-6 rounded-xl ${className}`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: animationDelay }}
       viewport={{ once: true }}
     >
       {title && (
-        <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold mb-4 sm:mb-6 text-[#24ce2a]">
+        <h3 className={`${TYPOGRAPHY.cardTitle} font-semibold mb-4 text-[#24ce2a]`}>
           {title}
         </h3>
       )}
@@ -94,16 +122,16 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({
   };
 
   const sizeClasses = {
-    2: "text-2xl sm:text-3xl lg:text-4xl xl:text-5xl",
-    3: "text-xl sm:text-2xl lg:text-3xl xl:text-4xl",
-    4: "text-lg sm:text-xl lg:text-2xl xl:text-3xl",
+    2: TYPOGRAPHY.slideTitle,
+    3: TYPOGRAPHY.sectionTitle,
+    4: TYPOGRAPHY.subHeading,
   };
 
   const Tag = `h${level}` as keyof JSX.IntrinsicElements;
 
   return (
     <Tag
-      className={`${sizeClasses[level]} ${colorClasses[color]} font-semibold mb-4 sm:mb-6 ${
+      className={`${sizeClasses[level]} ${colorClasses[color]} font-semibold mb-4 ${
         centered ? "text-center" : ""
       } ${className}`}
     >
@@ -115,7 +143,7 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({
 // Text Content yang konsisten
 interface TextContentProps {
   children: React.ReactNode;
-  size?: "sm" | "base" | "lg";
+  size?: "extraSmall" | "small" | "base" | "large" | "metric";
   className?: string;
 }
 
@@ -125,9 +153,11 @@ export const TextContent: React.FC<TextContentProps> = ({
   className = "",
 }) => {
   const sizeClasses = {
-    sm: "text-sm sm:text-base lg:text-lg",
-    base: "text-base sm:text-lg lg:text-xl",
-    lg: "text-lg sm:text-xl lg:text-2xl",
+    extraSmall: TYPOGRAPHY.extraSmall,
+    small: TYPOGRAPHY.smallText,
+    base: TYPOGRAPHY.bodyText,
+    large: TYPOGRAPHY.subHeading,
+    metric: TYPOGRAPHY.metricNumber,
   };
 
   return (
@@ -153,8 +183,8 @@ export const ListItem: React.FC<ListItemProps> = ({
     <div className="bg-[#24ce2a]/20 p-1 rounded-full mt-1 flex-shrink-0">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="14"
-        height="14"
+        width="12"
+        height="12"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -171,7 +201,7 @@ export const ListItem: React.FC<ListItemProps> = ({
   return (
     <li className={`flex items-start gap-3 ${className}`}>
       {icon || defaultIcon}
-      <span className="text-sm sm:text-base lg:text-lg text-gray-200 leading-relaxed">
+      <span className={`${TYPOGRAPHY.bodyText} text-gray-200 leading-relaxed`}>
         {children}
       </span>
     </li>
@@ -199,7 +229,7 @@ export const HighlightBox: React.FC<HighlightBoxProps> = ({
 
   return (
     <div
-      className={`${variants[variant]} p-4 sm:p-6 lg:p-8 rounded-xl backdrop-blur-sm ${className}`}
+      className={`${variants[variant]} p-4 sm:p-6 lg:p-6 rounded-xl backdrop-blur-sm ${className}`}
     >
       {children}
     </div>
@@ -219,15 +249,78 @@ export const FormulaBox: React.FC<FormulaBoxProps> = ({
   className = "",
 }) => {
   return (
-    <div className={`bg-white/15 p-4 sm:p-6 lg:p-8 rounded-xl border border-[#24ce2a]/20 ${className}`}>
+    <div className={`bg-white/15 p-4 sm:p-6 lg:p-6 rounded-xl border border-[#24ce2a]/20 ${className}`}>
       {title && (
-        <h4 className="text-lg sm:text-xl lg:text-2xl font-semibold mb-4 text-[#24ce2a] text-center">
+        <h4 className={`${TYPOGRAPHY.subHeading} font-semibold mb-4 text-[#24ce2a] text-center`}>
           {title}
         </h4>
       )}
-      <div className="text-center font-mono text-lg sm:text-xl lg:text-2xl xl:text-3xl text-[#24ce2a] font-bold leading-tight">
+      <div className={`text-center font-mono ${TYPOGRAPHY.formulaText} text-[#24ce2a] font-bold leading-tight`}>
         {children}
       </div>
     </div>
   );
 };
+
+// UTILITY COMPONENTS FOR SPECIFIC USE CASES
+
+// Metric Display - For large numbers/percentages
+interface MetricDisplayProps {
+  value: string | number;
+  label: string;
+  color?: string;
+  className?: string;
+}
+
+export const MetricDisplay: React.FC<MetricDisplayProps> = ({
+  value,
+  label,
+  color = "text-[#24ce2a]",
+  className = "",
+}) => {
+  return (
+    <div className={`text-center ${className}`}>
+      <div className={`${TYPOGRAPHY.metricNumber} font-bold ${color} mb-1`}>
+        {value}
+      </div>
+      <div className={`${TYPOGRAPHY.smallText} text-gray-300`}>
+        {label}
+      </div>
+    </div>
+  );
+};
+
+// Subtitle component for consistent section subtitles
+interface SubtitleProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+export const Subtitle: React.FC<SubtitleProps> = ({
+  children,
+  className = "",
+}) => {
+  return (
+    <p className={`${TYPOGRAPHY.subHeading} text-gray-300 leading-relaxed ${className}`}>
+      {children}
+    </p>
+  );
+};
+
+interface CaptionProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+export const Caption: React.FC<CaptionProps> = ({
+  children,
+  className = "",
+}) => {
+  return (
+    <p className={`${TYPOGRAPHY.smallText} text-gray-400 ${className}`}>
+      {children}
+    </p>
+  );
+};
+
+export { TYPOGRAPHY };

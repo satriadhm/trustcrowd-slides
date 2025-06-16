@@ -113,7 +113,7 @@ const FutureWorkSlide = () => {
       <HighlightBox variant="primary" className="text-center">
         <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-4">Visi Jangka Panjang</h3>
         
-        <TextContent size="lg" className="leading-relaxed">
+        <TextContent size="large" className="leading-relaxed">
           Mengembangkan ekosistem kontrol kualitas yang komprehensif dan adaptif yang merevolusi <i>crowdsourced testing</i> 
           dengan meminimalkan variabilitas sambil memaksimalkan nilai perspektif yang beragam.
         </TextContent>

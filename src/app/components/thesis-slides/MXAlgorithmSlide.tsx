@@ -1,35 +1,31 @@
-// src/app/components/thesis-slides/MXAlgorithmSlide.tsx (Updated)
+// src/app/components/thesis-slides/MXAlgorithmSlide.tsx (Standardized Typography)
 "use client";
 
 import React from "react";
 import SlideLayout from "./SlideLayout";
-import { ContentCard, FormulaBox, SectionGrid, TextContent } from "./SlideContentComponent";
+import { ContentCard, FormulaBox, SectionGrid, HighlightBox, TextContent, Caption } from "./SlideContentComponent";
 
 const MXAlgorithmSlide = () => {
   return (
     <SlideLayout 
       title="Algoritma M-X"
       className="bg-gradient-to-br from-[#0a1e5e] via-[#001333] to-[#21074f]"
+      contentClassName="space-y-6"
     >
-      {/* Formula Section */}
-      <SectionGrid columns={2} className="mb-8 sm:mb-10 lg:mb-12">
+      {/* Formula Section - Compact */}
+      <SectionGrid columns={2} gap="gap-4">
         <ContentCard 
           title="M-1 Algorithm" 
           highlight={true}
           animationDelay={0}
-          className="border-[#24ce2a]/30"
+          className="border-[#24ce2a]/30 py-4"
         >
-          <TextContent size="base" className="mb-6 text-center">
-            Evaluasi kualitas worker untuk masalah biner tanpa jawaban benar
-          </TextContent>
-          <FormulaBox>
-            <div className="space-y-2">
-              <div>
-                Q<sub className="text-base sm:text-lg lg:text-xl">ij</sub> = A<sub className="text-base sm:text-lg lg:text-xl">i</sub> · A<sub className="text-base sm:text-lg lg:text-xl">j</sub> +
-              </div>
-              <div>
-                ((1 - A<sub className="text-base sm:text-lg lg:text-xl">i</sub>)(1 - A<sub className="text-base sm:text-lg lg:text-xl">j</sub>)) / (M - 1)
-              </div>
+          <Caption className="text-center mb-4">
+            Worker quality tanpa ground truth
+          </Caption>
+          <FormulaBox className="py-4">
+            <div className="text-lg sm:text-xl lg:text-2xl">
+              Q<sub>ij</sub> = A<sub>i</sub> · A<sub>j</sub> + ((1-A<sub>i</sub>)(1-A<sub>j</sub>))/(M-1)
             </div>
           </FormulaBox>
         </ContentCard>
@@ -38,82 +34,53 @@ const MXAlgorithmSlide = () => {
           title="M-X Algorithm" 
           highlight={true}
           animationDelay={0.2}
-          className="border-[#25da9e]/30"
+          className="border-[#25da9e]/30 py-4"
         >
-          <TextContent size="base" className="mb-6 text-center">
-            Ekstensi M-1 untuk multiple-choice dengan dekomposisi biner
-          </TextContent>
-          <FormulaBox>
-            A<sub className="text-lg sm:text-xl lg:text-2xl">i</sub> = ∏<sub className="text-base sm:text-lg lg:text-xl">j=1</sub><sup className="text-base sm:text-lg lg:text-xl">M</sup> A<sub className="text-base sm:text-lg lg:text-xl">ij</sub>
+          <Caption className="text-center mb-4">
+            Ekstensi untuk multiple-choice
+          </Caption>
+          <FormulaBox className="py-4">
+            <div className="text-lg sm:text-xl lg:text-2xl">
+              A<sub>i</sub> = ∏<sub>j=1</sub><sup>M</sup> A<sub>ij</sub>
+            </div>
           </FormulaBox>
         </ContentCard>
       </SectionGrid>
 
-      {/* Features and Process Section */}
-      <SectionGrid columns={3}>
-        <ContentCard title="Karakteristik Algoritma" animationDelay={0}>
-          <div className="space-y-4">
-            <div className="bg-white/5 p-4 rounded-lg">
-              <h4 className="font-medium text-lg mb-2 text-[#24ce2a]">
-                <strong>Independensi Ground Truth</strong>
-              </h4>
-              <TextContent size="sm">
-                Tidak memerlukan jawaban yang benar untuk evaluasi kualitas worker
-              </TextContent>
-            </div>
-            
-            <div className="bg-white/5 p-4 rounded-lg">
-              <h4 className="font-medium text-lg mb-2 text-[#24ce2a]">
-                <strong>Dekomposisi Biner</strong>
-              </h4>
-              <TextContent size="sm">
-                Mengubah masalah multiple-choice menjadi sub-pertanyaan biner
-              </TextContent>
-            </div>
+      {/* Key Features - Ultra Compact */}
+      <HighlightBox variant="primary" className="py-4">
+        <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-center">Karakteristik & Aplikasi</h3>
+        
+        <SectionGrid columns={3} gap="gap-3">
+          <div className="bg-white/5 p-3 rounded-lg">
+            <h4 className="text-base sm:text-lg font-medium mb-2 text-[#24ce2a]">Core Features</h4>
+            <ul className="space-y-1">
+              <li><TextContent size="small" className="text-gray-300">• No ground truth needed</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">• Binary decomposition</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">• Consistency-based evaluation</TextContent></li>
+            </ul>
           </div>
-        </ContentCard>
-
-        <ContentCard title="Proses Algoritma" animationDelay={0.2}>
-          <ol className="space-y-2 text-sm sm:text-base lg:text-lg text-gray-300 ml-3 list-decimal">
-            <li>Dekomposisi tugas multiple-choice ke sub-pertanyaan biner</li>
-            <li>Hitung tingkat agreement antar worker</li>
-            <li>Bangun sistem persamaan probabilitas agreement</li>
-            <li>Selesaikan persamaan untuk tingkat akurasi worker</li>
-            <li>Klasifikasi kelayakan berdasarkan threshold</li>
-          </ol>
-        </ContentCard>
-
-        <ContentCard title="Relevansi UAT Crowdsourcing" animationDelay={0.4}>
-          <div className="space-y-4">
-            <div className="bg-white/5 p-4 rounded-lg">
-              <h4 className="font-medium text-lg mb-2 text-[#f39c12]">
-                <strong>Evaluasi Subjektif</strong>
-              </h4>
-              <TextContent size="sm">
-                Cocok untuk UAT dengan testing subjektif dan eksplorasi
-              </TextContent>
-            </div>
-            
-            <div className="bg-white/5 p-4 rounded-lg">
-              <h4 className="font-medium text-lg mb-2 text-[#f39c12]">
-                <strong>Reduksi Variabilitas</strong>
-              </h4>
-              <TextContent size="sm">
-                Identifikasi tester konsisten berdasarkan pola agreement
-              </TextContent>
-            </div>
-            
-            <div className="bg-white/5 p-4 rounded-lg">
-              <h4 className="font-medium text-lg mb-2 text-[#f39c12]">
-                <strong>Skalabilitas</strong>
-              </h4>
-              <TextContent size="sm">
-                Dirancang untuk pool worker besar dalam crowdsourcing
-              </TextContent>
-            </div>
+          
+          <div className="bg-white/5 p-3 rounded-lg">
+            <h4 className="text-base sm:text-lg font-medium mb-2 text-[#25da9e]">Process</h4>
+            <ol className="space-y-1 list-decimal list-inside">
+              <li><TextContent size="small" className="text-gray-300">Dekomposisi ke biner</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">Hitung agreement matrix</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">Solve accuracy scores</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">Threshold classification</TextContent></li>
+            </ol>
           </div>
-        </ContentCard>
-      </SectionGrid>
+          
+          <div className="bg-white/5 p-3 rounded-lg">
+            <h4 className="text-base sm:text-lg font-medium mb-2 text-[#f39c12]">UAT Relevance</h4>
+            <ul className="space-y-1">
+              <li><TextContent size="small" className="text-gray-300">• Subjektif evaluation</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">• Variability reduction</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">• Crowdsourcing scalable</TextContent></li>
+            </ul>
+          </div>
+        </SectionGrid>
+      </HighlightBox>
     </SlideLayout>
   );
 };

@@ -1,168 +1,222 @@
-// src/app/components/thesis-slides/ResultsSlide.tsx (Updated)
+// src/app/components/thesis-slides/ResultsSlide.tsx (Standardized Typography)
 "use client";
 
 import React from "react";
 import { motion } from "framer-motion";
 import SlideLayout from "./SlideLayout";
-import { SectionGrid, ContentCard, HighlightBox } from "./SlideContentComponent";
-
-// Helper to replace * and ** with <em> and <strong>
-function formatMarkdown(text: string) {
-  text = text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
-  text = text.replace(/\*(.*?)\*/g, "<em>$1</em>");
-  return text;
-}
+import { SectionGrid, ContentCard, HighlightBox, TextContent, MetricDisplay } from "./SlideContentComponent";
 
 const ResultsSlide = () => {
   const metricsData = [
-    { name: "Accuracy", value: 0.79 },
-    { name: "Precision", value: 0.82 },
-    { name: "Recall", value: 0.75 },
-    { name: "TNR", value: 0.83 },
-    { name: "F1 Score", value: 0.78 },
+    { name: "Accuracy", value: 0.79, color: "bg-[#24ce2a]" },
+    { name: "Precision", value: 0.82, color: "bg-blue-500" },
+    { name: "Recall", value: 0.75, color: "bg-purple-500" },
+    { name: "TNR", value: 0.83, color: "bg-green-500" },
+    { name: "F1 Score", value: 0.78, color: "bg-orange-500" },
   ];
 
-  const confusionMatrixData = {
-    truePositive: 9,
-    trueNegative: 10,
-    falsePositive: 2,
-    falseNegative: 3,
+  const confusionData = {
+    tp: 9, tn: 10, fp: 2, fn: 3
   };
 
   return (
     <SlideLayout 
       title="Hasil Penelitian"
       className="bg-gradient-to-br from-[#0a1e5e] via-[#001333] to-[#21074f]"
+      contentClassName="space-y-6"
     >
-      <SectionGrid columns={2} className="mb-8 sm:mb-10 lg:mb-12">
-        <ContentCard title="Metrik Performa" animationDelay={0}>
-          <div className="space-y-6">
+      {/* Top Row - Metrics & Matrix */}
+      <SectionGrid columns={2} gap="gap-4">
+        <ContentCard title="Metrik Performa" animationDelay={0} className="py-4">
+          <div className="grid grid-cols-3 gap-3">
             {metricsData.map((metric, index) => (
-              <div key={index} className="space-y-2">
-                <div className="flex justify-between items-center">
-                  <span className="font-medium text-xl"><strong>{metric.name}</strong></span>
-                  <span className="font-bold text-2xl lg:text-3xl text-[#24ce2a]">
-                    {(metric.value * 100).toFixed(1)}%
-                  </span>
-                </div>
-                <div className="w-full h-5 bg-white/10 rounded-full overflow-hidden">
+              <div key={index} className="text-center">
+                <MetricDisplay 
+                  value={`${(metric.value * 100).toFixed(0)}%`}
+                  label={metric.name}
+                  color="text-[#24ce2a]"
+                />
+                <div className="w-full h-2 bg-white/10 rounded-full mt-1">
                   <motion.div 
-                    className="h-full bg-[#24ce2a]"
+                    className={metric.color}
+                    style={{ width: `${metric.value * 100}%` }}
                     initial={{ width: 0 }}
                     whileInView={{ width: `${metric.value * 100}%` }}
                     transition={{ duration: 1, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                  ></motion.div>
+                    className="h-full rounded-full"
+                  />
                 </div>
               </div>
             ))}
           </div>
         </ContentCard>
 
-        <ContentCard title="Confusion Matrix" animationDelay={0.2}>
-          <div className="grid grid-cols-2 gap-6 p-6 bg-white/5 rounded-lg mb-6">
-            <motion.div 
-              className="bg-green-500/20 p-6 rounded-lg text-center"
-              initial={{ scale: 0.9, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <span className="block text-lg mb-3"><strong>True Positive</strong></span>
-              <span className="text-4xl lg:text-5xl font-bold text-green-400">
-                {confusionMatrixData.truePositive}
-              </span>
-            </motion.div>
-            
-            <motion.div 
-              className="bg-red-500/20 p-6 rounded-lg text-center"
-              initial={{ scale: 0.9, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
-              <span className="block text-lg mb-3"><strong>False Positive</strong></span>
-              <span className="text-4xl lg:text-5xl font-bold text-red-400">
-                {confusionMatrixData.falsePositive}
-              </span>
-            </motion.div>
-            
-            <motion.div 
-              className="bg-red-500/20 p-6 rounded-lg text-center"
-              initial={{ scale: 0.9, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <span className="block text-lg mb-3"><strong>False Negative</strong></span>
-              <span className="text-4xl lg:text-5xl font-bold text-red-400">
-                {confusionMatrixData.falseNegative}
-              </span>
-            </motion.div>
-            
-            <motion.div 
-              className="bg-green-500/20 p-6 rounded-lg text-center"
-              initial={{ scale: 0.9, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true }}
-            >
-              <span className="block text-lg mb-3"><strong>True Negative</strong></span>
-              <span className="text-4xl lg:text-5xl font-bold text-green-400">
-                {confusionMatrixData.trueNegative}
-              </span>
-            </motion.div>
+        <ContentCard title="Confusion Matrix" animationDelay={0.2} className="py-4">
+          <div className="grid grid-cols-2 gap-3 mb-4">
+            <div className="bg-green-500/20 p-3 rounded-lg text-center">
+              <MetricDisplay 
+                value={confusionData.tp}
+                label="True Positive"
+                color="text-green-400"
+              />
+            </div>
+            <div className="bg-red-500/20 p-3 rounded-lg text-center">
+              <MetricDisplay 
+                value={confusionData.fp}
+                label="False Positive"
+                color="text-red-400"
+              />
+            </div>
+            <div className="bg-red-500/20 p-3 rounded-lg text-center">
+              <MetricDisplay 
+                value={confusionData.fn}
+                label="False Negative"
+                color="text-red-400"
+              />
+            </div>
+            <div className="bg-green-500/20 p-3 rounded-lg text-center">
+              <MetricDisplay 
+                value={confusionData.tn}
+                label="True Negative"
+                color="text-green-400"
+              />
+            </div>
           </div>
-          
-          <div className="text-center text-lg text-gray-300">
-            <p><strong>Total Sample:</strong> {confusionMatrixData.truePositive + confusionMatrixData.trueNegative + confusionMatrixData.falsePositive + confusionMatrixData.falseNegative}</p>
-            <p><strong>Klasifikasi Benar:</strong> {confusionMatrixData.truePositive + confusionMatrixData.trueNegative}</p>
+          <div className="text-center">
+            <TextContent size="small" className="text-gray-300">
+              <strong>Correct:</strong> {confusionData.tp + confusionData.tn}/24 (79%)
+            </TextContent>
           </div>
         </ContentCard>
       </SectionGrid>
 
-      <HighlightBox variant="primary">
-        <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-6 text-center">Temuan Utama</h3>
+      {/* Key Findings */}
+      <HighlightBox variant="primary" className="py-4">
+        <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-center">Temuan Utama</h3>
         
-        <SectionGrid columns={2} className="mb-6">
-          <div className="bg-white/5 p-6 rounded-lg">
-            <h4 className="font-medium text-xl lg:text-2xl mb-3 text-[#24ce2a]">
-              <strong>RQ1: Akurasi Klasifikasi</strong>
-            </h4>
-            <p
-              className="text-lg text-gray-200"
-              dangerouslySetInnerHTML={{
-                __html: formatMarkdown(
-                  "Algoritma M-X mencapai akurasi *79%* dengan presisi *82%* dan *recall* *75%* dalam mengklasifikasi *tester*."
-                ),
-              }}
-            />
+        <SectionGrid columns={2} gap="gap-4">
+          <div className="bg-white/5 p-4 rounded-lg">
+            <h4 className="text-base sm:text-lg font-medium mb-2 text-[#24ce2a]">RQ1: Akurasi Klasifikasi</h4>
+            <TextContent size="small" className="text-gray-200">
+              M-X mencapai <strong>79% akurasi</strong> dengan presisi <strong>82%</strong> 
+              dan recall <strong>75%</strong> dalam klasifikasi tester.
+            </TextContent>
           </div>
           
-          <div className="bg-white/5 p-6 rounded-lg">
-            <h4 className="font-medium text-xl lg:text-2xl mb-3 text-[#25da9e]">
-              <strong>RQ2: Reduksi Variabilitas</strong>
-            </h4>
-            <p
-              className="text-lg text-gray-200"
-              dangerouslySetInnerHTML={{
-                __html: formatMarkdown(
-                  "TNR *83%* menunjukkan efektivitas algoritma dalam *filtering tester* tidak konsisten dan mengurangi variabilitas."
-                ),
-              }}
-            />
+          <div className="bg-white/5 p-4 rounded-lg">
+            <h4 className="text-base sm:text-lg font-medium mb-2 text-[#25da9e]">RQ2: Reduksi Variabilitas</h4>
+            <TextContent size="small" className="text-gray-200">
+              TNR <strong>83%</strong> menunjukkan efektivitas filtering 
+              tester tidak konsisten.
+            </TextContent>
           </div>
         </SectionGrid>
         
-        <div className="bg-[#24ce2a]/10 p-6 rounded-lg">
-          <p
-            className="text-center text-xl lg:text-2xl text-gray-200"
-            dangerouslySetInnerHTML={{
-              __html: formatMarkdown(
-                "Algoritma berhasil mengklasifikasi **19 dari 24 *tester*** dengan benar, menunjukkan efektivitas sebagai mekanisme kontrol kualitas UAT *crowdsourcing*."
-              ),
-            }}
-          />
+        <div className="bg-[#24ce2a]/10 p-4 rounded-lg mt-4 text-center">
+          <TextContent size="base" className="text-gray-200">
+            <strong>19/24 tester</strong> diklasifikasi benar → M-X efektif sebagai QC mechanism
+          </TextContent>
+        </div>
+      </HighlightBox>
+    </SlideLayout>
+  );
+};
+
+export default ResultsSlide;"Accuracy", value: 0.79, color: "bg-[#24ce2a]" },
+    { name: "Precision", value: 0.82, color: "bg-blue-500" },
+    { name: "Recall", value: 0.75, color: "bg-purple-500" },
+    { name: "TNR", value: 0.83, color: "bg-green-500" },
+    { name: "F1 Score", value: 0.78, color: "bg-orange-500" },
+  ];
+
+  const confusionData = {
+    tp: 9, tn: 10, fp: 2, fn: 3
+  };
+
+  return (
+    <SlideLayout 
+      title="Hasil Penelitian"
+      className="bg-gradient-to-br from-[#0a1e5e] via-[#001333] to-[#21074f]"
+      contentClassName="space-y-6"
+    >
+      {/* Top Row - Metrics & Matrix */}
+      <SectionGrid columns={2} gap="gap-4">
+        <ContentCard title="Metrik Performa" animationDelay={0} className="py-4">
+          <div className="grid grid-cols-3 gap-3">
+            {metricsData.map((metric, index) => (
+              <div key={index} className="text-center">
+                <div className="text-2xl font-bold text-[#24ce2a] mb-1">
+                  {(metric.value * 100).toFixed(0)}%
+                </div>
+                <div className="text-xs text-gray-300">{metric.name}</div>
+                <div className="w-full h-2 bg-white/10 rounded-full mt-1">
+                  <motion.div 
+                    className={metric.color}
+                    style={{ width: `${metric.value * 100}%` }}
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${metric.value * 100}%` }}
+                    transition={{ duration: 1, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="h-full rounded-full"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </ContentCard>
+
+        <ContentCard title="Confusion Matrix" animationDelay={0.2} className="py-4">
+          <div className="grid grid-cols-2 gap-3 mb-4">
+            <div className="bg-green-500/20 p-3 rounded-lg text-center">
+              <div className="text-lg font-bold text-green-400">TP: {confusionData.tp}</div>
+              <div className="text-xs text-gray-300">True Positive</div>
+            </div>
+            <div className="bg-red-500/20 p-3 rounded-lg text-center">
+              <div className="text-lg font-bold text-red-400">FP: {confusionData.fp}</div>
+              <div className="text-xs text-gray-300">False Positive</div>
+            </div>
+            <div className="bg-red-500/20 p-3 rounded-lg text-center">
+              <div className="text-lg font-bold text-red-400">FN: {confusionData.fn}</div>
+              <div className="text-xs text-gray-300">False Negative</div>
+            </div>
+            <div className="bg-green-500/20 p-3 rounded-lg text-center">
+              <div className="text-lg font-bold text-green-400">TN: {confusionData.tn}</div>
+              <div className="text-xs text-gray-300">True Negative</div>
+            </div>
+          </div>
+          <div className="text-center text-sm text-gray-300">
+            <strong>Correct:</strong> {confusionData.tp + confusionData.tn}/24 (79%)
+          </div>
+        </ContentCard>
+      </SectionGrid>
+
+      {/* Key Findings */}
+      <HighlightBox variant="primary" className="py-4">
+        <h3 className="text-xl font-semibold mb-4 text-center">Temuan Utama</h3>
+        
+        <SectionGrid columns={2} gap="gap-4">
+          <div className="bg-white/5 p-4 rounded-lg">
+            <h4 className="font-medium text-base mb-2 text-[#24ce2a]">RQ1: Akurasi Klasifikasi</h4>
+            <p className="text-sm text-gray-200">
+              M-X mencapai <strong>79% akurasi</strong> dengan presisi <strong>82%</strong> 
+              dan recall <strong>75%</strong> dalam klasifikasi tester.
+            </p>
+          </div>
+          
+          <div className="bg-white/5 p-4 rounded-lg">
+            <h4 className="font-medium text-base mb-2 text-[#25da9e]">RQ2: Reduksi Variabilitas</h4>
+            <p className="text-sm text-gray-200">
+              TNR <strong>83%</strong> menunjukkan efektivitas filtering 
+              tester tidak konsisten.
+            </p>
+          </div>
+        </SectionGrid>
+        
+        <div className="bg-[#24ce2a]/10 p-4 rounded-lg mt-4 text-center">
+          <p className="text-base text-gray-200">
+            <strong>19/24 tester</strong> diklasifikasi benar → M-X efektif sebagai QC mechanism
+          </p>
         </div>
       </HighlightBox>
     </SlideLayout>

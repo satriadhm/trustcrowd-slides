@@ -1,9 +1,9 @@
-// src/app/components/thesis-slides/SystemArchitectureSlide.tsx (Updated)
+// src/app/components/thesis-slides/SystemArchitectureSlide.tsx (Standardized Typography)
 "use client";
 
 import React from "react";
 import SlideLayout from "./SlideLayout";
-import { SectionGrid, ContentCard, TextContent, ListItem, HighlightBox } from "./SlideContentComponent";
+import { SectionGrid, ContentCard, TextContent, ListItem, HighlightBox, Caption } from "./SlideContentComponent";
 
 const SystemArchitectureSlide = () => {
   return (
@@ -11,7 +11,7 @@ const SystemArchitectureSlide = () => {
       title="Arsitektur Sistem"
       className="bg-gradient-to-br from-[#0a1e5e] via-[#001333] to-[#21074f]"
     >
-      <SectionGrid columns={2} className="mb-8 sm:mb-10 lg:mb-12">
+      <SectionGrid columns={2} className="mb-8">
         <ContentCard title="Arsitektur Overview" animationDelay={0}>
           <div className="bg-gradient-to-br from-blue-900/30 to-purple-900/30 p-6 rounded-lg mb-6">
             <div className="flex items-center justify-center mb-4">
@@ -28,8 +28,8 @@ const SystemArchitectureSlide = () => {
             </TextContent>
             <div className="flex items-center justify-between">
               <div className="text-center">
-                <span className="text-lg text-[#24ce2a]">Client</span>
-                <div className="mt-1 text-sm text-gray-400">Next.js, React</div>
+                <TextContent size="base" className="text-[#24ce2a]">Client</TextContent>
+                <Caption>Next.js, React</Caption>
               </div>
               <div className="flex-grow mx-3">
                 <div className="border-t border-dashed border-gray-500 relative">
@@ -39,8 +39,8 @@ const SystemArchitectureSlide = () => {
                 </div>
               </div>
               <div className="text-center">
-                <span className="text-lg text-[#24ce2a]">Server</span>
-                <div className="mt-1 text-sm text-gray-400">Nest.js, MongoDB</div>
+                <TextContent size="base" className="text-[#24ce2a]">Server</TextContent>
+                <Caption>Nest.js, MongoDB</Caption>
               </div>
             </div>
           </div>
@@ -48,19 +48,19 @@ const SystemArchitectureSlide = () => {
           <div className="space-y-4">
             <ListItem>
               <div>
-                <span className="font-medium">Single GraphQL Gateway</span>
-                <TextContent size="sm" className="mt-1">
+                <TextContent size="base" className="font-medium">Single GraphQL Gateway</TextContent>
+                <Caption className="mt-1">
                   Centralized entry point untuk semua data requests
-                </TextContent>
+                </Caption>
               </div>
             </ListItem>
             
             <ListItem>
               <div>
-                <span className="font-medium">Implementasi M-X di Quality Control Service</span>
-                <TextContent size="sm" className="mt-1">
+                <TextContent size="base" className="font-medium">Implementasi M-X di Quality Control Service</TextContent>
+                <Caption className="mt-1">
                   Processing server-side yang efisien
-                </TextContent>
+                </Caption>
               </div>
             </ListItem>
           </div>
@@ -78,11 +78,11 @@ const SystemArchitectureSlide = () => {
                     <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                   </svg>
                 </div>
-                <h4 className="font-medium text-lg">Worker Management Service</h4>
+                <h4 className="text-base sm:text-lg font-medium">Worker Management Service</h4>
               </div>
-              <TextContent size="sm">
+              <Caption>
                 Registrasi volunteer dan tracking kualifikasi
-              </TextContent>
+              </Caption>
             </div>
             
             <div className="bg-white/5 p-4 rounded-lg">
@@ -93,11 +93,11 @@ const SystemArchitectureSlide = () => {
                     <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
                   </svg>
                 </div>
-                <h4 className="font-medium text-lg">Task Management Service</h4>
+                <h4 className="text-base sm:text-lg font-medium">Task Management Service</h4>
               </div>
-              <TextContent size="sm">
+              <Caption>
                 Kontrol assignment, submission, dan validasi
-              </TextContent>
+              </Caption>
             </div>
             
             <div className="bg-white/5 p-4 rounded-lg border-2 border-[#24ce2a]/30">
@@ -107,11 +107,11 @@ const SystemArchitectureSlide = () => {
                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
                   </svg>
                 </div>
-                <h4 className="font-medium text-lg">Quality Control Service</h4>
+                <h4 className="text-base sm:text-lg font-medium">Quality Control Service</h4>
               </div>
-              <TextContent size="sm">
+              <Caption>
                 Implementasi algoritma M-X untuk assessment worker
-              </TextContent>
+              </Caption>
               <div className="mt-2 bg-[#24ce2a]/10 p-2 rounded">
                 <p className="text-xs text-[#24ce2a]">Core implementation algoritma M-X</p>
               </div>
@@ -124,11 +124,13 @@ const SystemArchitectureSlide = () => {
         <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-6 text-center">Data Flow Process</h3>
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
           <div className="bg-white/5 p-6 rounded-lg flex-1">
-            <h4 className="font-medium text-xl mb-3 text-[#24ce2a] text-center">Input</h4>
-            <div className="text-lg text-gray-300 text-center">
-              <p>• Task identification</p>
-              <p>• Worker identification</p>
-              <p>• Answer selection</p>
+            <h4 className="text-base sm:text-lg font-medium mb-3 text-[#24ce2a] text-center">Input</h4>
+            <div className="text-center">
+              <TextContent size="base" className="text-gray-300">
+                • Task identification<br/>
+                • Worker identification<br/>
+                • Answer selection
+              </TextContent>
             </div>
           </div>
 
@@ -140,11 +142,13 @@ const SystemArchitectureSlide = () => {
           </div>
           
           <div className="bg-white/5 p-6 rounded-lg flex-1">
-            <h4 className="font-medium text-xl mb-3 text-[#25da9e] text-center">Processing</h4>
-            <div className="text-lg text-gray-300 text-center">
-              <p>• Dekomposisi M-X</p>
-              <p>• Konsistensi antar-worker</p>
-              <p>• Accuracy scores</p>
+            <h4 className="text-base sm:text-lg font-medium mb-3 text-[#25da9e] text-center">Processing</h4>
+            <div className="text-center">
+              <TextContent size="base" className="text-gray-300">
+                • Dekomposisi M-X<br/>
+                • Konsistensi antar-worker<br/>
+                • Accuracy scores
+              </TextContent>
             </div>
           </div>
 
@@ -156,11 +160,13 @@ const SystemArchitectureSlide = () => {
           </div>
           
           <div className="bg-white/5 p-6 rounded-lg flex-1">
-            <h4 className="font-medium text-xl mb-3 text-[#24ce2a] text-center">Output</h4>
-            <div className="text-lg text-gray-300 text-center">
-              <p>• Worker accuracy scores</p>
-              <p>• Klasifikasi kelayakan</p>
-              <p>• Performance analytics</p>
+            <h4 className="text-base sm:text-lg font-medium mb-3 text-[#24ce2a] text-center">Output</h4>
+            <div className="text-center">
+              <TextContent size="base" className="text-gray-300">
+                • Worker accuracy scores<br/>
+                • Klasifikasi kelayakan<br/>
+                • Performance analytics
+              </TextContent>
             </div>
           </div>
         </div>
