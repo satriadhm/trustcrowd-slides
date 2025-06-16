@@ -66,6 +66,11 @@ export default function ThesisDefensePage() {
     setIsNavigationOpen(false);
   };
 
+  // Scroll to top when slide changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentSlide]);
+
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -95,7 +100,7 @@ export default function ThesisDefensePage() {
   const CurrentSlideComponent = slides[currentSlide].component;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0a1e5e] via-[#001333] to-[#21074f] text-white relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-[#0a1e5e] via-[#001333] to-[#21074f] text-white relative">
       {/* Compact Header Navigation */}
       <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[#001333]/95 to-[#0a1e5e]/95 backdrop-blur-md border-b border-white/10">
         <div className="flex items-center justify-between px-3 lg:px-6 py-2">
@@ -272,18 +277,13 @@ export default function ThesisDefensePage() {
         </div>
       )}
 
-      {/* Main Slide Content - Fixed with proper responsive spacing */}
-      <div className={`transition-all duration-300 ${
+      {/* Main Slide Content - Now Scrollable */}
+      <div className={`transition-all duration-300 pt-14 pb-20 lg:pb-4 ${
         isMinimized ? 'lg:ml-12' : 'lg:ml-60 xl:ml-64'
       }`}>
-        <div className="min-h-screen flex items-center justify-center">
-          {/* Container with proper responsive padding and max-width */}
-          <div className="w-full h-screen flex items-center justify-center pt-12 lg:pt-14 pb-16 lg:pb-4 px-2 sm:px-4 lg:px-6">
-            <div className="w-full max-w-7xl mx-auto h-full flex items-center justify-center">
-              <div className="w-full scale-90 sm:scale-95 lg:scale-100">
-                <CurrentSlideComponent />
-              </div>
-            </div>
+        <div className="w-full px-2 sm:px-4 lg:px-6">
+          <div className="w-full max-w-7xl mx-auto">
+            <CurrentSlideComponent />
           </div>
         </div>
       </div>
@@ -316,7 +316,6 @@ export default function ThesisDefensePage() {
         </div>
       </div>
 
-      {/* Keyboard Shortcuts Info */}
       <div className="sr-only">
         Use arrow keys or space to navigate slides. Home/End to go to first/last slide. Escape to close navigation.
       </div>

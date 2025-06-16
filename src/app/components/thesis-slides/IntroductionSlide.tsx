@@ -6,7 +6,7 @@ import { SectionGrid, ContentCard, ListItem, TextContent, HighlightBox, SectionT
 
 const IntroductionSlide = () => {
   return (
-    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#0a1e5e] via-[#001333] to-[#21074f] text-white px-4 py-8">
+    <div className="w-full bg-gradient-to-br from-[#0a1e5e] via-[#001333] to-[#21074f] text-white px-4 py-8">
       <div className="max-w-6xl mx-auto w-full">
         <motion.h2
           className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 sm:mb-8 lg:mb-12 text-center"
