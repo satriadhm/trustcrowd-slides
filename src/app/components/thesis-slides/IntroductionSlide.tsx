@@ -1,117 +1,73 @@
+// src/app/components/thesis-slides/IntroductionSlide.tsx (Updated)
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import SlideLayout from "./SlideLayout";
+import { SectionGrid, ContentCard, ListItem, TextContent, HighlightBox } from "./SlideContentComponent";
 
 const IntroductionSlide = () => {
   return (
-    <div className="w-full h-full flex items-center justify-center text-white px-4 py-8">
-      <div className="max-w-6xl mx-auto w-full">
-        <motion.h2 
-          className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 sm:mb-8 lg:mb-12 text-center"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-        >
-          Pendahuluan
-        </motion.h2>
+    <SlideLayout 
+      title="Pendahuluan"
+      className="bg-gradient-to-br from-[#0a1e5e] via-[#001333] to-[#21074f]"
+    >
+      <SectionGrid columns={2} className="mb-8 sm:mb-10 lg:mb-12">
+        <ContentCard title="Latar Belakang" animationDelay={0}>
+          <ul className="space-y-4 sm:space-y-5">
+            <ListItem>
+              Kualitas <em>software</em> sangat penting dalam pengembangan komersial.
+            </ListItem>
+            <ListItem>
+              UAT adalah tahap kritis <strong>validasi akhir</strong> sebelum implementasi, berperan sebagai{" "}
+              <strong>jembatan penting</strong> antara tim pengembangan dan <em>end-user</em>.
+            </ListItem>
+            <ListItem>
+              UAT membutuhkan sumber daya, waktu, dan anggaran yang signifikan.
+            </ListItem>
+          </ul>
+        </ContentCard>
 
-        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
-          <motion.div 
-            className="bg-white/10 p-4 sm:p-6 lg:p-8 rounded-xl backdrop-blur-sm"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-4 sm:mb-6 text-[#24ce2a]">Latar Belakang</h3>
-            <ul className="space-y-3 sm:space-y-4 lg:space-y-5 text-base sm:text-lg lg:text-xl text-gray-200">
-              <li className="flex items-start gap-3 sm:gap-4">
-                <div className="bg-[#24ce2a]/20 p-2 rounded-full mt-1 flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#24ce2a]">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>
-                </div>
-                <span>Kualitas <em>software</em> sangat penting dalam pengembangan komersial.</span>
-              </li>
-              <li className="flex items-start gap-3 sm:gap-4">
-                <div className="bg-[#24ce2a]/20 p-2 rounded-full mt-1 flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#24ce2a]">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>
-                </div>
-                <span>UAT adalah tahap kritis <strong>validasi akhir</strong> sebelum implementasi, berperan sebagai <strong>jembatan penting</strong> antara tim pengembangan dan <em>end-user</em>.</span>
-              </li>
-              <li className="flex items-start gap-3 sm:gap-4">
-                <div className="bg-[#24ce2a]/20 p-2 rounded-full mt-1 flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#24ce2a]">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>
-                </div>
-                <span>UAT membutuhkan sumber daya, waktu, dan anggaran yang signifikan.</span>
-              </li>
-            </ul>
-          </motion.div>
+        <ContentCard title="Crowdsourced UAT" animationDelay={0.2}>
+          <ul className="space-y-4 sm:space-y-5">
+            <ListItem>
+              <div>
+                <span className="font-medium">Solusi potensial:</span>
+                <TextContent size="sm" className="mt-2">
+                  Melibatkan beragam pengguna untuk <em>testing</em> yang{" "}
+                  <strong>lebih luas, realistis, dan hemat biaya</strong>.
+                </TextContent>
+              </div>
+            </ListItem>
+            <ListItem>
+              <div>
+                <span className="font-medium">Tantangan utama:</span>
+                <TextContent size="sm" className="mt-2">
+                  <strong>Heterogenitas partisipan</strong>, variabilitas karakteristik <em>tester</em>{" "}
+                  memengaruhi konsistensi hasil.
+                </TextContent>
+              </div>
+            </ListItem>
+          </ul>
+        </ContentCard>
+      </SectionGrid>
 
-          <motion.div 
-            className="bg-white/10 p-4 sm:p-6 lg:p-8 rounded-xl backdrop-blur-sm"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-4 sm:mb-6 text-[#25da9e]">Crowdsourced UAT</h3>
-            <ul className="space-y-3 sm:space-y-4 lg:space-y-5 text-base sm:text-lg lg:text-xl text-gray-200">
-              <li className="flex items-start gap-3 sm:gap-4">
-                <div className="bg-[#25da9e]/20 p-2 rounded-full mt-1 flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#25da9e]">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>
-                </div>
-                <div>
-                  <span className="font-medium">Solusi potensial:</span>
-                  <p className="text-sm sm:text-base lg:text-lg mt-1 sm:mt-2">Melibatkan beragam pengguna untuk <em>testing</em> yang <strong>lebih luas, realistis, dan hemat biaya</strong>.</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-3 sm:gap-4">
-                <div className="bg-[#25da9e]/20 p-2 rounded-full mt-1 flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#25da9e]">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>
-                </div>
-                <div>
-                  <span className="font-medium">Tantangan utama:</span>
-                  <p className="text-sm sm:text-base lg:text-lg mt-1 sm:mt-2"><strong>Heterogenitas partisipan</strong>, variabilitas karakteristik <em>tester</em> memengaruhi konsistensi hasil.</p>
-                </div>
-              </li>
-            </ul>
-          </motion.div>
+      <HighlightBox variant="primary" className="text-center">
+        <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold mb-4 sm:mb-6 text-[#24ce2a]">
+          Algoritma M-X sebagai Solusi
+        </h3>
+        <TextContent size="lg" className="mb-4 sm:mb-6">
+          Algoritma M-X menawarkan pendekatan untuk menilai kualitas <em>tester</em> berdasarkan konsistensi respons{" "}
+          <span className="text-[#25da9e] font-medium">tanpa memerlukan jawaban benar yang telah ditentukan</span>,{" "}
+          <strong>mengatasi keterbatasan metode konvensional yang tidak memiliki <em>ground truth</em></strong>.
+        </TextContent>
+        <div className="bg-gradient-to-r from-[#24ce2a]/30 to-[#25da9e]/30 p-4 sm:p-6 rounded-lg">
+          <TextContent size="base" className="font-medium">
+            Penelitian ini mengevaluasi efektivitas algoritma M-X dalam mengklasifikasi{" "}
+            <strong>kelayakan <em>tester</em></strong> dalam konteks UAT berbasis <em>crowdsourcing</em>.
+          </TextContent>
         </div>
-
-        <motion.div 
-          className="mt-8 sm:mt-10 lg:mt-12 bg-white/10 p-4 sm:p-6 lg:p-8 rounded-xl backdrop-blur-sm"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold mb-3 sm:mb-4 lg:mb-6 text-center text-[#24ce2a]">Algoritma M-X sebagai Solusi</h3>
-          <div className="text-center">
-            <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-gray-200 mb-4 sm:mb-6 leading-relaxed">
-              Algoritma M-X menawarkan pendekatan untuk menilai kualitas <em>tester</em> berdasarkan konsistensi respons 
-              <span className="text-[#25da9e] font-medium"> tanpa memerlukan jawaban benar yang telah ditentukan</span>, <strong>mengatasi keterbatasan metode konvensional yang tidak memiliki <em>ground truth</em></strong>.
-            </p>
-            <div className="bg-gradient-to-r from-[#24ce2a]/20 to-[#25da9e]/20 p-4 sm:p-6 rounded-lg">
-              <p className="text-base sm:text-lg lg:text-xl font-medium">
-                Penelitian ini mengevaluasi efektivitas algoritma M-X dalam mengklasifikasi <strong>kelayakan <em>tester</em></strong> 
-                dalam konteks UAT berbasis <em>crowdsourcing</em>.
-              </p>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-    </div>
+      </HighlightBox>
+    </SlideLayout>
   );
 };
 
