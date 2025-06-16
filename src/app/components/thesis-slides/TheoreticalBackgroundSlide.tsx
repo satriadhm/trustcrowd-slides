@@ -138,8 +138,7 @@ const TheoreticalBackgroundSlide = () => {
           <div className="bg-white/5 p-4 rounded-lg">
             <h4 className="text-base font-medium mb-2 text-[#24ce2a]">Kontribusi Penelitian</h4>
             <TextContent size="small" className="text-gray-300">
-              Empirical validation M-X dalam UAT environment dengan 
-              <strong> systematic mapping research questions ke evaluation metrics</strong>.
+              Implementasi algoritma M-X di ranah <strong>UAT berbasis crowdsourcing</strong> dan hasil validasinya
             </TextContent>
           </div>
         </SectionGrid>
