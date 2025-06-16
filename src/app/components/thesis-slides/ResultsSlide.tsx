@@ -24,26 +24,26 @@ const ResultsSlide = () => {
       className="bg-gradient-to-br from-[#0a1e5e] via-[#001333] to-[#21074f]"
       contentClassName="space-y-6"
     >
-      {/* Top Row - Enhanced Metrics & Matrix */}
+      {/* Metrics & Matrix */}
       <SectionGrid columns={2} gap="gap-4">
         <ContentCard title="Metrik Performa" animationDelay={0} className="py-4">
-          <div className="grid grid-cols-1 gap-4">
+          <div className="space-y-3">
             {metricsData.map((metric, index) => (
-              <div key={index} className="space-y-2">
-                <div className="flex justify-between items-center">
-                  <span className="text-sm font-medium text-white">{metric.name}</span>
-                  <span className="text-lg font-bold text-[#24ce2a]">
+              <div key={index} className="flex justify-between items-center">
+                <span className="text-sm text-white">{metric.name}</span>
+                <div className="flex items-center gap-3 flex-1 ml-4">
+                  <div className="flex-1 h-2 bg-white/20 rounded-full">
+                    <motion.div 
+                      className={`h-full rounded-full ${metric.color}`}
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${metric.value * 100}%` }}
+                      transition={{ duration: 1, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                    />
+                  </div>
+                  <span className="text-lg font-bold text-[#24ce2a] w-12 text-right">
                     {(metric.value * 100).toFixed(0)}%
                   </span>
-                </div>
-                <div className="w-full h-3 bg-white/20 rounded-full overflow-hidden">
-                  <motion.div 
-                    className={`h-full rounded-full ${metric.color}`}
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${metric.value * 100}%` }}
-                    transition={{ duration: 1.5, delay: index * 0.2 }}
-                    viewport={{ once: true }}
-                  />
                 </div>
               </div>
             ))}
@@ -51,40 +51,22 @@ const ResultsSlide = () => {
         </ContentCard>
 
         <ContentCard title="Confusion Matrix" animationDelay={0.2} className="py-4">
-          <div className="space-y-4">
-            {/* Matrix Visual */}
-            <div className="grid grid-cols-2 gap-3">
-              <div className="bg-green-500/20 p-4 rounded-lg text-center border border-green-500/30">
-                <div className="text-2xl font-bold text-green-400 mb-1">{confusionData.tp}</div>
-                <div className="text-xs text-gray-300">True Positive</div>
-                <div className="text-xs text-gray-400">Eligible → Eligible</div>
-              </div>
-              <div className="bg-red-500/20 p-4 rounded-lg text-center border border-red-500/30">
-                <div className="text-2xl font-bold text-red-400 mb-1">{confusionData.fp}</div>
-                <div className="text-xs text-gray-300">False Positive</div>
-                <div className="text-xs text-gray-400">Non-eligible → Eligible</div>
-              </div>
-              <div className="bg-red-500/20 p-4 rounded-lg text-center border border-red-500/30">
-                <div className="text-2xl font-bold text-red-400 mb-1">{confusionData.fn}</div>
-                <div className="text-xs text-gray-300">False Negative</div>
-                <div className="text-xs text-gray-400">Eligible → Non-eligible</div>
-              </div>
-              <div className="bg-green-500/20 p-4 rounded-lg text-center border border-green-500/30">
-                <div className="text-2xl font-bold text-green-400 mb-1">{confusionData.tn}</div>
-                <div className="text-xs text-gray-300">True Negative</div>
-                <div className="text-xs text-gray-400">Non-eligible → Non-eligible</div>
-              </div>
+          <div className="grid grid-cols-2 gap-2 mb-3">
+            <div className="bg-green-500/20 p-3 rounded text-center">
+              <div className="text-xl font-bold text-green-400">TP: {confusionData.tp}</div>
             </div>
-            
-            {/* Summary */}
-            <div className="bg-[#24ce2a]/10 p-3 rounded-lg text-center border border-[#24ce2a]/20">
-              <div className="text-base font-medium text-[#24ce2a]">
-                Correct Classifications: {confusionData.tp + confusionData.tn}/24
-              </div>
-              <div className="text-sm text-gray-300 mt-1">
-                Overall Accuracy: <span className="font-bold text-[#24ce2a]">79%</span>
-              </div>
+            <div className="bg-red-500/20 p-3 rounded text-center">
+              <div className="text-xl font-bold text-red-400">FP: {confusionData.fp}</div>
             </div>
+            <div className="bg-red-500/20 p-3 rounded text-center">
+              <div className="text-xl font-bold text-red-400">FN: {confusionData.fn}</div>
+            </div>
+            <div className="bg-green-500/20 p-3 rounded text-center">
+              <div className="text-xl font-bold text-green-400">TN: {confusionData.tn}</div>
+            </div>
+          </div>
+          <div className="text-center text-sm bg-[#24ce2a]/10 p-2 rounded">
+            <strong>Benar:</strong> {confusionData.tp + confusionData.tn}/24 (79%)
           </div>
         </ContentCard>
       </SectionGrid>
@@ -95,90 +77,67 @@ const ResultsSlide = () => {
         
         <SectionGrid columns={2} gap="gap-4">
           <div className="bg-white/5 p-4 rounded-lg">
-            <h4 className="font-medium text-base mb-3 text-[#24ce2a]">RQ1: Akurasi Klasifikasi</h4>
-            <ul className="text-sm text-gray-200 space-y-1">
-              <li>• M-X mencapai <strong>79% akurasi</strong> klasifikasi</li>
-              <li>• <strong>Presisi 82%</strong> - efektif minimalisir kesalahan positif</li>
-              <li>• <strong>Recall 75%</strong> - beberapa tester berpengalaman terlewat</li>
-              <li>• <strong>F1-Score 78%</strong> - performa seimbang</li>
-            </ul>
+            <h4 className="font-medium text-base mb-2 text-[#24ce2a]">RQ1: Akurasi Klasifikasi</h4>
+            <p className="text-sm text-gray-200">
+              M-X mencapai <strong>79% akurasi</strong> dengan presisi <strong>82%</strong> 
+              dan recall <strong>75%</strong> dalam klasifikasi tester.
+            </p>
           </div>
           
           <div className="bg-white/5 p-4 rounded-lg">
-            <h4 className="font-medium text-base mb-3 text-[#25da9e]">RQ2: Reduksi Variabilitas</h4>
-            <ul className="text-sm text-gray-200 space-y-1">
-              <li>• <strong>TNR 83%</strong> - filtering efektif</li>
-              <li>• Berhasil identifikasi <strong>10 dari 12</strong> tester tidak layak</li>
-              <li>• Presisi tinggi = kontrol kualitas ketat</li>
-              <li>• Reduksi variabilitas karakteristik tester</li>
-            </ul>
+            <h4 className="font-medium text-base mb-2 text-[#25da9e]">RQ2: Reduksi Variabilitas</h4>
+            <p className="text-sm text-gray-200">
+              TNR <strong>83%</strong> menunjukkan efektivitas filtering 
+              tester tidak konsisten.
+            </p>
           </div>
         </SectionGrid>
+        
+        <div className="bg-[#24ce2a]/10 p-3 rounded-lg mt-4 text-center">
+          <p className="text-base text-gray-200">
+            <strong>19/24 tester</strong> diklasifikasi benar → M-X efektif sebagai mekanisme kontrol kualitas
+          </p>
+        </div>
       </HighlightBox>
 
-      {/* Detailed Analysis */}
+      {/* Analysis */}
       <SectionGrid columns={2} gap="gap-4">
         <ContentCard title="Analisis Kesalahan" animationDelay={0.4} className="py-4">
           <div className="space-y-3">
-            <div className="bg-red-500/10 p-3 rounded-lg border border-red-500/20">
-              <h5 className="font-medium text-sm mb-2 text-red-400">False Negative (3 kasus)</h5>
-              <p className="text-xs text-gray-300">
-                3 mahasiswa teknik informatika berpengalaman diklasifikasi tidak layak. 
-                Algoritma cenderung <strong>konservatif</strong>.
-              </p>
+            <div className="bg-red-500/10 p-3 rounded border border-red-500/20">
+              <h5 className="font-medium text-sm mb-1 text-red-400">FN = 3</h5>
+              <p className="text-xs text-gray-300">3 mahasiswa berpengalaman diklasifikasi tidak layak</p>
             </div>
             
-            <div className="bg-yellow-500/10 p-3 rounded-lg border border-yellow-500/20">
-              <h5 className="font-medium text-sm mb-2 text-yellow-400">False Positive (2 kasus)</h5>
-              <p className="text-xs text-gray-300">
-                2 partisipan tanpa pengalaman UAT diklasifikasi layak. 
-                Konsistensi <strong>berbeda dari penilaian berbasis pengalaman</strong>.
-              </p>
+            <div className="bg-yellow-500/10 p-3 rounded border border-yellow-500/20">
+              <h5 className="font-medium text-sm mb-1 text-yellow-400">FP = 2</h5>
+              <p className="text-xs text-gray-300">2 tester tanpa pengalaman diklasifikasi layak</p>
             </div>
           </div>
         </ContentCard>
 
         <ContentCard title="Interpretasi" animationDelay={0.6} className="py-4">
           <div className="space-y-3">
-            <div className="bg-green-500/10 p-3 rounded-lg border border-green-500/20">
-              <h5 className="font-medium text-sm mb-2 text-green-400">✓ Kekuatan</h5>
-              <ul className="text-xs text-gray-300 space-y-1">
-                <li>• Presisi tinggi = filtering efektif</li>
-                <li>• TNR kuat = deteksi tidak layak baik</li>
-                <li>• Performa seimbang semua metrik</li>
-                <li>• Tidak perlu ground truth</li>
-              </ul>
+            <div className="bg-green-500/10 p-3 rounded border border-green-500/20">
+              <h5 className="font-medium text-sm mb-1 text-green-400">✓ Kekuatan</h5>
+              <p className="text-xs text-gray-300">Presisi tinggi, TNR kuat, tidak perlu ground truth</p>
             </div>
             
-            <div className="bg-blue-500/10 p-3 rounded-lg border border-blue-500/20">
-              <h5 className="font-medium text-sm mb-2 text-blue-400">⚠ Pertimbangan</h5>
-              <ul className="text-xs text-gray-300 space-y-1">
-                <li>• Tendensi konservatif</li>
-                <li>• Konsistensi ≠ keahlian domain</li>
-                <li>• Mungkin exclude perspektif berharga</li>
-                <li>• Perlu penilaian pelengkap</li>
-              </ul>
+            <div className="bg-blue-500/10 p-3 rounded border border-blue-500/20">
+              <h5 className="font-medium text-sm mb-1 text-blue-400">⚠ Keterbatasan</h5>
+              <p className="text-xs text-gray-300">Tendensi konservatif, konsistensi ≠ keahlian</p>
             </div>
           </div>
         </ContentCard>
       </SectionGrid>
 
-      {/* Overall Assessment */}
-      <HighlightBox variant="primary" className="py-4 text-center">
-        <h3 className="text-xl font-semibold mb-3">Kesimpulan</h3>
-        <p className="text-base text-gray-200 leading-relaxed mb-4">
-          M-X Algorithm menunjukkan <strong>performa solid</strong> sebagai mekanisme kontrol kualitas 
-          dalam UAT crowdsourced dengan <strong>akurasi 79%</strong>. Presisi tinggi efektif 
-          mempertahankan kualitas testing, namun recall moderat menunjukkan perlunya 
-          <strong>pendekatan pelengkap</strong> untuk optimalisasi seleksi tester.
+      {/* Conclusion */}
+      <HighlightBox variant="primary" className="py-3 text-center">
+        <h3 className="text-xl font-semibold mb-2">Kesimpulan</h3>
+        <p className="text-base text-gray-200 mb-3">
+          M-X efektif untuk kontrol kualitas UAT dengan <strong>akurasi 79%</strong>. 
+          Perlu pendekatan hibrid untuk hasil optimal.
         </p>
-        
-        <div className="bg-[#24ce2a]/10 p-3 rounded-lg">
-          <p className="text-sm text-[#24ce2a] font-medium">
-            <strong>Rekomendasi:</strong> Algoritma valid untuk kontrol kualitas UAT dengan 
-            perlunya kalibrasi dan pendekatan hibrid untuk performa optimal
-          </p>
-        </div>
       </HighlightBox>
     </SlideLayout>
   );
