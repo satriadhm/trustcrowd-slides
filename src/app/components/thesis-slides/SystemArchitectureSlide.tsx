@@ -1,9 +1,9 @@
-// src/app/components/thesis-slides/SystemArchitectureSlide.tsx (Standardized Typography)
+// src/app/components/thesis-slides/SystemArchitectureSlide.tsx (Updated with Component Diagram)
 "use client";
 
 import React from "react";
 import SlideLayout from "./SlideLayout";
-import { SectionGrid, ContentCard, TextContent, ListItem, HighlightBox, Caption } from "./SlideContentComponent";
+import { SectionGrid, ContentCard, ListItem, HighlightBox, Caption } from "./SlideContentComponent";
 
 const SystemArchitectureSlide = () => {
   return (
@@ -11,6 +11,142 @@ const SystemArchitectureSlide = () => {
       title="Arsitektur Sistem"
       className="bg-gradient-to-br from-[#0a1e5e] via-[#001333] to-[#21074f]"
     >
+      {/* Component Diagram */}
+      <HighlightBox variant="primary" className="mb-8">
+        <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-6 text-center">Component Diagram</h3>
+        
+        <div className="bg-white/5 p-6 rounded-lg">
+          {/* Client Layer */}
+          <div className="mb-6">
+            <h4 className="text-base sm:text-lg font-medium mb-4 text-[#24ce2a] text-center">Client Layer</h4>
+            <div className="flex justify-center">
+              <div className="bg-gradient-to-r from-blue-900/30 to-blue-700/30 p-4 rounded-lg border border-blue-500/30 max-w-xs">
+                <div className="text-center">
+                  <div className="bg-blue-500/20 p-2 rounded-full w-8 h-8 mx-auto mb-2 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-400">
+                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                      <line x1="8" y1="21" x2="16" y2="21"></line>
+                      <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                  </div>
+                  <h5 className="font-medium text-sm text-blue-300">React Client</h5>
+                  <p className="text-xs text-gray-300 mt-1">Next.js Interface</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* GraphQL Gateway */}
+          <div className="mb-6">
+            <div className="flex justify-center mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#25da9e]">
+                <line x1="12" y1="2" x2="12" y2="6"></line>
+                <line x1="12" y1="18" x2="12" y2="22"></line>
+                <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
+                <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
+                <line x1="2" y1="12" x2="6" y2="12"></line>
+                <line x1="18" y1="12" x2="22" y2="12"></line>
+                <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line>
+                <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
+              </svg>
+            </div>
+            <div className="flex justify-center">
+              <div className="bg-gradient-to-r from-purple-900/30 to-purple-700/30 p-3 rounded-lg border border-purple-500/30">
+                <h5 className="font-medium text-sm text-purple-300 text-center">GraphQL Gateway</h5>
+                <p className="text-xs text-gray-300 text-center">API Gateway & Schema</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Server Components */}
+          <div className="mb-6">
+            <h4 className="text-base sm:text-lg font-medium mb-4 text-[#25da9e] text-center">Server Components (Nest.js)</h4>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="bg-gradient-to-r from-green-900/30 to-green-700/30 p-3 rounded-lg border border-green-500/30">
+                <div className="text-center">
+                  <div className="bg-green-500/20 p-2 rounded-full w-8 h-8 mx-auto mb-2 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-green-400">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                  </div>
+                  <h5 className="font-medium text-xs text-green-300">Worker Management</h5>
+                  <p className="text-xs text-gray-300 mt-1">Registration & Profiling</p>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-yellow-900/30 to-yellow-700/30 p-3 rounded-lg border border-yellow-500/30">
+                <div className="text-center">
+                  <div className="bg-yellow-500/20 p-2 rounded-full w-8 h-8 mx-auto mb-2 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-yellow-400">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                      <circle cx="12" cy="16" r="1"></circle>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                  </div>
+                  <h5 className="font-medium text-xs text-yellow-300">Auth Service</h5>
+                  <p className="text-xs text-gray-300 mt-1">Authentication</p>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-blue-900/30 to-blue-700/30 p-3 rounded-lg border border-blue-500/30">
+                <div className="text-center">
+                  <div className="bg-blue-500/20 p-2 rounded-full w-8 h-8 mx-auto mb-2 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-400">
+                      <path d="M9 11l3 3L22 4"></path>
+                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                    </svg>
+                  </div>
+                  <h5 className="font-medium text-xs text-blue-300">Task Management</h5>
+                  <p className="text-xs text-gray-300 mt-1">Assignment & Validation</p>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-[#24ce2a]/30 to-[#25da9e]/30 p-3 rounded-lg border-2 border-[#24ce2a]/50">
+                <div className="text-center">
+                  <div className="bg-[#24ce2a]/20 p-2 rounded-full w-8 h-8 mx-auto mb-2 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#24ce2a]">
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                  </div>
+                  <h5 className="font-medium text-xs text-[#24ce2a]">Quality Control</h5>
+                  <p className="text-xs text-gray-300 mt-1">M-X Algorithm</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Database Layer */}
+          <div>
+            <div className="flex justify-center mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400">
+                <line x1="12" y1="18" x2="12" y2="22"></line>
+                <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line>
+                <line x1="18" y1="12" x2="22" y2="12"></line>
+                <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
+              </svg>
+            </div>
+            <div className="flex justify-center">
+              <div className="bg-gradient-to-r from-gray-800/30 to-gray-700/30 p-4 rounded-lg border border-gray-500/30">
+                <div className="text-center">
+                  <div className="bg-gray-500/20 p-2 rounded-full w-8 h-8 mx-auto mb-2 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400">
+                      <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                      <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                      <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                    </svg>
+                  </div>
+                  <h5 className="font-medium text-sm text-gray-300">MongoDB</h5>
+                  <p className="text-xs text-gray-400">Data Storage</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </HighlightBox>
+
       <SectionGrid columns={2} className="mb-8">
         <ContentCard title="Arsitektur Overview" animationDelay={0}>
           <div className="bg-gradient-to-br from-blue-900/30 to-purple-900/30 p-6 rounded-lg mb-6">
@@ -23,12 +159,12 @@ const SystemArchitectureSlide = () => {
                 </svg>
               </div>
             </div>
-            <TextContent size="base" className="text-center mb-4">
+            <div className="text-sm sm:text-base lg:text-base xl:text-lg text-gray-200 leading-relaxed text-center mb-4">
               Client-Server dengan GraphQL dan MongoDB
-            </TextContent>
+            </div>
             <div className="flex items-center justify-between">
               <div className="text-center">
-                <TextContent size="base" className="text-[#24ce2a]">Client</TextContent>
+                <div className="text-sm sm:text-base lg:text-base xl:text-lg text-gray-200 leading-relaxed text-[#24ce2a]">Client</div>
                 <Caption>Next.js, React</Caption>
               </div>
               <div className="flex-grow mx-3">
@@ -39,7 +175,7 @@ const SystemArchitectureSlide = () => {
                 </div>
               </div>
               <div className="text-center">
-                <TextContent size="base" className="text-[#24ce2a]">Server</TextContent>
+                <div className="text-sm sm:text-base lg:text-base xl:text-lg text-gray-200 leading-relaxed text-[#24ce2a]">Server</div>
                 <Caption>Nest.js, MongoDB</Caption>
               </div>
             </div>
@@ -48,7 +184,7 @@ const SystemArchitectureSlide = () => {
           <div className="space-y-4">
             <ListItem>
               <div>
-                <TextContent size="base" className="font-medium">Single GraphQL Gateway</TextContent>
+                <span className="text-sm sm:text-base lg:text-base xl:text-lg text-gray-200 leading-relaxed font-medium">Single GraphQL Gateway</span>
                 <Caption className="mt-1">
                   Centralized entry point untuk semua data requests
                 </Caption>
@@ -57,7 +193,7 @@ const SystemArchitectureSlide = () => {
             
             <ListItem>
               <div>
-                <TextContent size="base" className="font-medium">Implementasi M-X di Quality Control Service</TextContent>
+                <span className="text-sm sm:text-base lg:text-base xl:text-lg text-gray-200 leading-relaxed font-medium">Implementasi M-X di Quality Control Service</span>
                 <Caption className="mt-1">
                   Processing server-side yang efisien
                 </Caption>
@@ -126,11 +262,11 @@ const SystemArchitectureSlide = () => {
           <div className="bg-white/5 p-6 rounded-lg flex-1">
             <h4 className="text-base sm:text-lg font-medium mb-3 text-[#24ce2a] text-center">Input</h4>
             <div className="text-center">
-              <TextContent size="base" className="text-gray-300">
+              <div className="text-sm sm:text-base lg:text-base xl:text-lg text-gray-300">
                 • Task identification<br/>
                 • Worker identification<br/>
                 • Answer selection
-              </TextContent>
+              </div>
             </div>
           </div>
 
@@ -144,11 +280,11 @@ const SystemArchitectureSlide = () => {
           <div className="bg-white/5 p-6 rounded-lg flex-1">
             <h4 className="text-base sm:text-lg font-medium mb-3 text-[#25da9e] text-center">Processing</h4>
             <div className="text-center">
-              <TextContent size="base" className="text-gray-300">
+              <div className="text-sm sm:text-base lg:text-base xl:text-lg text-gray-300">
                 • Dekomposisi M-X<br/>
                 • Konsistensi antar-worker<br/>
                 • Accuracy scores
-              </TextContent>
+              </div>
             </div>
           </div>
 
@@ -162,11 +298,11 @@ const SystemArchitectureSlide = () => {
           <div className="bg-white/5 p-6 rounded-lg flex-1">
             <h4 className="text-base sm:text-lg font-medium mb-3 text-[#24ce2a] text-center">Output</h4>
             <div className="text-center">
-              <TextContent size="base" className="text-gray-300">
+              <div className="text-sm sm:text-base lg:text-base xl:text-lg text-gray-300">
                 • Worker accuracy scores<br/>
                 • Klasifikasi kelayakan<br/>
                 • Performance analytics
-              </TextContent>
+              </div>
             </div>
           </div>
         </div>
