@@ -1,4 +1,4 @@
-// src/app/components/thesis-slides/SystemArchitectureSlide.tsx (Updated with Component Diagram)
+// src/app/components/thesis-slides/SystemArchitectureSlide.tsx (Updated with Connection Lines)
 "use client";
 
 import React from "react";
@@ -15,12 +15,12 @@ const SystemArchitectureSlide = () => {
       <HighlightBox variant="primary" className="mb-8">
         <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-6 text-center">Component Diagram</h3>
         
-        <div className="bg-white/5 p-6 rounded-lg">
+        <div className="bg-white/5 p-6 rounded-lg relative">
           {/* Client Layer */}
-          <div className="mb-6">
+          <div className="mb-8">
             <h4 className="text-base sm:text-lg font-medium mb-4 text-[#24ce2a] text-center">Client Layer</h4>
             <div className="flex justify-center">
-              <div className="bg-gradient-to-r from-blue-900/30 to-blue-700/30 p-4 rounded-lg border border-blue-500/30 max-w-xs">
+              <div className="bg-gradient-to-r from-blue-900/30 to-blue-700/30 p-4 rounded-lg border border-blue-500/30 max-w-xs relative">
                 <div className="text-center">
                   <div className="bg-blue-500/20 p-2 rounded-full w-8 h-8 mx-auto mb-2 flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-400">
@@ -32,37 +32,48 @@ const SystemArchitectureSlide = () => {
                   <h5 className="font-medium text-sm text-blue-300">React Client</h5>
                   <p className="text-xs text-gray-300 mt-1">Next.js Interface</p>
                 </div>
+                
+                {/* Connection Line Down */}
+                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2">
+                  <div className="w-0.5 h-8 bg-gradient-to-b from-[#25da9e] to-transparent"></div>
+                  <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#25da9e]">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
           {/* GraphQL Gateway */}
-          <div className="mb-6">
-            <div className="flex justify-center mb-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#25da9e]">
-                <line x1="12" y1="2" x2="12" y2="6"></line>
-                <line x1="12" y1="18" x2="12" y2="22"></line>
-                <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
-                <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
-                <line x1="2" y1="12" x2="6" y2="12"></line>
-                <line x1="18" y1="12" x2="22" y2="12"></line>
-                <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line>
-                <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
-              </svg>
-            </div>
+          <div className="mb-8 relative">
             <div className="flex justify-center">
-              <div className="bg-gradient-to-r from-purple-900/30 to-purple-700/30 p-3 rounded-lg border border-purple-500/30">
+              <div className="bg-gradient-to-r from-purple-900/30 to-purple-700/30 p-3 rounded-lg border border-purple-500/30 relative">
                 <h5 className="font-medium text-sm text-purple-300 text-center">GraphQL Gateway</h5>
                 <p className="text-xs text-gray-300 text-center">API Gateway & Schema</p>
+                
+                {/* Connection Line Down */}
+                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2">
+                  <div className="w-0.5 h-8 bg-gradient-to-b from-[#25da9e] to-transparent"></div>
+                  <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#25da9e]">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
           {/* Server Components */}
-          <div className="mb-6">
+          <div className="mb-8 relative">
             <h4 className="text-base sm:text-lg font-medium mb-4 text-[#25da9e] text-center">Server Components (Nest.js)</h4>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="bg-gradient-to-r from-green-900/30 to-green-700/30 p-3 rounded-lg border border-green-500/30">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 relative">
+              {/* Horizontal connection line between components */}
+              <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#25da9e]/40 to-transparent transform -translate-y-1/2"></div>
+              
+              <div className="bg-gradient-to-r from-green-900/30 to-green-700/30 p-3 rounded-lg border border-green-500/30 relative z-10">
                 <div className="text-center">
                   <div className="bg-green-500/20 p-2 rounded-full w-8 h-8 mx-auto mb-2 flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-green-400">
@@ -77,7 +88,7 @@ const SystemArchitectureSlide = () => {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-r from-yellow-900/30 to-yellow-700/30 p-3 rounded-lg border border-yellow-500/30">
+              <div className="bg-gradient-to-r from-yellow-900/30 to-yellow-700/30 p-3 rounded-lg border border-yellow-500/30 relative z-10">
                 <div className="text-center">
                   <div className="bg-yellow-500/20 p-2 rounded-full w-8 h-8 mx-auto mb-2 flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-yellow-400">
@@ -91,7 +102,7 @@ const SystemArchitectureSlide = () => {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-r from-blue-900/30 to-blue-700/30 p-3 rounded-lg border border-blue-500/30">
+              <div className="bg-gradient-to-r from-blue-900/30 to-blue-700/30 p-3 rounded-lg border border-blue-500/30 relative z-10">
                 <div className="text-center">
                   <div className="bg-blue-500/20 p-2 rounded-full w-8 h-8 mx-auto mb-2 flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-400">
@@ -104,7 +115,7 @@ const SystemArchitectureSlide = () => {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-r from-[#24ce2a]/30 to-[#25da9e]/30 p-3 rounded-lg border-2 border-[#24ce2a]/50">
+              <div className="bg-gradient-to-r from-[#24ce2a]/30 to-[#25da9e]/30 p-3 rounded-lg border-2 border-[#24ce2a]/50 relative z-10">
                 <div className="text-center">
                   <div className="bg-[#24ce2a]/20 p-2 rounded-full w-8 h-8 mx-auto mb-2 flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#24ce2a]">
@@ -116,31 +127,31 @@ const SystemArchitectureSlide = () => {
                 </div>
               </div>
             </div>
+            
+            {/* Connection Line to Database */}
+            <div className="flex justify-center mt-8">
+              <div className="w-0.5 h-8 bg-gradient-to-b from-[#25da9e] to-transparent"></div>
+            </div>
+            <div className="flex justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#25da9e]">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
           </div>
 
           {/* Database Layer */}
-          <div>
-            <div className="flex justify-center mb-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400">
-                <line x1="12" y1="18" x2="12" y2="22"></line>
-                <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line>
-                <line x1="18" y1="12" x2="22" y2="12"></line>
-                <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
-              </svg>
-            </div>
-            <div className="flex justify-center">
-              <div className="bg-gradient-to-r from-gray-800/30 to-gray-700/30 p-4 rounded-lg border border-gray-500/30">
-                <div className="text-center">
-                  <div className="bg-gray-500/20 p-2 rounded-full w-8 h-8 mx-auto mb-2 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400">
-                      <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                      <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-                      <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-                    </svg>
-                  </div>
-                  <h5 className="font-medium text-sm text-gray-300">MongoDB</h5>
-                  <p className="text-xs text-gray-400">Data Storage</p>
+          <div className="flex justify-center">
+            <div className="bg-gradient-to-r from-gray-800/30 to-gray-700/30 p-4 rounded-lg border border-gray-500/30">
+              <div className="text-center">
+                <div className="bg-gray-500/20 p-2 rounded-full w-8 h-8 mx-auto mb-2 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400">
+                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                  </svg>
                 </div>
+                <h5 className="font-medium text-sm text-gray-300">MongoDB</h5>
+                <p className="text-xs text-gray-400">Data Storage</p>
               </div>
             </div>
           </div>
@@ -168,7 +179,7 @@ const SystemArchitectureSlide = () => {
                 <Caption>Next.js, React</Caption>
               </div>
               <div className="flex-grow mx-3">
-                <div className="border-t border-dashed border-gray-500 relative">
+                <div className="border-t border-dashed border-[#25da9e] relative">
                   <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-[#24ce2a]/20 text-xs text-[#24ce2a] px-1 rounded">
                     GraphQL
                   </div>
