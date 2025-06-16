@@ -51,7 +51,7 @@ const IntroductionSlide = () => {
         </SectionGrid>
 
         <HighlightBox variant="primary" className="mt-8">
-          <SectionTitle level={3} centered>Rumusan Masalah</SectionTitle>
+          <SectionTitle level={3} centered>Problem Definition</SectionTitle>
           <TextContent size="large" className="text-center font-medium">
             Bagaimana <strong>mengidentifikasi tester berkualitas</strong> dalam UAT crowdsourced tanpa jawaban yang telah ditentukan sebelumnya?
           </TextContent>
