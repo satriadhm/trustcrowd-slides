@@ -47,7 +47,7 @@ const ConclusionSlide = () => {
             <div className="bg-white/5 p-3 rounded-lg">
               <h4 className="font-medium text-base mb-1 text-[#24ce2a]">Algorithm Performance</h4>
               <p className="text-sm text-gray-300">
-                F1-Score 78% mengkonfirmasi balanced performance, cocok untuk crowdsourced UAT quality control.
+                F1-Score 78% mengkonfirmasi balanced performance, cocok untuk UAT berbasis Crowdsourcing quality control.
               </p>
             </div>
           </div>
@@ -121,7 +121,7 @@ const ConclusionSlide = () => {
       <HighlightBox variant="primary" className="py-4 text-center">
         <h3 className="text-xl font-semibold mb-3">Penilaian Akhir</h3>
         <p className="text-base text-gray-200 leading-relaxed mb-4">
-          M-X Algorithm memberikan <strong>valuable foundation</strong> untuk crowdsourced UAT quality control, 
+          M-X Algorithm memberikan <strong>valuable foundation</strong> untuk UAT berbasis Crowdsourcing quality control, 
           namun memerlukan <strong>careful domain-specific calibration</strong> dan supplementary qualification mechanisms 
           untuk optimal performance dalam complex enterprise scenarios.
         </p>

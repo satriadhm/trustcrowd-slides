@@ -28,7 +28,7 @@ const TheoreticalBackgroundSlide = () => {
           </div>
           
           <div className="bg-white/5 p-6 rounded-lg">
-            <h4 className="text-base sm:text-lg font-medium mb-4 text-[#25da9e]">Crowdsourced UAT: Potensi & Tantangan</h4>
+            <h4 className="text-base sm:text-lg font-medium mb-4 text-[#25da9e]">UAT berbasis Crowdsourcing: Potensi & Tantangan</h4>
             <ul className="space-y-3">
               <li><TextContent size="small" className="text-gray-300">• <strong>Cost-effective</strong> dengan cakupan testing luas</TextContent></li>
               <li><TextContent size="small" className="text-gray-300">• <strong>Diverse perspectives</strong> dari beragam tester</TextContent></li>

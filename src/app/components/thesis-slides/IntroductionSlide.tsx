@@ -33,13 +33,13 @@ const IntroductionSlide = () => {
               </ListItem>
               <ListItem>
                 <TextContent size="base">
-                  <strong>Crowdsourced UAT</strong> menawarkan solusi cost-effective dengan perspektif beragam.
+                  <strong>UAT berbasis Crowdsourcing</strong> menawarkan solusi cost-effective dengan perspektif beragam.
                 </TextContent>
               </ListItem>
             </div>
           </ContentCard>
 
-          <ContentCard title="Tantangan Crowdsourced UAT" animationDelay={0.2}>
+          <ContentCard title="Tantangan UAT berbasis Crowdsourcing" animationDelay={0.2}>
             <div className="space-y-4">
               <ListItem>
                 <TextContent size="base">

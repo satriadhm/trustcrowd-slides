@@ -187,7 +187,7 @@ const MXAlgorithmSlide = () => {
         <div className="text-center">
           <p className="text-base text-gray-200 leading-relaxed mb-4">
             Penelitian ini mengevaluasi <strong>efektivitas M-X sebagai quality control mechanism</strong> 
-            untuk mengklasifikasi tester eligibility dalam crowdsourced UAT scenarios 
+            untuk mengklasifikasi tester eligibility dalam UAT berbasis Crowdsourcing scenarios 
             dengan menggunakan <strong>real participant responses</strong> dan <strong>prior-experience validation</strong>.
           </p>
           
