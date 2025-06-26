@@ -53,7 +53,7 @@ const IntroductionSlide = () => {
               </ListItem>
               <ListItem>
                 <TextContent size="base">
-                  <strong>Tidak ada predefined answers</strong> dalam UAT yang bersifat subjektif dan eksploratif.
+                  <strong>Sifat subjektif dan kontekstual UAT</strong>  yang mempersulit penilaian reliabilitas tester.
                 </TextContent>
               </ListItem>
             </div>
