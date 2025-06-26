@@ -4,7 +4,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight, Home, Menu, X, MoreVertical } from "lucide-react";
-import PdfExportButton from "@/app/components/PdfExportButton";
 
 // Import all slide components
 import TitleSlide from "@/app/components/thesis-slides/TitleSlide";
@@ -245,10 +244,6 @@ export default function ThesisDefensePage() {
 
             {/* Right: Navigation Controls + PDF Export */}
             <div className="flex items-center gap-1">
-              <PdfExportButton 
-                currentSlide={currentSlide} 
-                totalSlides={slides.length} 
-              />
               
               <button
                 onClick={prevSlide}
