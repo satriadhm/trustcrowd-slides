@@ -45,12 +45,12 @@ const TheoreticalBackgroundSlide = () => {
         
         <SectionGrid columns={3} gap="gap-4">
           {/* MOCOM Method */}
-          <ContentCard title="MOCOM (Multi-Objective Optimization)" animationDelay={0} className="py-4">
+          <ContentCard title="MOCOM (Multi-Objective Crowd Worker Recommendation)" animationDelay={0} className="py-4">
             <div className="space-y-4">
               <div className="bg-blue-500/10 p-4 rounded-lg border border-blue-500/20">
                 <h4 className="text-base font-medium mb-3 text-blue-400">Konsep Dasar</h4>
                 <ul className="space-y-2">
-                  <li><TextContent size="small" className="text-gray-300">• <strong>Wang et al. (2019):</strong> Multi-objective optimization</TextContent></li>
+                  <li><TextContent size="small" className="text-gray-300">• <strong>Wang et al. (2019):</strong> Multi-Objective Crowd Worker Recommendation</TextContent></li>
                   <li><TextContent size="small" className="text-gray-300">• Berdasarkan <strong>riwayat deteksi bug</strong> sebelumnya</TextContent></li>
                   <li><TextContent size="small" className="text-gray-300">• Optimasi multiple criteria: accuracy, speed, cost</TextContent></li>
                   <li><TextContent size="small" className="text-gray-300">• Menggunakan <strong>historical performance data</strong></TextContent></li>
