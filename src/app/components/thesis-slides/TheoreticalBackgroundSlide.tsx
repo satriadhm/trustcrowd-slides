@@ -1,4 +1,4 @@
-// src/app/components/thesis-slides/TheoreticalBackgroundSlide.tsx (Improved - Concise Version)
+// src/app/components/thesis-slides/TheoreticalBackgroundSlide.tsx (Enhanced with Detailed Research Gap Analysis)
 "use client";
 
 import React from "react";
@@ -39,80 +39,246 @@ const TheoreticalBackgroundSlide = () => {
         </SectionGrid>
       </HighlightBox>
 
-      {/* Quality Control Methods - Simplified */}
-      <SectionGrid columns={2} gap="gap-6">
-        <ContentCard title="Metode Quality Control Existing" animationDelay={0} className="py-6">
-          <div className="space-y-4">
-            <div className="bg-red-500/10 p-4 rounded-lg border border-red-500/20">
-              <h4 className="text-base font-medium mb-3 text-red-400">Limitasi Metode Konvensional</h4>
-              <ul className="space-y-2">
-                <li><TextContent size="small" className="text-gray-300">• <strong>MOCOM:</strong> Butuh historical data ekstensif</TextContent></li>
-                <li><TextContent size="small" className="text-gray-300">• <strong>WSM:</strong> Privacy concerns & potential bias</TextContent></li>
-                <li><TextContent size="small" className="text-gray-300">• <strong>Learning Curves:</strong> Focus jangka panjang, tidak immediate</TextContent></li>
-                <li><TextContent size="small" className="text-gray-300">• <strong>Common issue:</strong> Memerlukan predefined answers</TextContent></li>
-              </ul>
+      {/* Enhanced Quality Control Methods Analysis */}
+      <HighlightBox variant="secondary" className="py-6">
+        <h3 className="text-xl sm:text-2xl font-semibold mb-6 text-center">Analisis Metode Quality Control Existing</h3>
+        
+        <SectionGrid columns={3} gap="gap-4">
+          {/* MOCOM Method */}
+          <ContentCard title="MOCOM (Multi-Objective Optimization)" animationDelay={0} className="py-4">
+            <div className="space-y-4">
+              <div className="bg-blue-500/10 p-4 rounded-lg border border-blue-500/20">
+                <h4 className="text-base font-medium mb-3 text-blue-400">Konsep Dasar</h4>
+                <ul className="space-y-2">
+                  <li><TextContent size="small" className="text-gray-300">• <strong>Wang et al. (2019):</strong> Multi-objective optimization</TextContent></li>
+                  <li><TextContent size="small" className="text-gray-300">• Berdasarkan <strong>riwayat deteksi bug</strong> sebelumnya</TextContent></li>
+                  <li><TextContent size="small" className="text-gray-300">• Optimasi multiple criteria: accuracy, speed, cost</TextContent></li>
+                  <li><TextContent size="small" className="text-gray-300">• Menggunakan <strong>historical performance data</strong></TextContent></li>
+                </ul>
+              </div>
+              
+              <div className="bg-red-500/10 p-4 rounded-lg border border-red-500/20">
+                <h4 className="text-base font-medium mb-3 text-red-400">Limitasi untuk UAT</h4>
+                <ul className="space-y-2">
+                  <li><TextContent size="small" className="text-gray-300">• <strong>Cold Start Problem:</strong> Butuh data historis ekstensif</TextContent></li>
+                  <li><TextContent size="small" className="text-gray-300">• Tidak cocok untuk <strong>tester baru</strong></TextContent></li>
+                  <li><TextContent size="small" className="text-gray-300">• Kurang applicable untuk skenario <strong>subjektif</strong></TextContent></li>
+                  <li><TextContent size="small" className="text-gray-300">• Focus pada <strong>objective bug detection</strong>, bukan user experience</TextContent></li>
+                </ul>
+              </div>
             </div>
+          </ContentCard>
 
-            <div className="bg-white/5 p-4 rounded-lg">
-              <h4 className="text-base font-medium mb-3 text-[#f39c12]">Kebutuhan untuk UAT</h4>
-              <TextContent size="small" className="text-gray-300">
-                Diperlukan mekanisme yang dapat mengevaluasi kualitas tester 
-                <strong> tanpa ground truth</strong> dan dapat diterapkan langsung 
-                pada skenario UAT yang subjektif.
-              </TextContent>
+          {/* WSM Method */}
+          <ContentCard title="WSM (Worker Search Model)" animationDelay={0.2} className="py-4">
+            <div className="space-y-4">
+              <div className="bg-purple-500/10 p-4 rounded-lg border border-purple-500/20">
+                <h4 className="text-base font-medium mb-3 text-purple-400">Konsep Dasar</h4>
+                <ul className="space-y-2">
+                  <li><TextContent size="small" className="text-gray-300">• <strong>Hong et al. (2021):</strong> Wide learning approach</TextContent></li>
+                  <li><TextContent size="small" className="text-gray-300">• Mengandalkan <strong>atribut personal & demografis</strong></TextContent></li>
+                  <li><TextContent size="small" className="text-gray-300">• Sistem rekomendasi worker berdasarkan profil</TextContent></li>
+                  <li><TextContent size="small" className="text-gray-300">• Machine learning untuk <strong>worker matching</strong></TextContent></li>
+                </ul>
+              </div>
+              
+              <div className="bg-red-500/10 p-4 rounded-lg border border-red-500/20">
+                <h4 className="text-base font-medium mb-3 text-red-400">Limitasi untuk UAT</h4>
+                <ul className="space-y-2">
+                  <li><TextContent size="small" className="text-gray-300">• <strong>Privacy Concerns:</strong> Butuh data personal sensitif</TextContent></li>
+                  <li><TextContent size="small" className="text-gray-300">• <strong>Potential Bias:</strong> Diskriminasi demografis</TextContent></li>
+                  <li><TextContent size="small" className="text-gray-300">• Tidak fokus pada <strong>response consistency</strong></TextContent></li>
+                  <li><TextContent size="small" className="text-gray-300">• Asumsi bahwa demografi = kemampuan testing</TextContent></li>
+                </ul>
+              </div>
             </div>
-          </div>
-        </ContentCard>
+          </ContentCard>
 
-        <ContentCard title="M-X Algorithm: Solusi untuk UAT" animationDelay={0.2} className="py-6">
-          <div className="space-y-4">
-            <div className="bg-[#24ce2a]/10 p-4 rounded-lg border border-[#24ce2a]/20">
-              <h4 className="text-base font-medium mb-3 text-[#24ce2a]">Keunggulan M-X untuk UAT</h4>
-              <ul className="space-y-2">
+          {/* Learning Curves Method */}
+          <ContentCard title="Learning Curves Analysis" animationDelay={0.4} className="py-4">
+            <div className="space-y-4">
+              <div className="bg-green-500/10 p-4 rounded-lg border border-green-500/20">
+                <h4 className="text-base font-medium mb-3 text-green-400">Konsep Dasar</h4>
+                <ul className="space-y-2">
+                  <li><TextContent size="small" className="text-gray-300">• <strong>Yao et al. (2021):</strong> Tester learning progression</TextContent></li>
+                  <li><TextContent size="small" className="text-gray-300">• Analisis <strong>kurva pembelajaran</strong> dari waktu ke waktu</TextContent></li>
+                  <li><TextContent size="small" className="text-gray-300">• Focus pada <strong>skill development</strong> jangka panjang</TextContent></li>
+                  <li><TextContent size="small" className="text-gray-300">• Longitudinal study approach</TextContent></li>
+                </ul>
+              </div>
+              
+              <div className="bg-red-500/10 p-4 rounded-lg border border-red-500/20">
+                <h4 className="text-base font-medium mb-3 text-red-400">Limitasi untuk UAT</h4>
+                <ul className="space-y-2">
+                  <li><TextContent size="small" className="text-gray-300">• Tidak mengatasi <strong>initial quality assessment</strong></TextContent></li>
+                  <li><TextContent size="small" className="text-gray-300">• Tidak ada <strong>immediate filtering</strong></TextContent></li>
+                  <li><TextContent size="small" className="text-gray-300">• Focus <strong>jangka panjang</strong>, bukan real-time selection</TextContent></li>
+                  <li><TextContent size="small" className="text-gray-300">• Memerlukan time investment yang besar</TextContent></li>
+                </ul>
+              </div>
+            </div>
+          </ContentCard>
+        </SectionGrid>
+      </HighlightBox>
+
+      {/* M-X Algorithm as Solution - Enhanced */}
+      <HighlightBox variant="primary" className="py-6">
+        <h3 className="text-xl sm:text-2xl font-semibold mb-6 text-center">M-X Algorithm: Solusi Komprehensif untuk UAT</h3>
+        
+        <div className="space-y-6">
+          <SectionGrid columns={2} gap="gap-6">
+            <div className="bg-white/5 p-6 rounded-lg">
+              <h4 className="text-base sm:text-lg font-medium mb-4 text-[#24ce2a]">Keunggulan M-X untuk UAT</h4>
+              <ul className="space-y-3">
                 <li><TextContent size="small" className="text-gray-300">• <strong>No Ground Truth Required:</strong> Evaluasi berdasarkan konsistensi peer</TextContent></li>
+                <li><TextContent size="small" className="text-gray-300">• <strong>Privacy Preserving:</strong> Analisis pola respons, bukan data personal</TextContent></li>
+                <li><TextContent size="small" className="text-gray-300">• <strong>Immediate Deployment:</strong> Tidak butuh historical data atau training period</TextContent></li>
                 <li><TextContent size="small" className="text-gray-300">• <strong>Probabilistic Approach:</strong> Matematis dan dapat diverifikasi</TextContent></li>
-                <li><TextContent size="small" className="text-gray-300">• <strong>Privacy Preserving:</strong> Analisis pola, bukan data personal</TextContent></li>
-                <li><TextContent size="small" className="text-gray-300">• <strong>Immediate Deployment:</strong> Tidak butuh training period</TextContent></li>
               </ul>
             </div>
             
-            <div className="bg-white/5 p-4 rounded-lg">
-              <h4 className="text-base font-medium mb-3 text-[#25da9e]">Aplikabilitas UAT</h4>
+            <div className="bg-white/5 p-6 rounded-lg">
+              <h4 className="text-base sm:text-lg font-medium mb-4 text-[#25da9e]">Aplikabilitas UAT</h4>
+              <ul className="space-y-3">
+                <li><TextContent size="small" className="text-gray-300">• Ideal untuk skenario UAT yang <strong>subjektif dan kontekstual</strong></TextContent></li>
+                <li><TextContent size="small" className="text-gray-300">• Mengatasi challenge <strong>heterogenitas tester</strong></TextContent></li>
+                <li><TextContent size="small" className="text-gray-300">• Scalable untuk <strong>large crowdsourced environments</strong></TextContent></li>
+                <li><TextContent size="small" className="text-gray-300">• Fokus pada <strong>inter-tester agreement</strong> patterns</TextContent></li>
+              </ul>
+            </div>
+          </SectionGrid>
+
+          {/* Comparison Table */}
+          <div className="bg-white/5 p-6 rounded-lg">
+            <h4 className="text-base sm:text-lg font-medium mb-4 text-center text-[#f39c12]">Perbandingan Komprehensif Metode Quality Control</h4>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="border-b border-white/20">
+                    <th className="text-left py-3 px-4 font-medium">Aspek</th>
+                    <th className="text-center py-3 px-4 font-medium text-blue-400">MOCOM</th>
+                    <th className="text-center py-3 px-4 font-medium text-purple-400">WSM</th>
+                    <th className="text-center py-3 px-4 font-medium text-green-400">Learning Curves</th>
+                    <th className="text-center py-3 px-4 font-medium text-[#24ce2a]">M-X Algorithm</th>
+                  </tr>
+                </thead>
+                <tbody className="text-sm">
+                  <tr className="border-b border-white/10">
+                    <td className="py-3 px-4 font-medium">Ground Truth Required</td>
+                    <td className="text-center py-3 px-4">✓ (Historical bugs)</td>
+                    <td className="text-center py-3 px-4">✗</td>
+                    <td className="text-center py-3 px-4">✓ (Performance data)</td>
+                    <td className="text-center py-3 px-4 text-[#24ce2a]">✗</td>
+                  </tr>
+                  <tr className="border-b border-white/10">
+                    <td className="py-3 px-4 font-medium">Privacy Preservation</td>
+                    <td className="text-center py-3 px-4">Partial</td>
+                    <td className="text-center py-3 px-4">✗ (Demographic data)</td>
+                    <td className="text-center py-3 px-4">Partial</td>
+                    <td className="text-center py-3 px-4 text-[#24ce2a]">✓</td>
+                  </tr>
+                  <tr className="border-b border-white/10">
+                    <td className="py-3 px-4 font-medium">Immediate Deployment</td>
+                    <td className="text-center py-3 px-4">✗ (Need history)</td>
+                    <td className="text-center py-3 px-4">Partial</td>
+                    <td className="text-center py-3 px-4">✗ (Long-term)</td>
+                    <td className="text-center py-3 px-4 text-[#24ce2a]">✓</td>
+                  </tr>
+                  <tr className="border-b border-white/10">
+                    <td className="py-3 px-4 font-medium">Subjective Task Support</td>
+                    <td className="text-center py-3 px-4">Limited</td>
+                    <td className="text-center py-3 px-4">Limited</td>
+                    <td className="text-center py-3 px-4">Partial</td>
+                    <td className="text-center py-3 px-4 text-[#24ce2a]">✓</td>
+                  </tr>
+                  <tr className="border-b border-white/10">
+                    <td className="py-3 px-4 font-medium">Scalability</td>
+                    <td className="text-center py-3 px-4">Medium</td>
+                    <td className="text-center py-3 px-4">High</td>
+                    <td className="text-center py-3 px-4">Low</td>
+                    <td className="text-center py-3 px-4 text-[#24ce2a]">High</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-4 font-medium">Bias Risk</td>
+                    <td className="text-center py-3 px-4">Medium</td>
+                    <td className="text-center py-3 px-4">High (Demographic)</td>
+                    <td className="text-center py-3 px-4">Low</td>
+                    <td className="text-center py-3 px-4 text-[#24ce2a]">Low</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </HighlightBox>
+
+      {/* Research Gap & Contribution - Enhanced */}
+      <HighlightBox variant="secondary" className="py-6">
+        <h3 className="text-xl sm:text-2xl font-semibold mb-6 text-center">Research Gap & Kontribusi Penelitian</h3>
+        <SectionGrid columns={2} gap="gap-6">
+          <div className="bg-red-500/10 p-6 rounded-lg border border-red-500/20">
+            <h4 className="text-base font-medium mb-4 text-red-400">Identified Research Gap</h4>
+            <div className="space-y-3">
               <TextContent size="small" className="text-gray-300">
-                Ideal untuk skenario UAT dimana <strong>correctness bersifat kontekstual</strong> 
-                dan bergantung pada agreement antar-tester daripada jawaban absolute.
+                <strong>Gap 1:</strong> Belum ada validasi empiris M-X algorithm dalam <strong>realistic UAT scenarios</strong> 
+                {" "}yang melibatkan subjective evaluation dan heterogeneous tester backgrounds.
+              </TextContent>
+              <TextContent size="small" className="text-gray-300">
+                <strong>Gap 2:</strong> Existing methods memerlukan <strong>predefined answers</strong> atau <strong>historical data</strong>, 
+                tidak sesuai dengan nature UAT yang subjektif.
+              </TextContent>
+              <TextContent size="small" className="text-gray-300">
+                <strong>Gap 3:</strong> Kurangnya mechanisms untuk <strong>immediate quality assessment</strong> 
+                tanpa privacy compromise dalam crowdsourced environments.
               </TextContent>
             </div>
           </div>
-        </ContentCard>
-      </SectionGrid>
+          
+          <div className="bg-[#24ce2a]/10 p-6 rounded-lg border border-[#24ce2a]/20">
+            <h4 className="text-base font-medium mb-4 text-[#24ce2a]">Kontribusi Penelitian</h4>
+            <div className="space-y-3">
+              <TextContent size="small" className="text-gray-300">
+                <strong>Contribution 1:</strong> Implementasi dan validasi empiris algoritma M-X 
+                dalam konteks <strong>UAT berbasis crowdsourcing</strong> dengan participant real.
+              </TextContent>
+              <TextContent size="small" className="text-gray-300">
+                <strong>Contribution 2:</strong> Evaluasi comprehensive menggunakan <strong>Confusion Matrix metrics</strong> 
+                untuk assess classification accuracy dalam subjective scenarios.
+              </TextContent>
+              <TextContent size="small" className="text-gray-300">
+                <strong>Contribution 3:</strong> Analisis dampak <strong>tester variability</strong> dan prior experience 
+                terhadap algorithm performance dalam real-world settings.
+              </TextContent>
+            </div>
+          </div>
+        </SectionGrid>
+      </HighlightBox>
 
-      {/* Validation Framework - Concise */}
-      <HighlightBox variant="secondary" className="py-6">
-        <h3 className="text-xl sm:text-2xl font-semibold mb-6 text-center">Framework Validasi & Evaluasi</h3>
-        
+      {/* Validation Framework */}
+      <HighlightBox variant="primary" className="py-4">
+        <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-center">Framework Validasi & Evaluasi</h3>
         <SectionGrid columns={3} gap="gap-4">
-          <div className="bg-white/5 p-4 rounded-lg">
+          <div className="bg-white/5 p-4 rounded-lg text-center">
             <h4 className="text-base font-medium mb-3 text-[#25da9e]">Prior-Experience Validation</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-2 text-left">
               <li><TextContent size="small" className="text-gray-300">• Assessment berdasarkan pengalaman UAT</TextContent></li>
               <li><TextContent size="small" className="text-gray-300">• Ground truth untuk evaluasi algoritma</TextContent></li>
               <li><TextContent size="small" className="text-gray-300">• Baseline perbandingan kinerja</TextContent></li>
             </ul>
           </div>
           
-          <div className="bg-white/5 p-4 rounded-lg">
+          <div className="bg-white/5 p-4 rounded-lg text-center">
             <h4 className="text-base font-medium mb-3 text-[#25da9e]">Gherkin BDD Format</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-2 text-left">
               <li><TextContent size="small" className="text-gray-300">• <strong>Given-When-Then</strong> structure</TextContent></li>
               <li><TextContent size="small" className="text-gray-300">• User-friendly untuk non-technical tester</TextContent></li>
               <li><TextContent size="small" className="text-gray-300">• Adaptable ke multiple-choice format</TextContent></li>
             </ul>
           </div>
           
-          <div className="bg-white/5 p-4 rounded-lg">
+          <div className="bg-white/5 p-4 rounded-lg text-center">
             <h4 className="text-base font-medium mb-3 text-[#25da9e]">Confusion Matrix Metrics</h4>
-            <div className="grid grid-cols-2 gap-1 text-xs">
+            <div className="grid grid-cols-2 gap-1 text-xs text-left">
               <div>• <strong>Accuracy:</strong> Overall correctness</div>
               <div>• <strong>Precision:</strong> True positive rate</div>
               <div>• <strong>Recall:</strong> Sensitivity</div>
@@ -120,26 +286,6 @@ const TheoreticalBackgroundSlide = () => {
               <div>• <strong>TNR:</strong> True negative rate</div>
               <div>• <strong>FP Rate:</strong> False positive rate</div>
             </div>
-          </div>
-        </SectionGrid>
-      </HighlightBox>
-
-      {/* Research Contribution - Simplified */}
-      <HighlightBox variant="primary" className="py-4">
-        <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-center">Research Gap & Kontribusi</h3>
-        <SectionGrid columns={2} gap="gap-6">
-          <div className="bg-white/5 p-4 rounded-lg">
-            <h4 className="text-base font-medium mb-2 text-red-400">Research Gap</h4>
-            <TextContent size="small" className="text-gray-300">
-              Belum ada validasi empiris M-X algorithm dalam <strong>realistic UAT scenarios </strong> 
-              yang melibatkan subjective evaluation dan heterogeneous tester backgrounds.
-            </TextContent>
-          </div>
-          <div className="bg-white/5 p-4 rounded-lg">
-            <h4 className="text-base font-medium mb-2 text-[#24ce2a]">Kontribusi Penelitian</h4>
-            <TextContent size="small" className="text-gray-300">
-              Implementasi algoritma M-X di ranah <strong>UAT berbasis crowdsourcing</strong> dan hasil validasinya
-            </TextContent>
           </div>
         </SectionGrid>
       </HighlightBox>

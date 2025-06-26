@@ -95,8 +95,8 @@ const IntroductionSlide = () => {
               <div className="bg-white/5 p-4 rounded-lg">
                 <h4 className="font-medium text-base mb-2 text-blue-400">Existing Methods</h4>
                 <ul className="text-sm text-gray-300 space-y-1">
-                  <li>• MOCOM: Butuh data historis ekstensif</li>
-                  <li>• WSM: Masalah privasi & bias</li>
+                  <li>• Multi-Objective Optimization: Butuh data historis ekstensif</li>
+                  <li>• Worker Search Model: Masalah privasi & bias</li>
                   <li>• Learning Curves: Focus jangka panjang</li>
                 </ul>
               </div>
