@@ -60,32 +60,7 @@ const IntroductionSlide = () => {
           </ContentCard>
         </SectionGrid>
 
-        {/* M-X Algorithm as Solution */}
-        <HighlightBox variant="primary" className="mt-8 mb-8">
-          <SectionTitle level={3} centered>M-X Algorithm sebagai Solusi</SectionTitle>
-          <div className="space-y-4">
-            <TextContent size="base" className="text-center">
-              <strong>M-X Algorithm</strong> menawarkan pendekatan probabilistik untuk mengevaluasi kualitas tester melalui <strong>inter-tester agreement</strong> tanpa memerlukan jawaban yang telah ditentukan sebelumnya.
-            </TextContent>
-            
-            <SectionGrid columns={3} gap="gap-4">
-              <div className="bg-white/5 p-4 rounded-lg text-center">
-                <h4 className="font-medium text-base mb-2 text-[#24ce2a]">No Ground Truth</h4>
-                <TextContent size="small">Evaluasi berdasarkan konsistensi antar-tester</TextContent>
-              </div>
-              <div className="bg-white/5 p-4 rounded-lg text-center">
-                <h4 className="font-medium text-base mb-2 text-[#24ce2a]">Probabilistic</h4>
-                <TextContent size="small">Pendekatan matematis yang robust</TextContent>
-              </div>
-              <div className="bg-white/5 p-4 rounded-lg text-center">
-                <h4 className="font-medium text-base mb-2 text-[#24ce2a]">Scalable</h4>
-                <TextContent size="small">Dapat diterapkan pada skala besar</TextContent>
-              </div>
-            </SectionGrid>
-          </div>
-        </HighlightBox>
-
-        <HighlightBox variant="secondary" className="mt-8">
+ <HighlightBox variant="secondary" className="mt-8">
           <SectionTitle level={3} centered>Research Gap</SectionTitle>
           <div className="space-y-4">
             <TextContent size="base" className="text-center font-medium">
@@ -107,6 +82,30 @@ const IntroductionSlide = () => {
                   <li>• Evaluasi pada skenario subjektif</li>
                   <li>• Analisis dampak variabilitas tester</li>
                 </ul>
+              </div>
+            </SectionGrid>
+          </div>
+        </HighlightBox>
+        {/* M-X Algorithm as Solution */}
+        <HighlightBox variant="primary" className="mt-8 mb-8">
+          <SectionTitle level={3} centered>M-X Algorithm sebagai Solusi</SectionTitle>
+          <div className="space-y-4">
+            <TextContent size="base" className="text-center">
+              <strong>M-X Algorithm</strong> menawarkan pendekatan probabilistik untuk mengevaluasi kualitas tester melalui <strong>inter-tester agreement</strong> tanpa memerlukan jawaban yang telah ditentukan sebelumnya.
+            </TextContent>
+            
+            <SectionGrid columns={3} gap="gap-4">
+              <div className="bg-white/5 p-4 rounded-lg text-center">
+                <h4 className="font-medium text-base mb-2 text-[#24ce2a]">No Ground Truth</h4>
+                <TextContent size="small">Evaluasi berdasarkan konsistensi antar-tester</TextContent>
+              </div>
+              <div className="bg-white/5 p-4 rounded-lg text-center">
+                <h4 className="font-medium text-base mb-2 text-[#24ce2a]">Probabilistic</h4>
+                <TextContent size="small">Pendekatan matematis yang robust</TextContent>
+              </div>
+              <div className="bg-white/5 p-4 rounded-lg text-center">
+                <h4 className="font-medium text-base mb-2 text-[#24ce2a]">Scalable</h4>
+                <TextContent size="small">Dapat diterapkan pada skala besar</TextContent>
               </div>
             </SectionGrid>
           </div>
