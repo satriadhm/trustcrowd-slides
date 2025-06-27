@@ -32,11 +32,6 @@ const ResearchProblemsSlide = () => {
                   <b>Tujuan:</b> Mengevaluasi akurasi klasifikasi M-X menggunakan respons <i>tester</i> nyata dalam tugas-tugas subjektif.
                 </TextContent>
               </ListItem>
-              <ListItem>
-                <TextContent size="base">
-                  <b>Metrik:</b> Akurasi, Presisi, <i>Recall</i>, F1-Score, dan TNR.
-                </TextContent>
-              </ListItem>
             </ul>
           </div>
         </ContentCard>
@@ -59,11 +54,6 @@ const ResearchProblemsSlide = () => {
               <ListItem>
                 <TextContent size="base">
                   <b>Tujuan:</b> Mengukur dampak variabilitas <i>tester</i>, khususnya pengalaman sebelumnya, terhadap performa algoritma.
-                </TextContent>
-              </ListItem>
-              <ListItem>
-                <TextContent size="base">
-                  <b>Metrik:</b> TNR, FP Rate.
                 </TextContent>
               </ListItem>
             </ul>
