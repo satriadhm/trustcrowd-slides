@@ -64,7 +64,7 @@ const IntroductionSlide = () => {
           <SectionTitle level={3} centered>Research Gap</SectionTitle>
           <div className="space-y-4">
             <TextContent size="base" className="text-center font-medium">
-              Studi sebelumnya fokus pada <strong>General Crowdsourcing Works</strong>, belum masuk ke konteks <strong>UAT</strong> yang subjektif dan eksploratif.
+              Studi sebelumnya fokus pada Mekanisme Kontrol Kualitas <strong>General Crowdsourcing Works</strong>, belum masuk ke konteks <strong>UAT</strong> yang subjektif dan eksploratif.
             </TextContent>
             <SectionGrid columns={2} gap="gap-4">
               <div className="bg-white/5 p-4 rounded-lg">
