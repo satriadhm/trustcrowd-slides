@@ -93,21 +93,63 @@ const SimulationDesignSlide = () => {
               Lihat Detail Proses
             </button>
           </DialogTrigger>
-          <DialogContent className="max-w-xl p-6 bg-gradient-to-br from-[#0a1e5e] via-[#001333] to-[#21074f] text-white rounded-xl shadow-xl">
+          <DialogContent className="max-w-2xl p-6 bg-gradient-to-br from-[#0a1e5e] via-[#001333] to-[#21074f] text-white rounded-xl shadow-xl max-h-[80vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle className="text-xl sm:text-2xl font-bold text-center mb-4">Detail Proses Pengumpulan Data</DialogTitle>
               <DialogDescription className="text-gray-300 text-base text-center">
-                Berikut adalah langkah-langkah detail dalam proses pengumpulan data untuk simulasi.
+                Berikut adalah langkah-langkah detail dalam proses pengumpulan data untuk simulasi validasi M-X algorithm dalam UAT environment.
               </DialogDescription>
             </DialogHeader>
             
-            <div className="space-y-6 mt-4">
+            <div className="space-y-4 mt-4">
               <div className="flex items-start gap-4">
-                <div className="bg-white/10 p-3 rounded-full flex-shrink-0 flex items-center justify-center w-10 h-10 font-bold text-lg text-[#25da9e]">4</div>
+                <div className="bg-white/10 p-3 rounded-full flex-shrink-0 flex items-center justify-center w-10 h-10 font-bold text-lg text-[#24ce2a]">1</div>
                 <div>
-                  <h4 className="text-base sm:text-lg font-medium text-white"><strong>Evaluation</strong></h4>
-                  <Caption>Evaluasi dengan <em>confusion matrix</em>.</Caption>
+                  <h4 className="text-base sm:text-lg font-medium text-white"><strong>Recruitment & Screening</strong></h4>
+                  <Caption>Rekrutmen 100 partisipan dengan screening berdasarkan experience level (Beginner/Intermediate/Expert)</Caption>
                 </div>
+              </div>
+              
+              <div className="flex items-start gap-4">
+                <div className="bg-white/10 p-3 rounded-full flex-shrink-0 flex items-center justify-center w-10 h-10 font-bold text-lg text-[#25da9e]">2</div>
+                <div>
+                  <h4 className="text-base sm:text-lg font-medium text-white"><strong>Task Assignment</strong></h4>
+                  <Caption>Pembagian 20 task UAT berbasis Gherkin BDD scenarios dengan domain berbeda (E-commerce, SaaS, Mobile Apps)</Caption>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-4">
+                <div className="bg-white/10 p-3 rounded-full flex-shrink-0 flex items-center justify-center w-10 h-10 font-bold text-lg text-[#f39c12]">3</div>
+                <div>
+                  <h4 className="text-base sm:text-lg font-medium text-white"><strong>Response Collection</strong></h4>
+                  <Caption>Pengumpulan response dalam format multiple-choice untuk 4 criteria: Functionality, Usability, UI Consistency, Error Handling</Caption>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-4">
+                <div className="bg-white/10 p-3 rounded-full flex-shrink-0 flex items-center justify-center w-10 h-10 font-bold text-lg text-[#e74c3c]">4</div>
+                <div>
+                  <h4 className="text-base sm:text-lg font-medium text-white"><strong>M-X Algorithm Processing</strong></h4>
+                  <Caption>Aplikasi M-X algorithm untuk menghitung accuracy scores dan klasifikasi eligible/non-eligible berdasarkan peer agreement</Caption>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-4">
+                <div className="bg-white/10 p-3 rounded-full flex-shrink-0 flex items-center justify-center w-10 h-10 font-bold text-lg text-[#9b59b6]">5</div>
+                <div>
+                  <h4 className="text-base sm:text-lg font-medium text-white"><strong>Ground Truth Validation</strong></h4>
+                  <Caption>Evaluasi hasil M-X dengan confusion matrix menggunakan ground truth dari expert assessment dan prior experience</Caption>
+                </div>
+              </div>
+            </div>
+            
+            <div className="mt-6 p-4 bg-white/5 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3 text-[#24ce2a]">Metrics Dikumpulkan:</h4>
+              <div className="grid grid-cols-2 gap-3 text-sm">
+                <div>• Accuracy, Precision, Recall</div>
+                <div>• F1-Score & Specificity</div>
+                <div>• Inter-rater Agreement</div>
+                <div>• Response Time Pattern</div>
               </div>
             </div>
           </DialogContent>
