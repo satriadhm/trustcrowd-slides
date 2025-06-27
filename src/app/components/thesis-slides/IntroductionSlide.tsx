@@ -89,7 +89,7 @@ const IntroductionSlide = () => {
           <SectionTitle level={3} centered>Research Gap</SectionTitle>
           <div className="space-y-4">
             <TextContent size="base" className="text-center font-medium">
-              Studi sebelumnya fokus pada <strong>konteks objektif dengan hasil terverifikasi</strong>, tidak sesuai dengan sifat UAT yang subjektif dan eksploratif.
+              Studi sebelumnya fokus pada <strong>General Crowdsourcing Works</strong>, belum masuk ke konteks <strong>UAT</strong> yang subjektif dan eksploratif.
             </TextContent>
             <SectionGrid columns={2} gap="gap-4">
               <div className="bg-white/5 p-4 rounded-lg">
@@ -111,19 +111,6 @@ const IntroductionSlide = () => {
             </SectionGrid>
           </div>
         </HighlightBox>
-
-        <motion.div
-          className="mt-8 bg-gradient-to-r from-purple-900/30 to-blue-900/30 p-6 rounded-xl border border-purple-400/20"
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <SectionTitle level={3} color="primary" centered>Tujuan Penelitian</SectionTitle>
-          <TextContent size="large" className="text-center font-medium">
-            Mengevaluasi efektivitas <strong>M-X Algorithm sebagai mekanisme kontrol kualitas</strong> untuk klasifikasi tester dalam UAT crowdsourced melalui pendekatan probabilistik berbasis konsistensi antar-tester.
-          </TextContent>
-        </motion.div>
       </div>
     </div>
   );
