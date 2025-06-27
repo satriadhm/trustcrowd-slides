@@ -106,7 +106,7 @@ const SimulationDesignSlide = () => {
                 <div className="bg-white/10 p-3 rounded-full flex-shrink-0 flex items-center justify-center w-10 h-10 font-bold text-lg text-[#24ce2a]">1</div>
                 <div>
                   <h4 className="text-base sm:text-lg font-medium text-white"><strong>Recruitment & Screening</strong></h4>
-                  <Caption>Rekrutmen 100 partisipan dengan screening berdasarkan experience level (Beginner/Intermediate/Expert)</Caption>
+                  <Caption>Rekrutmen 24 partisipan dengan screening berdasarkan prior experience</Caption>
                 </div>
               </div>
               
