@@ -56,8 +56,8 @@ const MXAlgorithmSlide = () => {
             </div>
             
             <div className="bg-white/5 p-3 rounded-lg">
-              <h4 className="text-base font-medium mb-2 text-[#24ce2a]">Key Variables</h4>
-              <div className="space-y-2 text-sm">
+              <h4 className="text-base font-medium mb-1 text-[#24ce2a]">Key Variables</h4>
+              <div className="space-y-1 text-sm">
                 <div className="flex justify-between items-center">
                   <strong>A<sub>i</sub></strong>
                   <span className="text-gray-300">Accuracy rate tester w<sub>i</sub></span>
