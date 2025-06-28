@@ -73,7 +73,7 @@ const IntroductionSlide = () => {
                   <li>• Multi-Objective Crowd Worker Recommendation: Butuh data historis ekstensif</li>
                   <li>• Worker Search Model: Masalah privasi & bias</li>
                   <li>• Learning Curves Method: Focus jangka panjang</li>
-                  <li><strong>M-X Algorithm: Focus terhadap agreement antar worker</strong></li>
+                  <li><strong>• M-X Algorithm: Focus terhadap agreement antar worker</strong></li>
                 </ul>
               </div>
               <div className="bg-white/5 p-4 rounded-lg">
