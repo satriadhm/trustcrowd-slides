@@ -133,7 +133,6 @@ const TheoreticalBackgroundSlide = () => {
                 <li><TextContent size="small" className="text-gray-300">• <strong>No Ground Truth Required:</strong> Evaluasi berdasarkan konsistensi peer</TextContent></li>
                 <li><TextContent size="small" className="text-gray-300">• <strong>Privacy Preserving:</strong> Analisis pola respons, bukan data personal</TextContent></li>
                 <li><TextContent size="small" className="text-gray-300">• <strong>Immediate Deployment:</strong> Tidak butuh historical data atau training period</TextContent></li>
-                <li><TextContent size="small" className="text-gray-300">• <strong>Probabilistic Approach:</strong> Matematis dan dapat diverifikasi</TextContent></li>
               </ul>
             </div>
             
