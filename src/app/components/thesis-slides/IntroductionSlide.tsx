@@ -78,9 +78,9 @@ const IntroductionSlide = () => {
               <div className="bg-white/5 p-4 rounded-lg">
                 <h4 className="font-medium text-base mb-2 text-purple-400">Our Contribution</h4>
                 <ul className="text-sm text-gray-300 space-y-1">
-                  <li>• Validasi empiris M-X dalam UAT</li>
-                  <li>• Evaluasi pada skenario subjektif</li>
-                  <li>• Analisis dampak variabilitas tester</li>
+                  <li>• Membawa salah satu method yang ada ke ranah UAT</li>
+                  <li>• Menilai kemampuan method tersebut</li>
+                  <li>• Analisis potensi penggunaan method tersebut</li>
                 </ul>
               </div>
             </SectionGrid>
