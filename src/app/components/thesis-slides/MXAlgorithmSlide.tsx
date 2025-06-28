@@ -31,11 +31,11 @@ const MXAlgorithmSlide = () => {
             </div>
             <div className="bg-white/5 p-4 rounded-lg text-center">
               <h4 className="font-medium text-base mb-2 text-[#24ce2a]">Probabilistic Foundation</h4>
-              <p className="text-sm text-gray-300">Mathematical model dengan assumsi dapat diverifikasi</p>
+              <p className="text-sm text-gray-300">Menangani ketidakpastian dan mendukung skalabilitas</p>
             </div>
             <div className="bg-white/5 p-4 rounded-lg text-center">
               <h4 className="font-medium text-base mb-2 text-[#24ce2a]">UAT Compatible</h4>
-              <p className="text-sm text-gray-300">Sesuai untuk subjective & contextual evaluation</p>
+              <p className="text-sm text-gray-300">Sesuai untuk evaluasi subjektif & kontekstual</p>
             </div>
           </SectionGrid>
         </div>
