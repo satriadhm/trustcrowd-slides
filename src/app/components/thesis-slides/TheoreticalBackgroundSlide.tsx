@@ -212,7 +212,7 @@ const TheoreticalBackgroundSlide = () => {
         </div>
       </HighlightBox>
 
-      {/* Research Gap & Contribution - Enhanced */}
+      {/* Research Gap & Contribution - Enhanced
       <HighlightBox variant="secondary" className="py-6">
         <h3 className="text-xl sm:text-2xl font-semibold mb-6 text-center">Research Gap & Kontribusi Penelitian</h3>
         <SectionGrid columns={2} gap="gap-6">
@@ -252,7 +252,7 @@ const TheoreticalBackgroundSlide = () => {
             </div>
           </div>
         </SectionGrid>
-      </HighlightBox>
+      </HighlightBox> */}
 
       {/* Validation Framework */}
       <HighlightBox variant="primary" className="py-4">
