@@ -121,32 +121,11 @@ const TheoreticalBackgroundSlide = () => {
         </SectionGrid>
       </HighlightBox>
 
-      {/* M-X Algorithm as Solution - Enhanced */}
+      {/* Comprehensive Comparison Study */}
       <HighlightBox variant="primary" className="py-6">
-        <h3 className="text-xl sm:text-2xl font-semibold mb-6 text-center">M-X Algorithm: Solusi Komprehensif untuk UAT</h3>
+        <h3 className="text-xl sm:text-2xl font-semibold mb-6 text-center">Comparison Study: Quality Control Methods</h3>
         
         <div className="space-y-6">
-          <SectionGrid columns={2} gap="gap-6">
-            <div className="bg-white/5 p-6 rounded-lg">
-              <h4 className="text-base sm:text-lg font-medium mb-4 text-[#24ce2a]">Keunggulan M-X untuk UAT</h4>
-              <ul className="space-y-3">
-                <li><TextContent size="small" className="text-gray-300">• <strong>No Ground Truth Required:</strong> Evaluasi berdasarkan konsistensi peer</TextContent></li>
-                <li><TextContent size="small" className="text-gray-300">• <strong>Privacy Preserving:</strong> Analisis pola respons, bukan data personal</TextContent></li>
-                <li><TextContent size="small" className="text-gray-300">• <strong>Immediate Deployment:</strong> Tidak butuh historical data atau training period</TextContent></li>
-              </ul>
-            </div>
-            
-            <div className="bg-white/5 p-6 rounded-lg">
-              <h4 className="text-base sm:text-lg font-medium mb-4 text-[#25da9e]">Aplikabilitas UAT</h4>
-              <ul className="space-y-3">
-                <li><TextContent size="small" className="text-gray-300">• Ideal untuk skenario UAT yang <strong>subjektif dan kontekstual</strong></TextContent></li>
-                <li><TextContent size="small" className="text-gray-300">• Mengatasi challenge <strong>heterogenitas tester</strong></TextContent></li>
-                <li><TextContent size="small" className="text-gray-300">• Scalable untuk <strong>large crowdsourced environments</strong></TextContent></li>
-                <li><TextContent size="small" className="text-gray-300">• Fokus pada <strong>inter-tester agreement</strong> patterns</TextContent></li>
-              </ul>
-            </div>
-          </SectionGrid>
-
           {/* Comparison Table */}
           <div className="bg-white/5 p-6 rounded-lg">
             <h4 className="text-base sm:text-lg font-medium mb-4 text-center text-[#f39c12]">Perbandingan Komprehensif Metode Quality Control</h4>
@@ -158,7 +137,7 @@ const TheoreticalBackgroundSlide = () => {
                     <th className="text-center py-3 px-4 font-medium text-blue-400">MOCOM</th>
                     <th className="text-center py-3 px-4 font-medium text-purple-400">WSM</th>
                     <th className="text-center py-3 px-4 font-medium text-green-400">Learning Curves</th>
-                    <th className="text-center py-3 px-4 font-medium text-[#24ce2a]">M-X Algorithm</th>
+                    <th className="text-center py-3 px-4 font-medium text-orange-400">Rule-Based</th>
                   </tr>
                 </thead>
                 <tbody className="text-sm">
@@ -167,47 +146,158 @@ const TheoreticalBackgroundSlide = () => {
                     <td className="text-center py-3 px-4">✓ (Historical bugs)</td>
                     <td className="text-center py-3 px-4">✗</td>
                     <td className="text-center py-3 px-4">✓ (Performance data)</td>
-                    <td className="text-center py-3 px-4 text-[#24ce2a]">✗</td>
+                    <td className="text-center py-3 px-4">Partial (Thresholds)</td>
                   </tr>
                   <tr className="border-b border-white/10">
                     <td className="py-3 px-4 font-medium">Privacy Preservation</td>
                     <td className="text-center py-3 px-4">Partial</td>
                     <td className="text-center py-3 px-4">✗ (Demographic data)</td>
                     <td className="text-center py-3 px-4">Partial</td>
-                    <td className="text-center py-3 px-4 text-[#24ce2a]">✓</td>
+                    <td className="text-center py-3 px-4">✓</td>
                   </tr>
                   <tr className="border-b border-white/10">
                     <td className="py-3 px-4 font-medium">Immediate Deployment</td>
                     <td className="text-center py-3 px-4">✗ (Need history)</td>
                     <td className="text-center py-3 px-4">Partial</td>
                     <td className="text-center py-3 px-4">✗ (Long-term)</td>
-                    <td className="text-center py-3 px-4 text-[#24ce2a]">✓</td>
+                    <td className="text-center py-3 px-4">✓</td>
                   </tr>
                   <tr className="border-b border-white/10">
                     <td className="py-3 px-4 font-medium">Subjective Task Support</td>
                     <td className="text-center py-3 px-4">Limited</td>
                     <td className="text-center py-3 px-4">Limited</td>
                     <td className="text-center py-3 px-4">Partial</td>
-                    <td className="text-center py-3 px-4 text-[#24ce2a]">✓</td>
+                    <td className="text-center py-3 px-4">Medium</td>
                   </tr>
                   <tr className="border-b border-white/10">
                     <td className="py-3 px-4 font-medium">Scalability</td>
                     <td className="text-center py-3 px-4">Medium</td>
                     <td className="text-center py-3 px-4">High</td>
                     <td className="text-center py-3 px-4">Low</td>
-                    <td className="text-center py-3 px-4 text-[#24ce2a]">High</td>
+                    <td className="text-center py-3 px-4">High</td>
+                  </tr>
+                  <tr className="border-b border-white/10">
+                    <td className="py-3 px-4 font-medium">Implementation Complexity</td>
+                    <td className="text-center py-3 px-4">High</td>
+                    <td className="text-center py-3 px-4">Medium</td>
+                    <td className="text-center py-3 px-4">High</td>
+                    <td className="text-center py-3 px-4">Low</td>
                   </tr>
                   <tr>
                     <td className="py-3 px-4 font-medium">Bias Risk</td>
                     <td className="text-center py-3 px-4">Medium</td>
                     <td className="text-center py-3 px-4">High (Demographic)</td>
                     <td className="text-center py-3 px-4">Low</td>
-                    <td className="text-center py-3 px-4 text-[#24ce2a]">Low</td>
+                    <td className="text-center py-3 px-4">Medium</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
+
+          {/* Research Gap Analysis */}
+          <SectionGrid columns={2} gap="gap-6">
+            <div className="bg-red-500/10 p-6 rounded-lg border border-red-500/20">
+              <h4 className="text-base font-medium mb-4 text-red-400">Identified Research Gaps</h4>
+              <div className="space-y-3">
+                <TextContent size="small" className="text-gray-300">
+                  <strong>Gap 1:</strong> Existing methods memerlukan <strong>predefined answers</strong> atau <strong>historical data</strong>, 
+                  tidak sesuai dengan nature UAT yang subjektif.
+                </TextContent>
+                <TextContent size="small" className="text-gray-300">
+                  <strong>Gap 2:</strong> Kurangnya mechanisms untuk <strong>immediate quality assessment</strong> 
+                  tanpa privacy compromise dalam crowdsourced environments.
+                </TextContent>
+                <TextContent size="small" className="text-gray-300">
+                  <strong>Gap 3:</strong> Belum ada validasi empiris untuk <strong>consensus-based approach</strong> 
+                  dalam realistic UAT scenarios.
+                </TextContent>
+              </div>
+            </div>
+            
+            <div className="bg-[#24ce2a]/10 p-6 rounded-lg border border-[#24ce2a]/20">
+              <h4 className="text-base font-medium mb-4 text-[#24ce2a]">Solution Direction</h4>
+              <div className="space-y-3">
+                <TextContent size="small" className="text-gray-300">
+                  <strong>Approach:</strong> Consensus-based quality assessment menggunakan 
+                  <strong> inter-tester agreement patterns</strong> tanpa ground truth.
+                </TextContent>
+                <TextContent size="small" className="text-gray-300">
+                  <strong>Innovation:</strong> Privacy-preserving analysis melalui <strong>response pattern recognition</strong> 
+                  bukan data personal atau demografis.
+                </TextContent>
+                <TextContent size="small" className="text-gray-300">
+                  <strong>Contribution:</strong> Empirical validation dari <strong>consensus-based quality assessment</strong> 
+                  dalam konteks <strong>UAT berbasis crowdsourcing</strong> tanpa historical data requirements.
+                </TextContent>
+              </div>
+            </div>
+          </SectionGrid>
+        </div>
+      </HighlightBox>
+
+      {/* Rule-Based Validation for Threshold Setting */}
+      <HighlightBox variant="secondary" className="py-6">
+        <h3 className="text-xl sm:text-2xl font-semibold mb-6 text-center">Rule-Based Validation untuk Threshold Setting</h3>
+        
+        <SectionGrid columns={2} gap="gap-6">
+          <div className="bg-white/5 p-6 rounded-lg">
+            <h4 className="text-base sm:text-lg font-medium mb-4 text-[#f39c12]">Konsep Rule-Based Validation</h4>
+            <ul className="space-y-3">
+              <li><TextContent size="small" className="text-gray-300">• <strong>Domain-Specific Rules:</strong> UAT-specific quality indicators</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">• <strong>Statistical Boundaries:</strong> Menggunakan distribusi data untuk boundary setting</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">• <strong>Expert Knowledge Integration:</strong> Incorporasi expert knowledge dalam rule formation</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">• <strong>Adaptive Thresholds:</strong> Dynamic adjustment berdasarkan dataset characteristics</TextContent></li>
+            </ul>
+          </div>
+          
+          <div className="bg-white/5 p-6 rounded-lg">
+            <h4 className="text-base sm:text-lg font-medium mb-4 text-[#25da9e]">Application dalam UAT Context</h4>
+            <ul className="space-y-3">
+              <li><TextContent size="small" className="text-gray-300">• <strong>Response Time Rules:</strong> Threshold untuk waktu respon optimal</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">• <strong>Consistency Rules:</strong> Batasan untuk inter-response variability</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">• <strong>Agreement Rules:</strong> Minimum consensus level untuk quality assessment</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">• <strong>Outlier Detection:</strong> Rules untuk identifikasi anomalous responses</TextContent></li>
+            </ul>
+          </div>
+        </SectionGrid>
+
+        <div className="mt-6 bg-white/5 p-6 rounded-lg">
+          <h4 className="text-base sm:text-lg font-medium mb-4 text-center text-[#e74c3c]">Threshold Setting Framework</h4>
+          <SectionGrid columns={3} gap="gap-4">
+            <div className="text-center">
+              <div className="bg-blue-500/10 p-4 rounded-lg border border-blue-500/20">
+                <h5 className="font-medium mb-2 text-blue-400">Statistical Rules</h5>
+                <TextContent size="small" className="text-gray-300">
+                  • Mean ± Standard Deviation<br/>
+                  • Percentile-based boundaries<br/>
+                  • Interquartile Range (IQR)
+                </TextContent>
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <div className="bg-purple-500/10 p-4 rounded-lg border border-purple-500/20">
+                <h5 className="font-medium mb-2 text-purple-400">Behavioral Rules</h5>
+                <TextContent size="small" className="text-gray-300">
+                  • Response pattern consistency<br/>
+                  • Time-based thresholds<br/>
+                  • Sequential response analysis
+                </TextContent>
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <div className="bg-green-500/10 p-4 rounded-lg border border-green-500/20">
+                <h5 className="font-medium mb-2 text-green-400">Consensus Rules</h5>
+                <TextContent size="small" className="text-gray-300">
+                  • Majority agreement threshold<br/>
+                  • Weighted consensus scoring<br/>
+                  • Multi-level validation
+                </TextContent>
+              </div>
+            </div>
+          </SectionGrid>
         </div>
       </HighlightBox>
 
@@ -253,40 +343,112 @@ const TheoreticalBackgroundSlide = () => {
         </SectionGrid>
       </HighlightBox> */}
 
-      {/* Validation Framework */}
-      <HighlightBox variant="primary" className="py-4">
-        <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-center">Framework Validasi & Evaluasi</h3>
-        <SectionGrid columns={3} gap="gap-4">
-          <div className="bg-white/5 p-4 rounded-lg text-center">
-            <h4 className="text-base font-medium mb-3 text-[#25da9e]">Prior-Experience Validation</h4>
-            <ul className="space-y-2 text-left">
-              <li><TextContent size="small" className="text-gray-300">• Assessment berdasarkan pengalaman UAT</TextContent></li>
-              <li><TextContent size="small" className="text-gray-300">• Ground truth untuk evaluasi algoritma</TextContent></li>
-              <li><TextContent size="small" className="text-gray-300">• Baseline perbandingan kinerja</TextContent></li>
+      {/* Research Variables */}
+      <HighlightBox variant="secondary" className="py-6">
+        <h3 className="text-xl sm:text-2xl font-semibold mb-6 text-center">Variabel-Variabel Penelitian</h3>
+        
+        <SectionGrid columns={3} gap="gap-6">
+          <div className="bg-white/5 p-6 rounded-lg">
+            <h4 className="text-base sm:text-lg font-medium mb-4 text-blue-400">Independent Variables</h4>
+            <ul className="space-y-3">
+              <li><TextContent size="small" className="text-gray-300">• <strong>Tester Experience Level:</strong> Novice, Intermediate, Expert</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">• <strong>Algorithm Threshold Settings:</strong> Conservative, Moderate, Aggressive</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">• <strong>Response Pattern Type:</strong> Consistent, Variable, Random</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">• <strong>Task Complexity:</strong> Simple, Medium, Complex scenarios</TextContent></li>
             </ul>
           </div>
           
-          <div className="bg-white/5 p-4 rounded-lg text-center">
-            <h4 className="text-base font-medium mb-3 text-[#25da9e]">Gherkin BDD Format</h4>
-            <ul className="space-y-2 text-left">
-              <li><TextContent size="small" className="text-gray-300">• <strong>Given-When-Then</strong> structure</TextContent></li>
-              <li><TextContent size="small" className="text-gray-300">• User-friendly untuk non-technical tester</TextContent></li>
-              <li><TextContent size="small" className="text-gray-300">• Adaptable ke multiple-choice format</TextContent></li>
+          <div className="bg-white/5 p-6 rounded-lg">
+            <h4 className="text-base sm:text-lg font-medium mb-4 text-green-400">Dependent Variables</h4>
+            <ul className="space-y-3">
+              <li><TextContent size="small" className="text-gray-300">• <strong>Classification Accuracy:</strong> True/False Positive & Negative rates</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">• <strong>Algorithm Performance:</strong> Precision, Recall, F1-Score</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">• <strong>Response Quality Score:</strong> Consensus-based rating</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">• <strong>System Efficiency:</strong> Processing time & resource usage</TextContent></li>
             </ul>
           </div>
           
-          <div className="bg-white/5 p-4 rounded-lg text-center">
-            <h4 className="text-base font-medium mb-3 text-[#25da9e]">Confusion Matrix Metrics</h4>
-            <div className="grid grid-cols-2 gap-1 text-xs text-left">
-              <div>• <strong>Accuracy:</strong> Overall correctness</div>
-              <div>• <strong>Precision:</strong> True positive rate</div>
-              <div>• <strong>Recall:</strong> Sensitivity</div>
-              <div>• <strong>F1-Score:</strong> Harmonic mean</div>
-              <div>• <strong>TNR:</strong> True negative rate</div>
-              <div>• <strong>FP Rate:</strong> False positive rate</div>
-            </div>
+          <div className="bg-white/5 p-6 rounded-lg">
+            <h4 className="text-base sm:text-lg font-medium mb-4 text-purple-400">Control Variables</h4>
+            <ul className="space-y-3">
+              <li><TextContent size="small" className="text-gray-300">• <strong>Test Environment:</strong> Controlled lab setting</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">• <strong>Test Duration:</strong> Standardized time allocation</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">• <strong>Task Format:</strong> Gherkin BDD multiple-choice</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">• <strong>Sample Size:</strong> Minimum 30 participants per group</TextContent></li>
+            </ul>
           </div>
         </SectionGrid>
+      </HighlightBox>
+
+      {/* Validation Framework */}
+      <HighlightBox variant="primary" className="py-6">
+        <h3 className="text-xl sm:text-2xl font-semibold mb-6 text-center">Framework Validasi & Evaluasi Komprehensif</h3>
+        
+        <SectionGrid columns={2} gap="gap-6">
+          <div className="bg-white/5 p-6 rounded-lg">
+            <h4 className="text-base sm:text-lg font-medium mb-4 text-[#25da9e]">Prior-Experience Validation</h4>
+            <ul className="space-y-3">
+              <li><TextContent size="small" className="text-gray-300">• <strong>Expert Assessment:</strong> Manual evaluation berdasarkan pengalaman UAT</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">• <strong>Ground Truth Creation:</strong> Baseline untuk evaluasi algoritma</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">• <strong>Inter-rater Reliability:</strong> Konsistensi antar expert evaluator</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">• <strong>Benchmark Comparison:</strong> Performance baseline untuk algoritma</TextContent></li>
+            </ul>
+          </div>
+          
+          <div className="bg-white/5 p-6 rounded-lg">
+            <h4 className="text-base sm:text-lg font-medium mb-4 text-[#f39c12]">Gherkin BDD Format</h4>
+            <ul className="space-y-3">
+              <li><TextContent size="small" className="text-gray-300">• <strong>Given-When-Then</strong> structure untuk clarity</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">• <strong>User-friendly</strong> untuk non-technical tester</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">• <strong>Standardized Format:</strong> Consistent across all test scenarios</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">• <strong>Multiple-choice Adaptation:</strong> Objective response format</TextContent></li>
+            </ul>
+          </div>
+        </SectionGrid>
+
+        <div className="mt-6 bg-white/5 p-6 rounded-lg">
+          <h4 className="text-base sm:text-lg font-medium mb-4 text-center text-[#e74c3c]">Metrics & Evaluation Framework</h4>
+          <SectionGrid columns={3} gap="gap-4">
+            <div className="text-center">
+              <div className="bg-blue-500/10 p-4 rounded-lg border border-blue-500/20">
+                <h5 className="font-medium mb-2 text-blue-400">Confusion Matrix Metrics</h5>
+                <div className="text-xs text-left space-y-1">
+                  <div>• <strong>Accuracy:</strong> (TP+TN)/(TP+TN+FP+FN)</div>
+                  <div>• <strong>Precision:</strong> TP/(TP+FP)</div>
+                  <div>• <strong>Recall:</strong> TP/(TP+FN)</div>
+                  <div>• <strong>F1-Score:</strong> 2×(Precision×Recall)/(Precision+Recall)</div>
+                  <div>• <strong>Specificity:</strong> TN/(TN+FP)</div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <div className="bg-purple-500/10 p-4 rounded-lg border border-purple-500/20">
+                <h5 className="font-medium mb-2 text-purple-400">Statistical Analysis</h5>
+                <div className="text-xs text-left space-y-1">
+                  <div>• <strong>Descriptive Statistics:</strong> Mean, SD, percentiles</div>
+                  <div>• <strong>Inferential Tests:</strong> t-test, ANOVA</div>
+                  <div>• <strong>Effect Size:</strong> Cohen&apos;s d, η²</div>
+                  <div>• <strong>Confidence Intervals:</strong> 95% CI for estimates</div>
+                  <div>• <strong>Power Analysis:</strong> Sample size validation</div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <div className="bg-green-500/10 p-4 rounded-lg border border-green-500/20">
+                <h5 className="font-medium mb-2 text-green-400">Qualitative Measures</h5>
+                <div className="text-xs text-left space-y-1">
+                  <div>• <strong>Response Quality:</strong> Content analysis</div>
+                  <div>• <strong>Pattern Recognition:</strong> Behavioral consistency</div>
+                  <div>• <strong>Outlier Detection:</strong> Anomaly identification</div>
+                  <div>• <strong>Consensus Level:</strong> Inter-tester agreement</div>
+                  <div>• <strong>Error Analysis:</strong> Misclassification patterns</div>
+                </div>
+              </div>
+            </div>
+          </SectionGrid>
+        </div>
       </HighlightBox>
     </SlideLayout>
   );
