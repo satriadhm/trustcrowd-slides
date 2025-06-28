@@ -21,7 +21,7 @@ const ConclusionSlide = () => {
             <span className="font-bold text-[#24ce2a]"> 82% presisi</span>, <span className="font-bold text-[#24ce2a]">75% recall</span>
           </p>
           <p className="text-sm text-gray-300">
-            Dapat membedakan tester eligible/non-eligible tanpa ground truth dalam konteks UAT crowdsourced
+            Dapat membedakan tester eligible/non-eligible tanpa ground truth dalam konteks UAT berbasis Crowdsourcing
           </p>
         </div>
       </HighlightBox>
