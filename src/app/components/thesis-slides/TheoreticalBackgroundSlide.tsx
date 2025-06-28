@@ -125,6 +125,7 @@ const TheoreticalBackgroundSlide = () => {
                   <th className="text-center py-3 px-4 font-medium text-blue-400">MOCOM</th>
                   <th className="text-center py-3 px-4 font-medium text-purple-400">WSM</th>
                   <th className="text-center py-3 px-4 font-medium text-green-400">Learning Curves</th>
+                  <th className="text-center py-3 px-4 font-medium text-cyan-400">MX Algorithm</th>
                 </tr>
               </thead>
               <tbody className="text-sm">
@@ -133,42 +134,49 @@ const TheoreticalBackgroundSlide = () => {
                   <td className="text-center py-3 px-4">✓ (Historical bugs)</td>
                   <td className="text-center py-3 px-4">✗</td>
                   <td className="text-center py-3 px-4">✓ (Performance data)</td>
+                  <td className="text-center py-3 px-4 text-cyan-400">✗</td>
                 </tr>
                 <tr className="border-b border-white/10">
                   <td className="py-3 px-4 font-medium">Privacy Preservation</td>
                   <td className="text-center py-3 px-4">Partial</td>
                   <td className="text-center py-3 px-4">✗ (Demographic data)</td>
                   <td className="text-center py-3 px-4">Partial</td>
+                  <td className="text-center py-3 px-4 text-cyan-400">✓</td>
                 </tr>
                 <tr className="border-b border-white/10">
                   <td className="py-3 px-4 font-medium">Immediate Deployment</td>
                   <td className="text-center py-3 px-4">✗ (Need history)</td>
                   <td className="text-center py-3 px-4">Partial</td>
                   <td className="text-center py-3 px-4">✗ (Long-term)</td>
+                  <td className="text-center py-3 px-4 text-cyan-400">✓</td>
                 </tr>
                 <tr className="border-b border-white/10">
                   <td className="py-3 px-4 font-medium">Subjective Task Support</td>
                   <td className="text-center py-3 px-4">Limited</td>
                   <td className="text-center py-3 px-4">Limited</td>
                   <td className="text-center py-3 px-4">Partial</td>
+                  <td className="text-center py-3 px-4 text-cyan-400">✓</td>
                 </tr>
                 <tr className="border-b border-white/10">
                   <td className="py-3 px-4 font-medium">Scalability</td>
                   <td className="text-center py-3 px-4">Medium</td>
                   <td className="text-center py-3 px-4">High</td>
                   <td className="text-center py-3 px-4">Low</td>
+                  <td className="text-center py-3 px-4 text-cyan-400">High</td>
                 </tr>
                 <tr className="border-b border-white/10">
                   <td className="py-3 px-4 font-medium">Implementation Complexity</td>
                   <td className="text-center py-3 px-4">High</td>
                   <td className="text-center py-3 px-4">Medium</td>
                   <td className="text-center py-3 px-4">High</td>
+                  <td className="text-center py-3 px-4 text-cyan-400">Medium</td>
                 </tr>
                 <tr>
                   <td className="py-3 px-4 font-medium">Bias Risk</td>
                   <td className="text-center py-3 px-4">Medium</td>
                   <td className="text-center py-3 px-4">High (Demographic)</td>
                   <td className="text-center py-3 px-4">Low</td>
+                  <td className="text-center py-3 px-4 text-cyan-400">Low</td>
                 </tr>
               </tbody>
             </table>
