@@ -14,7 +14,7 @@ const TheoreticalBackgroundSlide = () => {
     >
       {/* UAT in Crowdsourcing Context */}
       <HighlightBox variant="primary" className="py-6">
-        <h3 className="text-xl sm:text-2xl font-semibold mb-6 text-center">User Acceptance Testing dalam Crowdsourcing</h3>
+        <h3 className="text-xl sm:text-2xl font-semibold mb-6 text-center">User Acceptance Testing berbasis Crowdsourcing</h3>
         
         <SectionGrid columns={2} gap="gap-6">
           <div className="bg-white/5 p-6 rounded-lg">

@@ -92,7 +92,7 @@ const FutureWorkSlide = () => {
             Transisi temuan penelitian ke aplikasi bisnis praktis
           </TextContent>
           <ul className="text-base text-gray-300 space-y-2 list-disc pl-5">
-            <li>Model SaaS untuk platform <i>crowdsourced testing</i>.</li>
+            <li>Model SaaS untuk platform <i>crowdsourcing-based UAT</i>.</li>
             <li><i>Partnership</i> industri untuk validasi <i>real-world</i>.</li>
             <li>Framework sertifikasi kualitas untuk produk <i>software</i>.</li>
           </ul>
@@ -114,7 +114,7 @@ const FutureWorkSlide = () => {
         <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-4">Visi Jangka Panjang</h3>
         
         <TextContent size="large" className="leading-relaxed">
-          Mengembangkan ekosistem kontrol kualitas yang komprehensif dan adaptif yang merevolusi <i>crowdsourced testing</i> 
+          Mengembangkan ekosistem kontrol kualitas yang komprehensif dan adaptif yang merevolusi <i>UAt berbasis crowdsourcing</i> 
           dengan meminimalkan variabilitas sambil memaksimalkan nilai perspektif yang beragam.
         </TextContent>
       </HighlightBox>

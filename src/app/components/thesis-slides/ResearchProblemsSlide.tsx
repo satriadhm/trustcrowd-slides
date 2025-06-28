@@ -23,7 +23,7 @@ const ResearchProblemsSlide = () => {
             </span>
           </div>
           <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold mb-6 text-center leading-relaxed">
-            Seberapa akurat algoritma M-X dalam mengklasifikasi kelayakan <i>tester</i> di lingkungan UAT <i>crowdsourced</i>?
+            Seberapa akurat algoritma M-X dalam mengklasifikasi kelayakan <i>tester</i> di lingkungan UAT <i>berbasis crowdsourcing</i>?
           </h3>
           <div className="bg-white/10 p-4 sm:p-6 rounded-lg">
             <ul className="space-y-4">

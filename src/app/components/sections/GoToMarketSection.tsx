@@ -97,7 +97,7 @@ const GoToMarketSection = ({ sectionClasses }) => {
                 </div>
                 <div>
                   <span className="font-medium block mb-1">Content Marketing</span>
-                  <p className="text-sm text-gray-300">Publish thought leadership on software quality, UAT best practices, and the future of crowdsourced testing.</p>
+                  <p className="text-sm text-gray-300">Publish thought leadership on software quality, UAT best practices, and the future of crowdsourcing-based UAT.</p>
                 </div>
               </li>
             </ul>

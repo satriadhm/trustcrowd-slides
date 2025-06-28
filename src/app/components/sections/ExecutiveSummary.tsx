@@ -9,7 +9,7 @@ const ExecutiveSummarySection = () => {
     >
       <p className="text-lg mb-6">
         TrustCrowd is a revolutionary platform that bridges the gap between
-        software companies and quality testers through crowdsourced User
+        software companies and quality testers through crowdsourcing-based User
         Acceptance Testing (UAT). We operate on a dual business model:
       </p>
 
