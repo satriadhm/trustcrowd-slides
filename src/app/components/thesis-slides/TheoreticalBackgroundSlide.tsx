@@ -107,18 +107,73 @@ const TheoreticalBackgroundSlide = () => {
                 </ul>
               </div>
               
-              <div className="bg-red-500/10 p-4 rounded-lg border border-red-500/20">
-                <h4 className="text-base font-medium mb-3 text-red-400">Limitasi untuk UAT</h4>
-                <ul className="space-y-2">
-                  <li><TextContent size="small" className="text-gray-300">• Tidak mengatasi <strong>initial quality assessment</strong></TextContent></li>
-                  <li><TextContent size="small" className="text-gray-300">• Tidak ada <strong>immediate filtering</strong></TextContent></li>
-                  <li><TextContent size="small" className="text-gray-300">• Focus <strong>jangka panjang</strong>, bukan real-time selection</TextContent></li>
-                  <li><TextContent size="small" className="text-gray-300">• Memerlukan time investment yang besar</TextContent></li>
-                </ul>
-              </div>
             </div>
           </ContentCard>
         </SectionGrid>
+      </HighlightBox>
+
+      {/* Comparison Table */}
+      <HighlightBox variant="primary" className="py-6">
+        <h3 className="text-xl sm:text-2xl font-semibold mb-6 text-center">Perbandingan Metode Quality Control</h3>
+        
+        <div className="bg-white/5 p-6 rounded-lg">
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="border-b border-white/20">
+                  <th className="text-left py-3 px-4 font-medium">Aspek</th>
+                  <th className="text-center py-3 px-4 font-medium text-blue-400">MOCOM</th>
+                  <th className="text-center py-3 px-4 font-medium text-purple-400">WSM</th>
+                  <th className="text-center py-3 px-4 font-medium text-green-400">Learning Curves</th>
+                </tr>
+              </thead>
+              <tbody className="text-sm">
+                <tr className="border-b border-white/10">
+                  <td className="py-3 px-4 font-medium">Ground Truth Required</td>
+                  <td className="text-center py-3 px-4">✓ (Historical bugs)</td>
+                  <td className="text-center py-3 px-4">✗</td>
+                  <td className="text-center py-3 px-4">✓ (Performance data)</td>
+                </tr>
+                <tr className="border-b border-white/10">
+                  <td className="py-3 px-4 font-medium">Privacy Preservation</td>
+                  <td className="text-center py-3 px-4">Partial</td>
+                  <td className="text-center py-3 px-4">✗ (Demographic data)</td>
+                  <td className="text-center py-3 px-4">Partial</td>
+                </tr>
+                <tr className="border-b border-white/10">
+                  <td className="py-3 px-4 font-medium">Immediate Deployment</td>
+                  <td className="text-center py-3 px-4">✗ (Need history)</td>
+                  <td className="text-center py-3 px-4">Partial</td>
+                  <td className="text-center py-3 px-4">✗ (Long-term)</td>
+                </tr>
+                <tr className="border-b border-white/10">
+                  <td className="py-3 px-4 font-medium">Subjective Task Support</td>
+                  <td className="text-center py-3 px-4">Limited</td>
+                  <td className="text-center py-3 px-4">Limited</td>
+                  <td className="text-center py-3 px-4">Partial</td>
+                </tr>
+                <tr className="border-b border-white/10">
+                  <td className="py-3 px-4 font-medium">Scalability</td>
+                  <td className="text-center py-3 px-4">Medium</td>
+                  <td className="text-center py-3 px-4">High</td>
+                  <td className="text-center py-3 px-4">Low</td>
+                </tr>
+                <tr className="border-b border-white/10">
+                  <td className="py-3 px-4 font-medium">Implementation Complexity</td>
+                  <td className="text-center py-3 px-4">High</td>
+                  <td className="text-center py-3 px-4">Medium</td>
+                  <td className="text-center py-3 px-4">High</td>
+                </tr>
+                <tr>
+                  <td className="py-3 px-4 font-medium">Bias Risk</td>
+                  <td className="text-center py-3 px-4">Medium</td>
+                  <td className="text-center py-3 px-4">High (Demographic)</td>
+                  <td className="text-center py-3 px-4">Low</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </HighlightBox>
 
       {/* Validation Framework */}
