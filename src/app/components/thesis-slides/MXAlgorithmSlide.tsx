@@ -62,11 +62,11 @@ const MXAlgorithmSlide = () => {
                   <strong>A<sub>i</sub></strong>
                   <span className="text-gray-300">Accuracy rate tester w<sub>i</sub></span>
                 </div>
-                <div className="flex justify-between items-center">
+                <div className="flex items-center gap-4">
                   <strong>M</strong>
                   <span className="text-gray-300">Jumlah opsi per pertanyaan</span>
                 </div>
-                <div className="flex justify-between items-center">
+                <div className="flex items-center gap-4">
                   <strong>Q<sub>ij</sub></strong>
                   <span className="text-gray-300">Observed agreement rate</span>
                 </div>
