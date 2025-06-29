@@ -64,7 +64,7 @@ const ResearchProblemsSlide = () => {
       <HighlightBox variant="primary" className="text-center">
         <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-4 sm:mb-6">Tujuan Penelitian</h3>
         <Subtitle>
-          Mengevaluasi <b>efektivitas algoritma M-X sebagai mekanisme kontrol kualitas</b> untuk klasifikasi <i>tester</i> dalam lingkungan UAT <i>crowdsourced</i>.
+          Mengevaluasi <b>efektivitas algoritma M-X sebagai mekanisme kontrol kualitas</b> untuk klasifikasi <i>tester</i> dalam lingkungan UAT berbasis <i>crowdsourcing</i>.
         </Subtitle>
       </HighlightBox>
     </SlideLayout>
