@@ -1,4 +1,4 @@
-// src/app/components/thesis-slides/MXAlgorithmSlide.tsx (Updated - Sesuai PDF)
+// src/app/components/thesis-slides/MXAlgorithmSlide.tsx (Updated)
 "use client";
 
 import React from "react";
@@ -41,7 +41,7 @@ const MXAlgorithmSlide = () => {
         </div>
       </HighlightBox>
 
-      {/* Core Mathematical Principle - Updated sesuai PDF */}
+      {/* Core Mathematical Principle - Update */}
       <SectionGrid columns={2} gap="gap-4">
         <ContentCard title="Algoritma M-1 (Base Algorithm)" animationDelay={0} className="py-4">
           <div className="space-y-3">
@@ -88,7 +88,7 @@ const MXAlgorithmSlide = () => {
         <ContentCard title="Algoritma M-X (Extension)" animationDelay={0.2} className="py-4">
           <div className="space-y-3">
             <div className="bg-white/5 p-3 rounded-lg">
-              <h4 className="text-base font-medium mb-2 text-[#24ce2a]">M-X Formula (Sesuai PDF)</h4>
+              <h4 className="text-base font-medium mb-2 text-[#24ce2a]">M-X Formula</h4>
               <FormulaBox className="py-2 mb-2">
                 <div className="text-lg flex flex-col items-center gap-2">
                   <div>
@@ -123,7 +123,7 @@ const MXAlgorithmSlide = () => {
         </ContentCard>
       </SectionGrid>
 
-      {/* UAT Application Example - Updated sesuai PDF */}
+      {/* UAT Application Example - Updat */}
       <HighlightBox variant="secondary" className="py-4">
         <h3 className="text-xl font-semibold mb-3 text-center">Implementasi M-X dalam UAT Berbasis Crowdsourcing</h3>
         
@@ -149,7 +149,7 @@ const MXAlgorithmSlide = () => {
             </div>
             
             <div className="bg-white/5 p-3 rounded-lg">
-              <h5 className="font-medium text-sm mb-2 text-[#25da9e]">M-X Processing (Sesuai PDF)</h5>
+              <h5 className="font-medium text-sm mb-2 text-[#25da9e]">M-X Processing</h5>
               <div className="space-y-2 text-xs">
                 <div className="bg-blue-500/10 p-2 rounded">
                   <strong>Step 1:</strong> Konversi 4 opsi → 4 sub-pertanyaan biner
@@ -176,7 +176,7 @@ const MXAlgorithmSlide = () => {
         </div>
       </HighlightBox>
 
-      {/* Algorithm Mathematical Foundation - Sesuai PDF */}
+      {/* Algorithm Mathematical Foundation */}
       <SectionGrid columns={2} gap="gap-4">
         <ContentCard title="Fondasi Matematis" animationDelay={0} className="py-4">
           <div className="space-y-3">
