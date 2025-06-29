@@ -22,8 +22,8 @@ const TheoreticalBackgroundSlide = () => {
             <ul className="space-y-3">
               <li><TextContent size="small" className="text-gray-300">• Tahap kritis sebelum deployment produk</TextContent></li>
               <li><TextContent size="small" className="text-gray-300">• Evaluasi dari perspektif end-user sesungguhnya</TextContent></li>
-              <li><TextContent size="small" className="text-gray-300">• <strong>Tidak ada ground truth</strong> yang telah ditentukan</TextContent></li>
-              <li><TextContent size="small" className="text-gray-300">• Penilaian bersifat <strong>subjektif dan kontekstual</strong></TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">• <strong>Discovery-oriented testing</strong> untuk menemukan edge cases</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">• <strong>User-centric assessment</strong> berdasarkan experience nyata</TextContent></li>
             </ul>
           </div>
           
