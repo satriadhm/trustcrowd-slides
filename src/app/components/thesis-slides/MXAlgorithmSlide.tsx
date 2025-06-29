@@ -56,19 +56,48 @@ const MXAlgorithmSlide = () => {
             </div>
             
             <div className="bg-white/5 p-3 rounded-lg">
-              <h4 className="text-base font-medium mb-1 text-[#24ce2a]">Key Variables</h4>
+              <h4 className="text-base font-medium mb-2 text-[#24ce2a]">M1 Formula (3 Workers Base)</h4>
+              <FormulaBox className="py-2 mb-2">
+                <div className="text-lg">
+                  A<sub>i</sub> = <span className="text-[#24ce2a]">(Q<sub>ij</sub> + Q<sub>ik</sub> - 1) / (2Q<sub>jk</sub> - 1)</span>
+                </div>
+              </FormulaBox>
+              <Caption>Base algorithm untuk exactly 3 workers (Whitehill et al., 2009)</Caption>
+            </div>
+
+            <div className="bg-white/5 p-3 rounded-lg">
+              <h4 className="text-base font-medium mb-2 text-[#f39c12]">MX Formula (X Workers Extension)</h4>
+              <FormulaBox className="py-2 mb-2">
+                <div className="text-lg flex flex-col items-center gap-2">
+                  <div>
+                    MX = <span className="text-[#f39c12]">M1 + Sliding Window Approach</span>
+                  </div>
+                  <div className="text-sm text-gray-300">
+                    untuk X ≥ 3 workers dengan circular grouping
+                  </div>
+                </div>
+              </FormulaBox>
+              <Caption>MX extends M1 untuk arbitrary number of workers menggunakan grup overlapping</Caption>
+            </div>
+            
+            <div className="bg-white/5 p-3 rounded-lg">
+              <h4 className="text-base font-medium mb-1 text-[#25da9e]">Key Variables</h4>
               <div className="space-y-1 text-sm">
                 <div className="flex items-center gap-4">
                   <strong>A<sub>i</sub></strong>
                   <span className="text-gray-300">Accuracy rate tester w<sub>i</sub></span>
                 </div>
                 <div className="flex items-center gap-4">
-                  <strong>M</strong>
-                  <span className="text-gray-300">Jumlah opsi per pertanyaan</span>
+                  <strong>Q<sub>ij</sub></strong>
+                  <span className="text-gray-300">Observed agreement rate antar tester i,j</span>
                 </div>
                 <div className="flex items-center gap-4">
-                  <strong>Q<sub>ij</sub></strong>
-                  <span className="text-gray-300">Observed agreement rate</span>
+                  <strong>M</strong>
+                  <span className="text-gray-300">Jumlah opsi per pertanyaan (choice options)</span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <strong>X</strong>
+                  <span className="text-gray-300">Total number of workers (≥ 3)</span>
                 </div>
               </div>
             </div>
@@ -78,13 +107,13 @@ const MXAlgorithmSlide = () => {
         <ContentCard title="Implementasi untuk UAT" animationDelay={0.2} className="py-4">
           <div className="space-y-3">
             <div className="bg-white/5 p-3 rounded-lg">
-              <h4 className="text-base font-medium mb-2 text-[#24ce2a]">Multiple-Choice Decomposition</h4>
+              <h4 className="text-base font-medium mb-2 text-[#24ce2a]">Scalable Worker Evaluation</h4>
               <ul className="space-y-2 text-sm">
-                <li><strong>Step 1:</strong> Setiap M-choice question → M binary sub-problems</li>
-                <li><strong>Step 2:</strong> Apply M-X pada setiap dimensi opsi</li>
-                <li><strong>Step 3:</strong> Aggregate accuracy scores</li>
+                <li><strong>Step 1:</strong> Apply M1 pada setiap grup 3 workers</li>
+                <li><strong>Step 2:</strong> Use sliding window untuk cover semua workers</li>
+                <li><strong>Step 3:</strong> Aggregate multiple evaluations per worker</li>
               </ul>
-              <Caption className="mt-2">Transformasi &quot;Pilih yang benar&quot; → &quot;Apakah opsi X benar?&quot;</Caption>
+              <Caption className="mt-2">MX memungkinkan evaluasi dengan arbitrary number of workers</Caption>
             </div>
             
             <div className="bg-white/5 p-3 rounded-lg">
@@ -130,19 +159,19 @@ const MXAlgorithmSlide = () => {
             </div>
             
             <div className="bg-white/5 p-3 rounded-lg">
-              <h5 className="font-medium text-sm mb-2 text-[#25da9e]">M-X Processing Steps</h5>
+              <h5 className="font-medium text-sm mb-2 text-[#25da9e]">MX Processing Steps</h5>
               <div className="space-y-2 text-xs">
                 <div className="bg-blue-500/10 p-2 rounded">
-                  <strong>Step 1:</strong> Decompose ke 4 binary sub-problems
+                  <strong>Step 1:</strong> Apply M1 algorithm pada setiap grup 3 workers
                 </div>
                 <div className="bg-purple-500/10 p-2 rounded">
-                  <strong>Step 2:</strong> Analyze agreement untuk setiap opsi
+                  <strong>Step 2:</strong> Use sliding window untuk cover semua workers
                 </div>
                 <div className="bg-green-500/10 p-2 rounded">
-                  <strong>Step 3:</strong> Calculate individual accuracy scores
+                  <strong>Step 3:</strong> Aggregate accuracy scores dari multiple evaluations
                 </div>
                 <div className="bg-orange-500/10 p-2 rounded">
-                  <strong>Step 4:</strong> Classify eligible/non-eligible
+                  <strong>Step 4:</strong> Classify eligible/non-eligible berdasarkan threshold
                 </div>
               </div>
             </div>
@@ -150,8 +179,8 @@ const MXAlgorithmSlide = () => {
           
           <div className="mt-3 text-center">
             <Caption>
-              M-X mengidentifikasi tester dengan pola respons konsisten tanpa mengetahui 
-              jawaban &quot;benar&quot; absolut dalam konteks UI/UX evaluation
+              MX menggunakan M1 sebagai building block dengan sliding window approach untuk 
+              evaluasi scalable worker quality tanpa memerlukan ground truth dalam UAT context
             </Caption>
           </div>
         </div>
