@@ -8,7 +8,7 @@ import { SectionGrid, ContentCard, ListItem, HighlightBox, Caption } from "./Sli
 const SystemArchitectureSlide = () => {
   return (
     <SlideLayout 
-      title="Arsitektur Sistem"
+      title="Arsitektur Sistem Platform Simulasi"
       className="bg-gradient-to-br from-[#0a1e5e] via-[#001333] to-[#21074f]"
     >
       {/* Component Diagram */}
