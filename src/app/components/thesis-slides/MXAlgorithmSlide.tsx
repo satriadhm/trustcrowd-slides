@@ -123,6 +123,58 @@ const MXAlgorithmSlide = () => {
         </ContentCard>
       </SectionGrid>
 
+       {/* Algorithm Mathematical Foundation */}
+      <SectionGrid columns={2} gap="gap-4">
+        <ContentCard title="Pondasi Matematis" animationDelay={0} className="py-4">
+          <div className="space-y-3">
+            <div className="bg-white/5 p-3 rounded-lg">
+              <h4 className="text-base font-medium mb-2 text-[#24ce2a]">Komponen Formula M-1</h4>
+              <div className="space-y-2 text-sm">
+                <div className="bg-green-600/20 p-2 rounded">
+                  <strong>A<sub>i</sub> · A<sub>j</sub>:</strong> Probabilitas kedua worker benar secara bersamaan
+                </div>
+                <div className="bg-blue-600/20 p-2 rounded">
+                  <strong>(1/(M+1)) · (1-A<sub>i</sub>)(1-A<sub>j</sub>) · (M-1):</strong> Probabilitas agreement saat keduanya salah
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white/5 p-3 rounded-lg">
+              <h4 className="text-base font-medium mb-2 text-[#25da9e]">Sistem Persamaan Linear</h4>
+              <p className="text-sm text-gray-300">
+                Algoritma menyusun sistem persamaan linear dari Q<sub>ij</sub> yang dihitung dari data respons, 
+                kemudian diselesaikan untuk menentukan nilai akurasi A<sub>i</sub> setiap worker.
+              </p>
+            </div>
+          </div>
+        </ContentCard>
+
+        <ContentCard title="Keunggulan untuk UAT" animationDelay={0.2} className="py-4">
+          <div className="space-y-3">
+            <div className="bg-white/5 p-3 rounded-lg text-center">
+              <h4 className="font-medium text-base mb-2 text-[#24ce2a]">Tidak Bergantung Ground Truth</h4>
+              <p className="text-sm text-gray-300">
+                Perfect untuk UAT scenarios dimana correctness bersifat subjective dan contextual
+              </p>
+            </div>
+            
+            <div className="bg-white/5 p-3 rounded-lg text-center">
+              <h4 className="font-medium text-base mb-2 text-[#25da9e]">Evaluasi Konsistensi</h4>
+              <p className="text-sm text-gray-300">
+                Menilai worker berdasarkan konsistensi pola jawaban dengan worker lain
+              </p>
+            </div>
+            
+            <div className="bg-white/5 p-3 rounded-lg text-center">
+              <h4 className="font-medium text-base mb-2 text-[#f39c12]">Skalabilitas Multiple Choice</h4>
+              <p className="text-sm text-gray-300">
+                M-X memungkinkan evaluasi pada tugas dengan multiple opsi sekaligus
+              </p>
+            </div>
+          </div>
+        </ContentCard>
+      </SectionGrid>
+
       {/* UAT Application Example - Updat */}
       <HighlightBox variant="secondary" className="py-4">
         <h3 className="text-xl font-semibold mb-3 text-center">Implementasi M-X dalam UAT Berbasis Crowdsourcing</h3>
@@ -175,58 +227,6 @@ const MXAlgorithmSlide = () => {
           </div>
         </div>
       </HighlightBox>
-
-      {/* Algorithm Mathematical Foundation */}
-      <SectionGrid columns={2} gap="gap-4">
-        <ContentCard title="Fondasi Matematis" animationDelay={0} className="py-4">
-          <div className="space-y-3">
-            <div className="bg-white/5 p-3 rounded-lg">
-              <h4 className="text-base font-medium mb-2 text-[#24ce2a]">Komponen Formula M-1</h4>
-              <div className="space-y-2 text-sm">
-                <div className="bg-green-600/20 p-2 rounded">
-                  <strong>A<sub>i</sub> · A<sub>j</sub>:</strong> Probabilitas kedua worker benar secara bersamaan
-                </div>
-                <div className="bg-blue-600/20 p-2 rounded">
-                  <strong>(1/(M+1)) · (1-A<sub>i</sub>)(1-A<sub>j</sub>) · (M-1):</strong> Probabilitas agreement saat keduanya salah
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-white/5 p-3 rounded-lg">
-              <h4 className="text-base font-medium mb-2 text-[#25da9e]">Sistem Persamaan Linear</h4>
-              <p className="text-sm text-gray-300">
-                Algoritma menyusun sistem persamaan linear dari Q<sub>ij</sub> yang dihitung dari data respons, 
-                kemudian diselesaikan untuk menentukan nilai akurasi A<sub>i</sub> setiap worker.
-              </p>
-            </div>
-          </div>
-        </ContentCard>
-
-        <ContentCard title="Keunggulan untuk UAT" animationDelay={0.2} className="py-4">
-          <div className="space-y-3">
-            <div className="bg-white/5 p-3 rounded-lg text-center">
-              <h4 className="font-medium text-base mb-2 text-[#24ce2a]">Tidak Bergantung Ground Truth</h4>
-              <p className="text-sm text-gray-300">
-                Perfect untuk UAT scenarios dimana correctness bersifat subjective dan contextual
-              </p>
-            </div>
-            
-            <div className="bg-white/5 p-3 rounded-lg text-center">
-              <h4 className="font-medium text-base mb-2 text-[#25da9e]">Evaluasi Konsistensi</h4>
-              <p className="text-sm text-gray-300">
-                Menilai worker berdasarkan konsistensi pola jawaban dengan worker lain
-              </p>
-            </div>
-            
-            <div className="bg-white/5 p-3 rounded-lg text-center">
-              <h4 className="font-medium text-base mb-2 text-[#f39c12]">Skalabilitas Multiple Choice</h4>
-              <p className="text-sm text-gray-300">
-                M-X memungkinkan evaluasi pada tugas dengan multiple opsi sekaligus
-              </p>
-            </div>
-          </div>
-        </ContentCard>
-      </SectionGrid>
 
       {/* Research Implementation Focus - Updated */}
       <HighlightBox variant="primary" className="py-3">
