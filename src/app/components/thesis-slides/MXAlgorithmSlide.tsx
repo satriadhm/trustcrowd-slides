@@ -114,9 +114,9 @@ const MXAlgorithmSlide = () => {
             <div className="bg-white/5 p-3 rounded-lg">
               <h4 className="text-base font-medium mb-2 text-[#f39c12]">Implementasi untuk UAT</h4>
               <ul className="space-y-2 text-sm">
-                <li>• Setiap opsi UAT diperlakukan sebagai <strong>pertanyaan terpisah</strong></li>
-                <li>• Worker harus benar dalam <strong>semua opsi yang benar</strong></li>
-                <li>• Sesuai untuk skenario pengujian yang <strong>subjektif</strong></li>
+                <li>• Setiap opsi UAT diperlakukan sebagai <strong>pertanyaan independen</strong></li>
+                <li>• Tidak ada jawaban <strong>yang salah</strong></li>
+                <li>• Minimal <strong>3 worker</strong> yang memberikan jawaban</li>
               </ul>
             </div>
           </div>
