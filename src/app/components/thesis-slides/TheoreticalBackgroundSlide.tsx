@@ -107,6 +107,16 @@ const TheoreticalBackgroundSlide = () => {
                 </ul>
               </div>
               
+              <div className="bg-red-500/10 p-4 rounded-lg border border-red-500/20">
+                <h4 className="text-base font-medium mb-3 text-red-400">Limitasi untuk UAT</h4>
+                <ul className="space-y-2">
+                  <li><TextContent size="small" className="text-gray-300">• Tidak mengatasi <strong>initial quality assessment</strong></TextContent></li>
+                  <li><TextContent size="small" className="text-gray-300">• Tidak ada <strong>immediate filtering</strong></TextContent></li>
+                  <li><TextContent size="small" className="text-gray-300">• Focus <strong>jangka panjang</strong>, bukan real-time selection</TextContent></li>
+                  <li><TextContent size="small" className="text-gray-300">• Memerlukan time investment yang besar</TextContent></li>
+                </ul>
+              </div>
+              
             </div>
           </ContentCard>
         </SectionGrid>
