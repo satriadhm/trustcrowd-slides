@@ -39,7 +39,6 @@ const TheoreticalBackgroundSlide = () => {
         </SectionGrid>
       </HighlightBox>
 
-      {/* Enhanced Quality Control Methods Analysis */}
       <HighlightBox variant="secondary" className="py-6">
         <h3 className="text-xl sm:text-2xl font-semibold mb-6 text-center">Analisis Metode Quality Control Existing</h3>
         
@@ -174,19 +173,12 @@ const TheoreticalBackgroundSlide = () => {
                   <td className="text-center py-3 px-4">Low</td>
                   <td className="text-center py-3 px-4 text-cyan-400">High</td>
                 </tr>
-                <tr className="border-b border-white/10">
+                <tr>
                   <td className="py-3 px-4 font-medium">Implementation Complexity</td>
                   <td className="text-center py-3 px-4">High</td>
                   <td className="text-center py-3 px-4">Medium</td>
                   <td className="text-center py-3 px-4">High</td>
                   <td className="text-center py-3 px-4 text-cyan-400">Medium</td>
-                </tr>
-                <tr>
-                  <td className="py-3 px-4 font-medium">Bias Risk</td>
-                  <td className="text-center py-3 px-4">Medium</td>
-                  <td className="text-center py-3 px-4">High (Demographic)</td>
-                  <td className="text-center py-3 px-4">Low</td>
-                  <td className="text-center py-3 px-4 text-cyan-400">Low</td>
                 </tr>
               </tbody>
             </table>
