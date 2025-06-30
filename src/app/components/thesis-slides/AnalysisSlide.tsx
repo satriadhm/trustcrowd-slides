@@ -27,7 +27,7 @@ const AnalysisSlide = () => {
             </div>
             
             <div className="bg-white/5 p-3 rounded-lg">
-              <h4 className="font-medium text-base mb-1 text-[#24ce2a]">TNR 83%</h4>
+              <h4 className="font-medium text-base mb-1 text-[#24ce2a]">True Negative Rate 83%</h4>
               <p className="text-sm text-gray-300">Filter non-eligible sangat efektif</p>
             </div>
           </div>
@@ -74,27 +74,6 @@ const AnalysisSlide = () => {
           </div>
         </SectionGrid>
       </HighlightBox>
-
-      {/* Key Insights - Bottom */}
-      <SectionGrid columns={2} gap="gap-4">
-        <div className="bg-gradient-to-r from-green-600/20 to-green-500/20 p-4 rounded-xl">
-          <h4 className="font-medium text-base mb-2 text-green-400">✓ Strengths</h4>
-          <ul className="text-sm text-gray-200 space-y-1">
-            <li>• High TNR = excellent filtering</li>
-            <li>• Balanced performance</li>
-            <li>• No ground truth dependency</li>
-          </ul>
-        </div>
-        
-        <div className="bg-gradient-to-r from-yellow-600/20 to-yellow-500/20 p-4 rounded-xl">
-          <h4 className="font-medium text-base mb-2 text-yellow-400">⚠ Considerations</h4>
-          <ul className="text-sm text-gray-200 space-y-1">
-            <li>• Consistency ≠ experience-based</li>
-            <li>• May exclude diverse perspectives</li>
-            <li>• Needs real-world validation</li>
-          </ul>
-        </div>
-      </SectionGrid>
     </SlideLayout>
   );
 };

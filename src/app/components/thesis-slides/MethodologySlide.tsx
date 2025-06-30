@@ -90,7 +90,7 @@ const MethodologySlide = () => {
             <SectionTitle level={4} color="secondary" className="mb-0"><strong>F1 Score</strong></SectionTitle> {/* **F1 Score** -> <strong>F1 Score</strong> */}
           </div>
           <div className="bg-white/5 p-4 rounded-lg text-center">
-            <SectionTitle level={4} color="primary" className="mb-0"><strong>TNR</strong></SectionTitle> {/* **TNR** -> <strong>TNR</strong> */}
+            <SectionTitle level={4} color="primary" className="mb-0"><strong>True Negative Rate</strong></SectionTitle> {/* **True Negative Rate** -> <strong>True Negative Rate</strong> */}
           </div>
         </SectionGrid>
         <TextContent size="small" className="mt-4 text-center"> 

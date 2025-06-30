@@ -40,7 +40,7 @@ const ConclusionSlide = () => {
             <div className="bg-white/5 p-3 rounded-lg">
               <h4 className="font-medium text-base mb-1 text-[#24ce2a]">RQ2: Variability Reduction</h4>
               <p className="text-sm text-gray-300">
-                <strong>TNR 83%</strong> dan high precision menunjukkan efektivitas dalam reducing tester characteristic variability dan ensuring consistent testing quality.
+                <strong>True Negative Rate 83%</strong> dan high precision menunjukkan efektivitas dalam reducing tester characteristic variability dan ensuring consistent testing quality.
               </p>
             </div>
             
@@ -75,6 +75,15 @@ const ConclusionSlide = () => {
                 <strong>Simulation environment</strong> lacks complexity dari actual production deployments. Multiple-choice format mungkin tidak capture full spectrum UAT activities.
               </p>
             </div>
+            
+            <div className="bg-yellow-500/10 p-3 rounded-lg border border-yellow-500/20">
+              <h4 className="font-medium text-base mb-1 text-yellow-400">Algorithm Considerations</h4>
+              <ul className="text-sm text-gray-300 space-y-1">
+                <li>• Consistency ≠ experience-based</li>
+                <li>• May exclude diverse perspectives</li>
+                <li>• Needs real-world validation</li>
+              </ul>
+            </div>
           </div>
         </ContentCard>
       </SectionGrid>
@@ -87,9 +96,11 @@ const ConclusionSlide = () => {
             <h4 className="font-medium text-base mb-2 text-green-400">✓ Algorithm Strengths</h4>
             <ul className="text-sm text-gray-200 space-y-1">
               <li>• High precision (82%) = effective quality control</li>
+              <li>• High True Negative Rate (83%) = excellent filtering</li>
               <li>• No ground truth dependency = UAT applicable</li>
               <li>• Privacy preservation through response patterns</li>
               <li>• Immediate deployment capability</li>
+              <li>• Balanced performance</li>
             </ul>
           </div>
           

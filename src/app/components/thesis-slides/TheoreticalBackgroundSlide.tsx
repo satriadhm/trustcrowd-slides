@@ -215,7 +215,7 @@ const TheoreticalBackgroundSlide = () => {
               <div>• <strong>Precision:</strong> True positive rate</div>
               <div>• <strong>Recall:</strong> Sensitivity</div>
               <div>• <strong>F1-Score:</strong> Harmonic mean</div>
-              <div>• <strong>TNR:</strong> True negative rate</div>
+              <div>• <strong>True Negative Rate:</strong> True negative rate</div>
               <div>• <strong>FP Rate:</strong> False positive rate</div>
             </div>
           </div>

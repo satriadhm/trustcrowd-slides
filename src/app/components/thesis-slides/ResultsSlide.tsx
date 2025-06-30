@@ -10,7 +10,7 @@ const ResultsSlide = () => {
     { name: "Accuracy", value: 0.79, color: "bg-[#24ce2a]" },
     { name: "Precision", value: 0.82, color: "bg-blue-500" },
     { name: "Recall", value: 0.75, color: "bg-purple-500" },
-    { name: "TNR", value: 0.83, color: "bg-green-500" },
+    { name: "True Negative Rate", value: 0.83, color: "bg-green-500" },
     { name: "F1 Score", value: 0.78, color: "bg-orange-500" },
   ];
 
@@ -20,7 +20,7 @@ const ResultsSlide = () => {
 
   return (
     <SlideLayout 
-      title="Hasil Penelitian"
+      title="Hasil Penelitian dan Analisis"
       className="bg-gradient-to-br from-[#0a1e5e] via-[#001333] to-[#21074f]"
       contentClassName="space-y-6"
     >
@@ -87,7 +87,7 @@ const ResultsSlide = () => {
           <div className="bg-white/5 p-4 rounded-lg">
             <h4 className="font-medium text-base mb-2 text-[#25da9e]">RQ2: Reduksi Variabilitas</h4>
             <p className="text-sm text-gray-200">
-              TNR <strong>83%</strong> menunjukkan efektivitas filtering 
+              True Negative Rate <strong>83%</strong> menunjukkan efektivitas filtering 
               tester tidak konsisten.
             </p>
           </div>
@@ -120,7 +120,7 @@ const ResultsSlide = () => {
           <div className="space-y-3">
             <div className="bg-green-500/10 p-3 rounded border border-green-500/20">
               <h5 className="font-medium text-sm mb-1 text-green-400">✓ Kekuatan</h5>
-              <p className="text-xs text-gray-300">Presisi tinggi, TNR kuat, tidak perlu ground truth</p>
+              <p className="text-xs text-gray-300">Presisi tinggi, True Negative Rate kuat, tidak perlu ground truth</p>
             </div>
             
             <div className="bg-blue-500/10 p-3 rounded border border-blue-500/20">
@@ -138,6 +138,69 @@ const ResultsSlide = () => {
           M-X efektif untuk kontrol kualitas UAT dengan <strong>akurasi 79%</strong>. 
           Perlu pendekatan hibrid untuk hasil optimal.
         </p>
+      </HighlightBox>
+
+      {/* Analysis Section */}
+      <SectionGrid columns={2} gap="gap-4">
+        <ContentCard title="Interpretasi Metrik" animationDelay={0} className="py-4">
+          <div className="space-y-3">
+            <div className="bg-white/5 p-3 rounded-lg">
+              <h4 className="font-medium text-base mb-1 text-[#24ce2a]">Accuracy 79%</h4>
+              <p className="text-sm text-gray-300">4 dari 5 tester benar, performa kuat</p>
+            </div>
+            
+            <div className="bg-white/5 p-3 rounded-lg">
+              <h4 className="font-medium text-base mb-1 text-[#24ce2a]">Precision 82%</h4>
+              <p className="text-sm text-gray-300">Minimalisir false positive</p>
+            </div>
+            
+            <div className="bg-white/5 p-3 rounded-lg">
+              <h4 className="font-medium text-base mb-1 text-[#24ce2a]">True Negative Rate 83%</h4>
+              <p className="text-sm text-gray-300">Filter non-eligible sangat efektif</p>
+            </div>
+          </div>
+        </ContentCard>
+
+        <ContentCard title="Kekuatan M-X" animationDelay={0.2} className="py-4">
+          <div className="space-y-3">
+            <div className="bg-white/5 p-3 rounded-lg">
+              <h4 className="font-medium text-base mb-1 text-[#25da9e]">Independensi Ground Truth</h4>
+              <p className="text-sm text-gray-300">Ideal untuk UAT subjektif</p>
+            </div>
+            
+            <div className="bg-white/5 p-3 rounded-lg">
+              <h4 className="font-medium text-base mb-1 text-[#25da9e]">Performa Seimbang</h4>
+              <p className="text-sm text-gray-300">F1-Score 78%, konsisten semua metrik</p>
+            </div>
+            
+            <div className="bg-white/5 p-3 rounded-lg">
+              <h4 className="font-medium text-base mb-1 text-[#25da9e]">Reduksi Variabilitas</h4>
+              <p className="text-sm text-gray-300">Pool tester lebih homogen</p>
+            </div>
+          </div>
+        </ContentCard>
+      </SectionGrid>
+
+      {/* Classification Analysis */}
+      <HighlightBox variant="primary" className="py-4">
+        <h3 className="text-xl font-semibold mb-4 text-center">Analisis Klasifikasi</h3>
+        
+        <SectionGrid columns={3} gap="gap-3">
+          <div className="bg-white/5 p-3 rounded-lg">
+            <h4 className="font-medium text-base mb-2 text-red-400">FP = 2</h4>
+            <p className="text-sm text-gray-300">2 non-experienced diklasifikasi eligible</p>
+          </div>
+          
+          <div className="bg-white/5 p-3 rounded-lg">
+            <h4 className="font-medium text-base mb-2 text-orange-400">FN = 3</h4>
+            <p className="text-sm text-gray-300">3 experienced tidak terdeteksi</p>
+          </div>
+          
+          <div className="bg-white/5 p-3 rounded-lg">
+            <h4 className="font-medium text-base mb-2 text-[#24ce2a]">Overall</h4>
+            <p className="text-sm text-gray-300">19/24 benar (79% akurasi)</p>
+          </div>
+        </SectionGrid>
       </HighlightBox>
     </SlideLayout>
   );

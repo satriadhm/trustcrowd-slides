@@ -15,7 +15,6 @@ import MethodologySlide from "@/app/components/thesis-slides/MethodologySlide";
 import SystemArchitectureSlide from "@/app/components/thesis-slides/SystemArchitectureSlide";
 import SimulationDesignSlide from "@/app/components/thesis-slides/SimulationDesignSlide";
 import ResultsSlide from "@/app/components/thesis-slides/ResultsSlide";
-import AnalysisSlide from "@/app/components/thesis-slides/AnalysisSlide";
 import ConclusionSlide from "@/app/components/thesis-slides/ConclusionSlide";
 // import FutureWorkSlide from "@/app/components/thesis-slides/FutureWorkSlide";
 import ThankYouSlide from "@/app/components/thesis-slides/ThankyouSlide";
@@ -44,8 +43,7 @@ export default function ThesisDefensePage() {
     { component: MethodologySlide, title: "Metodologi", id: "methodology", shortTitle: "Method" },
     { component: SystemArchitectureSlide, title: "Arsitektur Sistem", id: "architecture", shortTitle: "System" },
     { component: SimulationDesignSlide, title: "Desain Simulasi", id: "simulation", shortTitle: "Simulation" },
-    { component: ResultsSlide, title: "Hasil Penelitian", id: "results", shortTitle: "Results" },
-    { component: AnalysisSlide, title: "Analisis Hasil", id: "analysis", shortTitle: "Analysis" },
+    { component: ResultsSlide, title: "Hasil Penelitian dan Analisis", id: "results", shortTitle: "Results" },
     { component: ConclusionSlide, title: "Kesimpulan", id: "conclusion", shortTitle: "Conclusion" },
     // { component: FutureWorkSlide, title: "Penelitian Lanjutan", id: "future", shortTitle: "Future" },
     { component: ThankYouSlide, title: "Terima Kasih", id: "thankyou", shortTitle: "Thanks" }
