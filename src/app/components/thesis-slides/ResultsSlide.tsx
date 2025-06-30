@@ -120,7 +120,7 @@ const ResultsSlide = () => {
           <div className="space-y-3">
             <div className="bg-green-500/10 p-3 rounded border border-green-500/20">
               <h5 className="font-medium text-sm mb-1 text-green-400">✓ Kekuatan</h5>
-              <p className="text-xs text-gray-300">Presisi tinggi, True Negative Rate kuat, tidak perlu ground truth</p>
+              <p className="text-xs text-gray-300">Presisi tinggi, True Negative Rate kuat, tidak perlu pre-defined answer di dalam task</p>
             </div>
             
             <div className="bg-blue-500/10 p-3 rounded border border-blue-500/20">
@@ -164,7 +164,7 @@ const ResultsSlide = () => {
         <ContentCard title="Kekuatan M-X" animationDelay={0.2} className="py-4">
           <div className="space-y-3">
             <div className="bg-white/5 p-3 rounded-lg">
-              <h4 className="font-medium text-base mb-1 text-[#25da9e]">Independensi Ground Truth</h4>
+              <h4 className="font-medium text-base mb-1 text-[#25da9e]">Independensi Pre-defined Answer dalam Task</h4>
               <p className="text-sm text-gray-300">Ideal untuk UAT subjektif</p>
             </div>
             

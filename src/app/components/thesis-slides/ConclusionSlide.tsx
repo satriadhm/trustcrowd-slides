@@ -21,7 +21,7 @@ const ConclusionSlide = () => {
             <span className="font-bold text-[#24ce2a]"> 82% presisi</span>, <span className="font-bold text-[#24ce2a]">75% recall</span>
           </p>
           <p className="text-sm text-gray-300">
-            Dapat membedakan tester eligible/non-eligible tanpa ground truth dalam konteks UAT berbasis Crowdsourcing
+            Dapat membedakan tester eligible/non-eligible tanpa task dengan <strong>pre-defined answer</strong> dalam konteks UAT berbasis Crowdsourcing
           </p>
         </div>
       </HighlightBox>
@@ -97,7 +97,7 @@ const ConclusionSlide = () => {
             <ul className="text-sm text-gray-200 space-y-1">
               <li>• High precision (82%) = effective quality control</li>
               <li>• High True Negative Rate (83%) = excellent filtering</li>
-              <li>• No ground truth dependency = UAT applicable</li>
+              <li>• No pre-defined answer dependency = UAT applicable</li>
               <li>• Privacy preservation through response patterns</li>
               <li>• Immediate deployment capability</li>
               <li>• Balanced performance</li>

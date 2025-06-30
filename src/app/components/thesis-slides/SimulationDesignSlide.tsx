@@ -74,7 +74,7 @@ const SimulationDesignSlide = () => {
                 <span className="text-sm sm:text-base lg:text-base xl:text-lg font-medium inline">Partisipan:</span> <strong>24 <em>volunteer</em></strong> (12 berpengalaman UAT, 12 tanpa pengalaman)
               </div>
               <div className="text-gray-300">
-                <span className="text-sm sm:text-base lg:text-base xl:text-lg font-medium inline">Validasi:</span> <strong><em>Prior-experience based validation</em></strong> untuk <em>ground truth</em>
+                <span className="text-sm sm:text-base lg:text-base xl:text-lg font-medium inline">Validasi:</span> <strong><em>Prior-experience based validation</em></strong> untuk <em>pre-defined answer</em>
               </div>
               <div className="text-gray-300">
                 <span className="text-sm sm:text-base lg:text-base xl:text-lg font-medium inline">Distribusi:</span> <strong>50:50 <em>eligible</em>/<em>non-eligible</em></strong>
@@ -137,8 +137,8 @@ const SimulationDesignSlide = () => {
               <div className="flex items-start gap-4">
                 <div className="bg-white/10 p-3 rounded-full flex-shrink-0 flex items-center justify-center w-10 h-10 font-bold text-lg text-[#9b59b6]">5</div>
                 <div>
-                  <h4 className="text-base sm:text-lg font-medium text-white"><strong>Ground Truth Validation</strong></h4>
-                  <Caption>Evaluasi hasil M-X dengan confusion matrix menggunakan ground truth dari expert assessment dan prior experience</Caption>
+                  <h4 className="text-base sm:text-lg font-medium text-white"><strong>Prior-Experience Based Validation</strong></h4>
+                  <Caption>Evaluasi hasil M-X dengan confusion matrix menggunakan data dari expert assessment dan prior experience</Caption>
                 </div>
               </div>
             </div>

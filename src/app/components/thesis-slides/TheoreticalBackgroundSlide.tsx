@@ -139,7 +139,7 @@ const TheoreticalBackgroundSlide = () => {
               </thead>
               <tbody className="text-sm">
                 <tr className="border-b border-white/10">
-                  <td className="py-3 px-4 font-medium">Ground Truth Required</td>
+                  <td className="py-3 px-4 font-medium">Pre-defined Answer Required</td>
                   <td className="text-center py-3 px-4">✓ (Historical bugs)</td>
                   <td className="text-center py-3 px-4">✗</td>
                   <td className="text-center py-3 px-4">✓ (Performance data)</td>
@@ -194,7 +194,7 @@ const TheoreticalBackgroundSlide = () => {
             <h4 className="text-base font-medium mb-3 text-[#25da9e]">Prior-Experience Validation</h4>
             <ul className="space-y-2 text-left">
               <li><TextContent size="small" className="text-gray-300">• Assessment berdasarkan pengalaman UAT</TextContent></li>
-              <li><TextContent size="small" className="text-gray-300">• Ground truth untuk evaluasi algoritma</TextContent></li>
+              <li><TextContent size="small" className="text-gray-300">• Pre-defined answer untuk evaluasi algoritma</TextContent></li>
               <li><TextContent size="small" className="text-gray-300">• Baseline perbandingan kinerja</TextContent></li>
             </ul>
           </div>

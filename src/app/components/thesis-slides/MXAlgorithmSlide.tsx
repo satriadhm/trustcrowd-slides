@@ -26,7 +26,7 @@ const MXAlgorithmSlide = () => {
           
           <SectionGrid columns={3} gap="gap-4">
             <div className="bg-white/5 p-4 rounded-lg text-center">
-              <h4 className="font-medium text-base mb-2 text-[#24ce2a]">Tanpa Ground Truth</h4>
+              <h4 className="font-medium text-base mb-2 text-[#24ce2a]">Tanpa Pre-defined Answer di setiap task</h4>
               <p className="text-sm text-gray-300">Evaluasi melalui inter-tester agreement patterns</p>
             </div>
             <div className="bg-white/5 p-4 rounded-lg text-center">
@@ -152,7 +152,7 @@ const MXAlgorithmSlide = () => {
         <ContentCard title="Keunggulan untuk UAT" animationDelay={0.2} className="py-4">
           <div className="space-y-3">
             <div className="bg-white/5 p-3 rounded-lg text-center">
-              <h4 className="font-medium text-base mb-2 text-[#24ce2a]">Tidak Bergantung Ground Truth</h4>
+              <h4 className="font-medium text-base mb-2 text-[#24ce2a]">Tidak Bergantung Pre-defined Answer</h4>
               <p className="text-sm text-gray-300">
                 Perfect untuk UAT scenarios dimana correctness bersifat subjective dan contextual
               </p>

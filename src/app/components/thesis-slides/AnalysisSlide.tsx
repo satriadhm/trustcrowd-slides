@@ -36,7 +36,7 @@ const AnalysisSlide = () => {
         <ContentCard title="Kekuatan M-X" animationDelay={0.2} className="py-4">
           <div className="space-y-3">
             <div className="bg-white/5 p-3 rounded-lg">
-              <h4 className="font-medium text-base mb-1 text-[#25da9e]">Independensi Ground Truth</h4>
+              <h4 className="font-medium text-base mb-1 text-[#25da9e]">Independensi Pre-defined Answer</h4>
               <p className="text-sm text-gray-300">Ideal untuk UAT subjektif</p>
             </div>
             

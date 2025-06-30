@@ -97,7 +97,7 @@ const IntroductionSlide = () => {
             
             <SectionGrid columns={3} gap="gap-4">
               <div className="bg-white/5 p-4 rounded-lg text-center">
-                <h4 className="font-medium text-base mb-2 text-[#24ce2a]">No Ground Truth</h4>
+                <h4 className="font-medium text-base mb-2 text-[#24ce2a]">No Pre-defined Answer</h4>
                 <TextContent size="small">Evaluasi berdasarkan konsistensi antar-tester</TextContent>
               </div>
               <div className="bg-white/5 p-4 rounded-lg text-center">
