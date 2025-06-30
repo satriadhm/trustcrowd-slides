@@ -61,7 +61,7 @@ const MXAlgorithmSlide = () => {
                 <li>• Dirancang untuk <strong>single-choice dan biner</strong></li>
                 <li>• Mengukur akurasi workers berdasarkan <strong>kesamaan jawaban</strong></li>
                 <li>• Minimal <strong>3 workers</strong> untuk setiap tugas</li>
-                <li>• Tanpa memerlukan <strong>pre-developed answers</strong></li>
+                <li>• Tanpa memerlukan <strong>pre-defined answers</strong></li>
               </ul>
             </div>
 
